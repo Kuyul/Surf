@@ -15,6 +15,7 @@ TagManager:
   - HealthBar
   - Wave
   - Squid
+  - Coin
   layers:
   - Default
   - TransparentFX
