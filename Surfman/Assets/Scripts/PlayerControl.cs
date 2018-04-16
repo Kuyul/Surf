@@ -8,6 +8,7 @@ public class PlayerControl : MonoBehaviour
 
     public LayerMask whatIsSea;
     public float jumpVel = 5.0f;
+    public float baloonVel = 20.0f;
     private Rigidbody2D rb;
     private bool onSea;
     //surfboard Transform properties
@@ -53,6 +54,12 @@ public class PlayerControl : MonoBehaviour
         if (other.gameObject.CompareTag("Obstacle"))
         {
             SceneManager.LoadScene(0);
+        }
+
+        if (other.gameObject.CompareTag("Balloon"))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, baloonVel);
+            other.gameObject.SetActive(false);
         }
     }
 }

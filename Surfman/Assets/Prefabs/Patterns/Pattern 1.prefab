@@ -4090,6 +4090,7 @@ MonoBehaviour:
   - {fileID: 1481513357720474, guid: 3c6bb61a734d9714eab5025b5782c20c, type: 2}
   - {fileID: 1278812166618152, guid: d6fab5c5295d76047b5c587318fce709, type: 2}
   - {fileID: 1637706999552104, guid: 8cc7a10a7b81c424c9b1fc2bd87f2961, type: 2}
+  - {fileID: 1927426586836986, guid: 456174e8b9aeedf478ac0cecc753c768, type: 2}
   patternSpawn: {fileID: 1265690840924604}
 --- !u!114 &114926498084088882
 MonoBehaviour:

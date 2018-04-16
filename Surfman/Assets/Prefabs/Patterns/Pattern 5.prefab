@@ -377,6 +377,7 @@ GameObject:
   - component: {fileID: 4036712497806792}
   - component: {fileID: 50624799781037372}
   - component: {fileID: 114924492326738874}
+  - component: {fileID: 61956623745169218}
   m_Layer: 0
   m_Name: Pattern 5
   m_TagString: Pattern
@@ -620,8 +621,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1376583311476546}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.3, y: -6.659782, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalPosition: {x: 23.6, y: -6.659782, z: 0}
+  m_LocalScale: {x: 2, y: 1.5, z: 1}
   m_Children:
   - {fileID: 4763032370841186}
   m_Father: {fileID: 4599130359227810}
@@ -769,7 +770,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1333663528561696}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35, y: 0, z: 0}
+  m_LocalPosition: {x: 41.7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4036712497806792}
@@ -918,7 +919,7 @@ Transform:
   m_GameObject: {fileID: 1152095067489858}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 10.342639, y: -6.659782, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 2, y: 1.5, z: 1}
   m_Children:
   - {fileID: 4477507004056396}
   m_Father: {fileID: 4599130359227810}
@@ -1082,8 +1083,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1682611208634054}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.581, y: 0.456, z: 0}
-  m_LocalScale: {x: 25, y: 8, z: 1}
+  m_LocalPosition: {x: 10.209, y: 4.959, z: 0}
+  m_LocalScale: {x: 26.255363, y: 29.013721, z: 1}
   m_Children: []
   m_Father: {fileID: 4036712497806792}
   m_RootOrder: 2
@@ -3403,6 +3404,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!61 &61956623745169218
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1637706999552104}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -7.86}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!114 &114507579925318884
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3414,7 +3440,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48d249daaf3a15a428671fc4078d57ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: []
+  obj:
+  - {fileID: 1518283305088766, guid: dad7992e7aa134f4ab6780b34c9ef8b2, type: 2}
+  - {fileID: 1854357933908728, guid: 44a1d70872369214d8a372d35e9e4b02, type: 2}
+  - {fileID: 1481513357720474, guid: 3c6bb61a734d9714eab5025b5782c20c, type: 2}
+  - {fileID: 1278812166618152, guid: d6fab5c5295d76047b5c587318fce709, type: 2}
+  - {fileID: 1927426586836986, guid: 456174e8b9aeedf478ac0cecc753c768, type: 2}
   patternSpawn: {fileID: 1333663528561696}
 --- !u!114 &114924492326738874
 MonoBehaviour:
@@ -4583,7 +4614,7 @@ BuoyancyEffector2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_SurfaceLevel: 7.48
-  m_Density: 2
+  m_Density: 5
   m_LinearDrag: 30
   m_AngularDrag: 5
   m_FlowAngle: 0
@@ -4600,8 +4631,8 @@ BuoyancyEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_SurfaceLevel: 7.48
-  m_Density: 2
+  m_SurfaceLevel: 7.66
+  m_Density: 5
   m_LinearDrag: 30
   m_AngularDrag: 5
   m_FlowAngle: 0
