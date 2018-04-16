@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 60479128214153368}
   m_Layer: 0
   m_Name: Shark
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -195,8 +195,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1607604741821048}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.63, y: -3.56, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.5603973, w: 0.82822394}
+  m_LocalPosition: {x: 11.269551, y: -4.1726913, z: 0}
   m_LocalScale: {x: -1, y: 1, z: -1}
   m_Children:
   - {fileID: 4753514782701518}
@@ -208,7 +208,7 @@ Transform:
   - {fileID: 4940515600835464}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -68.167}
 --- !u!4 &4753514782701518
 Transform:
   m_ObjectHideFlags: 1

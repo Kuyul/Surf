@@ -16,6 +16,8 @@ TagManager:
   - Wave
   - Squid
   - Coin
+  - Pattern
+  - player
   layers:
   - Default
   - TransparentFX

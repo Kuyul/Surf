@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaveControl : MonoBehaviour {
+public class PatternControl : MonoBehaviour {
 
     private Rigidbody2D rb;
 
@@ -11,9 +11,5 @@ public class WaveControl : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector3(-5.0f, 0.0f, 0.0f);
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }
