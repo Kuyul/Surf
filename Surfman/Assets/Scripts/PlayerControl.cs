@@ -59,6 +59,7 @@ public class PlayerControl : MonoBehaviour
         if (other.gameObject.CompareTag("Balloon"))
         {
             rb.velocity = new Vector2(rb.velocity.x, baloonVel);
+            jump = true;
             other.gameObject.SetActive(false);
         }
     }

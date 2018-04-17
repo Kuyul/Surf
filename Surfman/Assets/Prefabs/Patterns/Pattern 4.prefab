@@ -2609,6 +2609,8 @@ MonoBehaviour:
   - {fileID: 1481513357720474, guid: 3c6bb61a734d9714eab5025b5782c20c, type: 2}
   - {fileID: 1637706999552104, guid: 8cc7a10a7b81c424c9b1fc2bd87f2961, type: 2}
   - {fileID: 1927426586836986, guid: 456174e8b9aeedf478ac0cecc753c768, type: 2}
+  - {fileID: 1428453103247088, guid: 49a0901b63ad49042a330452b9644780, type: 2}
+  - {fileID: 1383736212625178, guid: 33c5fd744ce3bfe4d9dc60047db1ae2d, type: 2}
   patternSpawn: {fileID: 1139372271267548}
 --- !u!212 &212022288247477052
 SpriteRenderer:

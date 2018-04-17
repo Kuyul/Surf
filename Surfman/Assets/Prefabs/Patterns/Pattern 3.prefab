@@ -4255,6 +4255,8 @@ MonoBehaviour:
   - {fileID: 1278812166618152, guid: d6fab5c5295d76047b5c587318fce709, type: 2}
   - {fileID: 1637706999552104, guid: 8cc7a10a7b81c424c9b1fc2bd87f2961, type: 2}
   - {fileID: 1927426586836986, guid: 456174e8b9aeedf478ac0cecc753c768, type: 2}
+  - {fileID: 1428453103247088, guid: 49a0901b63ad49042a330452b9644780, type: 2}
+  - {fileID: 1383736212625178, guid: 33c5fd744ce3bfe4d9dc60047db1ae2d, type: 2}
   patternSpawn: {fileID: 1149095477181384}
 --- !u!114 &114194697534431514
 MonoBehaviour:
