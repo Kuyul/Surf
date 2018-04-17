@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -31,14 +32,19 @@ public class PlayerControl : MonoBehaviour
             jump = true;
         }
 
-        //jump
-        if (Input.GetMouseButtonDown(0) && jump)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpVel);
 
-            if (!onSea)
+        //prevents jumping when paused button is pressed
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
+            //jump
+            if (Input.GetMouseButtonDown(0) && jump)
             {
-                jump = false;
+                rb.velocity = new Vector2(rb.velocity.x, jumpVel);
+
+                if (!onSea)
+                {
+                    jump = false;
+                }
             }
         }
 
