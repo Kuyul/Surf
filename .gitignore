@@ -32,3 +32,6 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+*.ide
+*.lock
+Surfman/Assets/Prefabs/Interactables/Enemies.meta

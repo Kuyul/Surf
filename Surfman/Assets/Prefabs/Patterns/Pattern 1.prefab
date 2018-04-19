@@ -455,6 +455,7 @@ GameObject:
   - component: {fileID: 4567775925229578}
   - component: {fileID: 50815345241215334}
   - component: {fileID: 60365927302907424}
+  - component: {fileID: 95141820782964970}
   m_Layer: 0
   m_Name: Shark
   m_TagString: Obstacle
@@ -1071,8 +1072,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1681454387193244}
-  m_LocalRotation: {x: -0, y: -0, z: -0.5603973, w: 0.82822394}
-  m_LocalPosition: {x: 9.54, y: -5.2, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.5598241, w: 0.8286115}
+  m_LocalPosition: {x: 9.541449, y: -5.198265, z: 0}
   m_LocalScale: {x: -1, y: 1, z: -1}
   m_Children:
   - {fileID: 4116353040302222}
@@ -1084,7 +1085,7 @@ Transform:
   - {fileID: 4059599542947480}
   m_Father: {fileID: 4917624490101212}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -68.167}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -68.087006}
 --- !u!4 &4572246438661456
 Transform:
   m_ObjectHideFlags: 1
@@ -4073,6 +4074,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &95141820782964970
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1681454387193244}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dc78f74ba2aa8aa4e93d7818d37d14ea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114297100452321532
 MonoBehaviour:
   m_ObjectHideFlags: 1
