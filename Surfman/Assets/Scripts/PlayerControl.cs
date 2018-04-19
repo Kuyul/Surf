@@ -62,7 +62,7 @@ public class PlayerControl : MonoBehaviour
         
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
 
         if (other.gameObject.CompareTag("Balloon"))
