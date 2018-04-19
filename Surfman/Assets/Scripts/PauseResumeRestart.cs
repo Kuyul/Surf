@@ -14,8 +14,9 @@ public class PauseResumeRestart : MonoBehaviour {
         if (isPaused == true)
         {
             Time.timeScale = 0;
-            //GameControl.instance.backGroundMusic.Pause();
+            GameControl.instance.backgroundMusic.Pause();
             pausePanel.SetActive(true);
+
         }
 
     }
@@ -27,6 +28,7 @@ public class PauseResumeRestart : MonoBehaviour {
         {
             Time.timeScale = 1;
             pausePanel.SetActive(false);
+            GameControl.instance.backgroundMusic.UnPause();
         }
     }
 
