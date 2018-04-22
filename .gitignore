@@ -33,6 +33,8 @@ sysinfo.txt
 *.apk
 *.unitypackage
 *.ide
+*.ide-shm
+*.ide-wal
 *.lock
 Surfman/Assets/Prefabs/Interactables/Enemies.meta
 *.ide-shm

@@ -1,12 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour {
 
     public static GameControl instance;
 
+    public GameObject gameOverPanel;
+    public GameObject pausePanel;
+    public GameObject pauseButtonPanel;
+    
+
     public AudioSource backgroundMusic;
+    public AudioSource onEdibleTakeSound;
+    public AudioSource balloonPopSound;
+
+    public Text scoreText;
+    public Text scoreTextAtEnd;
+
+    public bool isDead = false;
+
+    private int highscore=0;
 
     private void Awake()
     {
@@ -30,9 +45,21 @@ public class GameControl : MonoBehaviour {
 		
 	}
 
-    public void Testing()
+    public void IncrementScore()
     {
-        Debug.Log("bla");
+        highscore = highscore + 1;
+        scoreText.text = "Score: " + highscore;
     }
+
+    public void Die()
+    {
+        scoreText.text = "";
+        isDead = true;
+        backgroundMusic.Pause();
+        pauseButtonPanel.SetActive(false);
+        gameOverPanel.SetActive(true);
+        scoreTextAtEnd.text = "Your Score is " + highscore;
+    }
+
 
 }
