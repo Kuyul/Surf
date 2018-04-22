@@ -35,3 +35,4 @@ sysinfo.txt
 *.ide
 *.lock
 Surfman/Assets/Prefabs/Interactables/Enemies.meta
+*.ide-shm
