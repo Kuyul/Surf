@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class PauseResumeRestart : MonoBehaviour {
 
     public bool isPaused = false;
-    public GameObject pausePanel;
 
     public void PauseGame()
     {
@@ -15,10 +14,8 @@ public class PauseResumeRestart : MonoBehaviour {
         {
             Time.timeScale = 0;
             GameControl.instance.backgroundMusic.Pause();
-            pausePanel.SetActive(true);
-
+            GameControl.instance.pausePanel.SetActive(true);
         }
-
     }
 
     public void ResumeGame()
@@ -27,7 +24,7 @@ public class PauseResumeRestart : MonoBehaviour {
         if(isPaused==false)
         {
             Time.timeScale = 1;
-            pausePanel.SetActive(false);
+            GameControl.instance.pausePanel.SetActive(false);
             GameControl.instance.backgroundMusic.UnPause();
         }
     }
@@ -37,8 +34,16 @@ public class PauseResumeRestart : MonoBehaviour {
         SceneManager.LoadScene(level);
         isPaused = false;
         Time.timeScale = 1;
-        pausePanel.SetActive(false);
+        GameControl.instance.pausePanel.SetActive(false);
     }
 
+    public void LoadHome(int homeScene)
+    {
+        SceneManager.LoadScene(homeScene);
+    }
 
+    public void LoadGame(int level)
+    {
+        SceneManager.LoadScene(level);
+    }
 }

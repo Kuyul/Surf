@@ -12,4 +12,12 @@ public class PatternControl : MonoBehaviour {
         rb.velocity = new Vector3(-5.0f, 0.0f, 0.0f);
     }
 
+    private void Update()
+    {
+        if (GameControl.instance.isDead == true)
+        {
+            rb.velocity = Vector3.zero;
+        }
+    }
+
 }

@@ -15,8 +15,8 @@ public class PlayerControl : MonoBehaviour
     //surfboard Transform properties
     private float angle;
     private bool jump = true;
-    public AudioSource onEdibleTakeSound;
-    public AudioSource balloonPopSound;
+   //public AudioSource onEdibleTakeSound;
+    //public AudioSource balloonPopSound;
 
     // Use this for initialization
     void Start()
@@ -56,18 +56,20 @@ public class PlayerControl : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Coin"))
         {
-            onEdibleTakeSound.Play();
+            GameControl.instance.onEdibleTakeSound.Play();
             other.gameObject.SetActive(false);
+            GameControl.instance.IncrementScore();
         }
         
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            SceneManager.LoadScene(1);
+            //SceneManager.LoadScene(1);
+            GameControl.instance.Die();
         }
 
         if (other.gameObject.CompareTag("Balloon"))
         {
-            balloonPopSound.Play();
+            GameControl.instance.balloonPopSound.Play();
             rb.velocity = new Vector2(rb.velocity.x, balloonVel);
             jump = true;
             other.gameObject.SetActive(false);
