@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 50962359126113232}
   m_Layer: 8
   m_Name: Large Collapsing Wave
-  m_TagString: Untagged
+  m_TagString: Wave
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -888,7 +888,7 @@ GameObject:
   - component: {fileID: 50321871222990828}
   m_Layer: 8
   m_Name: Tsunami
-  m_TagString: Untagged
+  m_TagString: Wave
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2292,7 +2292,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1470545557570604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 63, y: 0, z: 0}
+  m_LocalPosition: {x: 54.4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4076971802724204}
@@ -3028,7 +3028,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1113485670644296}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.22271, y: -1.776263, z: 9.957031}
+  m_LocalPosition: {x: 0.6227093, y: -1.776263, z: 9.957031}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4372227697944630}
@@ -3271,7 +3271,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1738412054455292}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.6, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4149497394692836}
@@ -3666,7 +3666,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1093634926234292}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.6, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4211496473903062}
@@ -3720,7 +3720,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1287268812773762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.6, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4732165589258454}
@@ -3943,12 +3943,15 @@ Transform:
   m_GameObject: {fileID: 1569668083550052}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
 <<<<<<< HEAD
-  m_LocalPosition: {x: 41.18, y: 7.5, z: 0}
-  m_LocalScale: {x: 26.073303, y: 33.773712, z: 1}
+<<<<<<< HEAD
+<<<<<<< HEAD
 =======
-  m_LocalPosition: {x: 4.35, y: 5.49, z: 0}
-  m_LocalScale: {x: 31.827053, y: 40.87, z: 1}
->>>>>>> parent of 602319b... Merge branch 'master' of https://github.com/Kuyul/Surf
+>>>>>>> parent of 1297865... Commit Revert
+  m_LocalPosition: {x: 41.18, y: 7.5, z: 0}
+=======
+  m_LocalPosition: {x: 32.58, y: 7.5, z: 0}
+>>>>>>> parent of 4ead04b... Reverting Sam's Commit
+  m_LocalScale: {x: 26.073303, y: 33.773712, z: 1}
   m_Children: []
   m_Father: {fileID: 4076971802724204}
   m_RootOrder: 2
@@ -12481,13 +12484,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj:
-  - {fileID: 1383736212625178, guid: 33c5fd744ce3bfe4d9dc60047db1ae2d, type: 2}
+  - {fileID: 1927426586836986}
   - {fileID: 1518283305088766, guid: dad7992e7aa134f4ab6780b34c9ef8b2, type: 2}
   - {fileID: 1854357933908728, guid: 44a1d70872369214d8a372d35e9e4b02, type: 2}
   - {fileID: 1481513357720474, guid: 3c6bb61a734d9714eab5025b5782c20c, type: 2}
   - {fileID: 1278812166618152, guid: d6fab5c5295d76047b5c587318fce709, type: 2}
   - {fileID: 1637706999552104, guid: 8cc7a10a7b81c424c9b1fc2bd87f2961, type: 2}
   - {fileID: 1428453103247088, guid: 49a0901b63ad49042a330452b9644780, type: 2}
+  - {fileID: 1383736212625178, guid: 33c5fd744ce3bfe4d9dc60047db1ae2d, type: 2}
   patternSpawn: {fileID: 1470545557570604}
 --- !u!212 &212015475078563266
 SpriteRenderer:
@@ -17648,7 +17652,7 @@ BuoyancyEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_SurfaceLevel: 7.63
+  m_SurfaceLevel: 7.21
   m_Density: 5
   m_LinearDrag: 30
   m_AngularDrag: 5
@@ -17666,7 +17670,7 @@ BuoyancyEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_SurfaceLevel: 7.58
+  m_SurfaceLevel: 7.04
   m_Density: 3
   m_LinearDrag: 30
   m_AngularDrag: 5
