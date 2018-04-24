@@ -22569,7 +22569,6 @@ MonoBehaviour:
   - {fileID: 1637706999552104, guid: 8cc7a10a7b81c424c9b1fc2bd87f2961, type: 2}
   - {fileID: 1927426586836986, guid: 456174e8b9aeedf478ac0cecc753c768, type: 2}
   - {fileID: 1428453103247088, guid: 49a0901b63ad49042a330452b9644780, type: 2}
-  - {fileID: 1383736212625178}
   patternSpawn: {fileID: 1248040332518820}
 --- !u!114 &114679607443857458
 MonoBehaviour:
