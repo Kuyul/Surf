@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 253936796872969448}
   m_Layer: 8
   m_Name: Large Wave
-  m_TagString: Wave
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2898,7 +2898,7 @@ GameObject:
   - component: {fileID: 50140812822392422}
   m_Layer: 8
   m_Name: Tsunami
-  m_TagString: Wave
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5912,7 +5912,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1682611208634054}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 57.4, y: 8.4, z: 0}
+  m_LocalPosition: {x: 10.209, y: 4.959, z: 0}
   m_LocalScale: {x: 26.255363, y: 29.013721, z: 1}
   m_Children: []
   m_Father: {fileID: 4036712497806792}
@@ -26335,7 +26335,7 @@ BuoyancyEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_SurfaceLevel: 6.9
+  m_SurfaceLevel: 7.66
   m_Density: 5
   m_LinearDrag: 30
   m_AngularDrag: 5

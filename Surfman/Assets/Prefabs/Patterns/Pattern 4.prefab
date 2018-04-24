@@ -2419,7 +2419,7 @@ GameObject:
   - component: {fileID: 253367088442035608}
   m_Layer: 8
   m_Name: Small Wave
-  m_TagString: Wave
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2554,7 +2554,7 @@ GameObject:
   - component: {fileID: 50516494341961442}
   m_Layer: 8
   m_Name: Large Collapsing Wave
-  m_TagString: Wave
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4794,8 +4794,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1159437359718016}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 39.08, y: 1.39, z: 0}
-  m_LocalScale: {x: 23.541466, y: 18.55393, z: 1}
+  m_LocalPosition: {x: 23.97, y: 5.5, z: 0}
+  m_LocalScale: {x: 53.767483, y: 26.78, z: 1}
   m_Children: []
   m_Father: {fileID: 4987958325175418}
   m_RootOrder: 2
@@ -21770,7 +21770,7 @@ BuoyancyEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_SurfaceLevel: 7.17
+  m_SurfaceLevel: 7.59
   m_Density: 5
   m_LinearDrag: 30
   m_AngularDrag: 5

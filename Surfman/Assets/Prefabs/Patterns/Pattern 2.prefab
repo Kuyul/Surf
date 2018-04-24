@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 253964162124246344}
   m_Layer: 8
   m_Name: Medium Wave (1)
-  m_TagString: Wave
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1567,7 +1567,7 @@ GameObject:
   - component: {fileID: 253721881986636754}
   m_Layer: 8
   m_Name: Medium Wave
-  m_TagString: Wave
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3174,7 +3174,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1869772718504178}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23.8, y: -2.712, z: 0}
+  m_LocalPosition: {x: 9.625, y: -2.712, z: 0}
   m_LocalScale: {x: 25.087994, y: 14.335692, z: 1}
   m_Children: []
   m_Father: {fileID: 4520374762396214}
