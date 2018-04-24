@@ -3708,19 +3708,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1204440082450768}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_LocalPosition: {x: 30.977291, y: 0.456, z: 0}
-=======
-  m_LocalPosition: {x: 9.581, y: 0.456, z: 0}
->>>>>>> parent of 602319b... Merge branch 'master' of https://github.com/Kuyul/Surf
-=======
   m_LocalPosition: {x: 25.2, y: 0.456, z: 0}
->>>>>>> parent of 4ead04b... Reverting Sam's Commit
-=======
-  m_LocalPosition: {x: 30.977291, y: 0.456, z: 0}
->>>>>>> parent of 1297865... Commit Revert
   m_LocalScale: {x: 25, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 4280269786627358}

@@ -3942,15 +3942,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1569668083550052}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 1297865... Commit Revert
-  m_LocalPosition: {x: 41.18, y: 7.5, z: 0}
-=======
   m_LocalPosition: {x: 32.58, y: 7.5, z: 0}
->>>>>>> parent of 4ead04b... Reverting Sam's Commit
   m_LocalScale: {x: 26.073303, y: 33.773712, z: 1}
   m_Children: []
   m_Father: {fileID: 4076971802724204}
