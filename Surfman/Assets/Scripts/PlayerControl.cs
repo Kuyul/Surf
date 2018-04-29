@@ -15,8 +15,8 @@ public class PlayerControl : MonoBehaviour
     //surfboard Transform properties
     private float angle;
     private bool jump = true;
-   //public AudioSource onEdibleTakeSound;
-    //public AudioSource balloonPopSound;
+
+    public Transform board;
 
     // Use this for initialization
     void Start()
@@ -28,8 +28,8 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         //center position of the box, size of the box, roation around the z axis
-        onSea = Physics2D.OverlapBox(transform.position, transform.localScale, transform.rotation.z, whatIsSea);
-        if (onSea)
+//        onSea = Physics2D.OverlapBox(transform.position, transform.localScale, transform.rotation.z, whatIsSea);
+        if (BoardCollision.onSea == true)
         {
             jump = true;
         }
