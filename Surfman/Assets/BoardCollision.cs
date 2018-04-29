@@ -2,21 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class BoardCollision {
+public class BoardCollision : MonoBehaviour {
 
-    public static bool onSea = true;
+    private bool onSea = true;
 
-    public static void OnTriggerEnter2D(Collider2D collision)
+    public bool getOnSea()
     {
-        if (collision.gameObject.CompareTag("Sea"))
+        return onSea;
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wave"))
         {
             onSea = true;
         }
     }
 
-    public static void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Sea"))
+        if (collision.gameObject.CompareTag("Wave"))
         {
             onSea = false;
         }

@@ -16,7 +16,7 @@ public class PlayerControl : MonoBehaviour
     private float angle;
     private bool jump = true;
 
-    public Transform board;
+    public BoardCollision board;
 
     // Use this for initialization
     void Start()
@@ -28,8 +28,9 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         //center position of the box, size of the box, roation around the z axis
-//        onSea = Physics2D.OverlapBox(transform.position, transform.localScale, transform.rotation.z, whatIsSea);
-        if (BoardCollision.onSea == true)
+        //        onSea = Physics2D.OverlapBox(transform.position, transform.localScale, transform.rotation.z, whatIsSea);
+        onSea = board.getOnSea();
+        if (onSea)
         {
             jump = true;
         }
