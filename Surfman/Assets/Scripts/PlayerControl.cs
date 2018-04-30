@@ -8,6 +8,7 @@ public class PlayerControl : MonoBehaviour
 {
 
     public LayerMask whatIsSea;
+    public float initialPlayerSpeed;
     public float jumpVel = 5.0f;
     public float balloonVel = 20.0f;
     private Rigidbody2D rb;
@@ -22,6 +23,7 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.velocity = new Vector3(initialPlayerSpeed, 0.0f, 0.0f);
     }
 
     // Update is called once per frame
@@ -74,6 +76,14 @@ public class PlayerControl : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, balloonVel);
             jump = true;
             other.gameObject.SetActive(false);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Wave"))
+        {
+            rb.velocity = new Vector3(initialPlayerSpeed, rb.velocity.y, 0.0f);
         }
     }
 }

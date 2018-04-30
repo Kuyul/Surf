@@ -10,7 +10,7 @@ public class PatternControl : MonoBehaviour {
     void Start () {
         rb = GetComponent<Rigidbody2D>();
 
-        rb.velocity = new Vector3(-10.0f, 0.0f, 0.0f);
+        //rb.velocity = new Vector3(-10.0f, 0.0f, 0.0f);
     }
 
     private void Update()
