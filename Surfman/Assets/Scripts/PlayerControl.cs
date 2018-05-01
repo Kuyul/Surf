@@ -11,12 +11,12 @@ public class PlayerControl : MonoBehaviour
     public float initialPlayerSpeed;
     public float jumpVel = 5.0f;
     public float balloonVel = 20.0f;
-
     private Rigidbody2D rb;
     private bool onSea;
     //surfboard Transform properties
     private float angle;
     private bool jump = true;
+    private Animator animator;
 
     public BoardCollision board;
 
@@ -25,6 +25,7 @@ public class PlayerControl : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector3(initialPlayerSpeed, 0.0f, 0.0f);
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -38,6 +39,27 @@ public class PlayerControl : MonoBehaviour
             jump = true;
         }
 
+        if (rb.velocity.y > 1)
+        {
+            animator.SetTrigger("Jump");
+            animator.ResetTrigger("Normal");
+            animator.ResetTrigger("Fall");
+        }
+
+        if (rb.velocity.y > -0.5 & rb.velocity.y < 0.5)
+        {
+            animator.SetTrigger("Normal");
+            animator.ResetTrigger("Jump");
+            animator.ResetTrigger("Fall");
+        }
+        
+
+        /*if (rb.velocity.y < -0.5)
+        {
+            animator.SetTrigger("Fall");
+            animator.ResetTrigger("Jump");
+            animator.ResetTrigger("Normal");
+        }*/
 
         //prevents jumping when paused button is pressed
         if (!EventSystem.current.IsPointerOverGameObject())
@@ -54,12 +76,6 @@ public class PlayerControl : MonoBehaviour
             }
         }
 
-        if (GameControl.instance.isDead == true)
-        {
-            rb.velocity = Vector3.zero;
-        }
-
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -73,6 +89,7 @@ public class PlayerControl : MonoBehaviour
         
         if (other.gameObject.CompareTag("Obstacle"))
         {
+            //SceneManager.LoadScene(1);
             GameControl.instance.Die();
         }
 
