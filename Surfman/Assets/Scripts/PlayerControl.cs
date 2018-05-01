@@ -11,6 +11,7 @@ public class PlayerControl : MonoBehaviour
     public float initialPlayerSpeed;
     public float jumpVel = 5.0f;
     public float balloonVel = 20.0f;
+
     private Rigidbody2D rb;
     private bool onSea;
     //surfboard Transform properties
@@ -53,6 +54,12 @@ public class PlayerControl : MonoBehaviour
             }
         }
 
+        if (GameControl.instance.isDead == true)
+        {
+            rb.velocity = Vector3.zero;
+        }
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -66,7 +73,6 @@ public class PlayerControl : MonoBehaviour
         
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            //SceneManager.LoadScene(1);
             GameControl.instance.Die();
         }
 

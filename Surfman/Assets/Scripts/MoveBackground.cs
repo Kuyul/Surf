@@ -13,6 +13,9 @@ public class MoveBackground : MonoBehaviour {
 	
 
 	void Update () {
-		
+		if(GameControl.instance.isDead==true)
+        {
+            rb.velocity = Vector3.zero;
+        }
 	}
 }
