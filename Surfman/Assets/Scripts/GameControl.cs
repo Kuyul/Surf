@@ -15,14 +15,15 @@ public class GameControl : MonoBehaviour {
     public AudioSource onEdibleTakeSound;
     public AudioSource balloonPopSound;
 
-    public Text scoreText;
+    public Text scoreTextInGame;
     public Text scoreTextAtEnd;
+    public Text highScoreTextAtEnd;
 
     public int scrollSpeed;
 
     public bool isDead = false;
 
-    private int highscore=0;
+    private int currentScore = 0;
 
     private void Awake()
     {
@@ -48,18 +49,25 @@ public class GameControl : MonoBehaviour {
 
     public void IncrementScore()
     {
-        highscore = highscore + 1;
-        scoreText.text = "Score: " + highscore;
+        currentScore = currentScore + 1;
+        scoreTextInGame.text = "Score: " + currentScore;
+
+        if (currentScore > PlayerPrefs.GetInt("highscore",0))
+        {
+            PlayerPrefs.SetInt("highscore", currentScore);
+        }
+
     }
 
     public void Die()
     {
-        scoreText.text = "";
+        scoreTextInGame.text = "";
         isDead = true;
         backgroundMusic.Pause();
         pauseButtonPanel.SetActive(false);
         gameOverPanel.SetActive(true);
-        scoreTextAtEnd.text = "Your Score is " + highscore;
+        scoreTextAtEnd.text = "Your Score is " + currentScore;
+        highScoreTextAtEnd.text = "Your HighScore is " + PlayerPrefs.GetInt("highscore");
     }
 
 
