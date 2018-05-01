@@ -9,8 +9,7 @@ public class GameControl : MonoBehaviour {
 
     public GameObject gameOverPanel;
     public GameObject pausePanel;
-    public GameObject pauseButtonPanel;
-    
+    public GameObject pauseButtonPanel;  
 
     public AudioSource backgroundMusic;
     public AudioSource onEdibleTakeSound;
@@ -18,6 +17,8 @@ public class GameControl : MonoBehaviour {
 
     public Text scoreText;
     public Text scoreTextAtEnd;
+
+    public int scrollSpeed;
 
     public bool isDead = false;
 
