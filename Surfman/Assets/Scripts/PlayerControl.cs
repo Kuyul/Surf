@@ -76,6 +76,11 @@ public class PlayerControl : MonoBehaviour
             }
         }
 
+        if (GameControl.instance.isDead == true)
+        {
+            rb.velocity = Vector3.zero;
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
