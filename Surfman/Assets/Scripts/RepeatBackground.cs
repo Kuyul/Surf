@@ -11,12 +11,6 @@ public class RepeatBackground : MonoBehaviour {
 	void Start () {
 
         sprite = GetComponent<SpriteRenderer>();
-       
-        Debug.Log(sprite.bounds.extents.x);
-       Debug.Log(-sprite.bounds.extents.x);
-        Debug.Log(sprite.bounds.extents.y);
-        Debug.Log(-sprite.bounds.extents.y);
-        Debug.Log(playerTransform.position.x);
 
     }
 

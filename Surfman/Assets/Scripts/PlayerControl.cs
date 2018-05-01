@@ -16,6 +16,7 @@ public class PlayerControl : MonoBehaviour
     //surfboard Transform properties
     private float angle;
     private bool jump = true;
+    private Animator animator;
 
     public BoardCollision board;
 
@@ -24,6 +25,7 @@ public class PlayerControl : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector3(initialPlayerSpeed, 0.0f, 0.0f);
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -37,6 +39,27 @@ public class PlayerControl : MonoBehaviour
             jump = true;
         }
 
+        if (rb.velocity.y > 1)
+        {
+            animator.SetTrigger("Jump");
+            animator.ResetTrigger("Normal");
+            animator.ResetTrigger("Fall");
+        }
+
+        if (rb.velocity.y > -0.5 & rb.velocity.y < 0.5)
+        {
+            animator.SetTrigger("Normal");
+            animator.ResetTrigger("Jump");
+            animator.ResetTrigger("Fall");
+        }
+        
+
+        /*if (rb.velocity.y < -0.5)
+        {
+            animator.SetTrigger("Fall");
+            animator.ResetTrigger("Jump");
+            animator.ResetTrigger("Normal");
+        }*/
 
         //prevents jumping when paused button is pressed
         if (!EventSystem.current.IsPointerOverGameObject())
