@@ -40,6 +40,8 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //make sure velocity stays the same
+        rb.velocity = new Vector3(initialPlayerSpeed + speedIncremented, rb.velocity.y, 0.0f);
         //Increment score per frame
         GameControl.instance.IncrementScorePerFrame();
 
@@ -78,6 +80,7 @@ public class PlayerControl : MonoBehaviour
             //jump
             if (Input.GetMouseButtonDown(0) && jump)
             {
+                GameControl.instance.jumpSound.Play();
                 rb.velocity = new Vector2(rb.velocity.x, jumpVel);
 
                 if (!onSea)

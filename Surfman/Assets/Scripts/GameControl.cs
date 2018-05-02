@@ -14,6 +14,7 @@ public class GameControl : MonoBehaviour {
     public AudioSource backgroundMusic;
     public AudioSource onEdibleTakeSound;
     public AudioSource balloonPopSound;
+    public AudioSource jumpSound;
 
     public int scoreIncremental = 10;
     private int frameIncremental = 1;
