@@ -17,6 +17,12 @@ public class PlayerControl : MonoBehaviour
     private float angle;
     private bool jump = true;
     private Animator animator;
+    //Variables used to calculate incremental speed
+    private float startPos;
+    private float nextPos;
+    public float incrementDistance = 100.0f;
+    public float incrementSpeed = 0.5f;
+    private float speedIncremented = 0.0f;
 
     public BoardCollision board;
 
@@ -26,13 +32,21 @@ public class PlayerControl : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector3(initialPlayerSpeed, 0.0f, 0.0f);
         animator = GetComponent<Animator>();
+        startPos = transform.position.x;
+        nextPos = startPos + incrementDistance;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //center position of the box, size of the box, roation around the z axis
-        //        onSea = Physics2D.OverlapBox(transform.position, transform.localScale, transform.rotation.z, whatIsSea);
+        //Check whether speed incremental distance was met
+        if (transform.position.x > nextPos)
+        {
+            startPos = nextPos;
+            nextPos = startPos + incrementDistance;
+            speedIncremented += incrementSpeed;
+        }
+
         onSea = board.getOnSea();
         if (onSea)
         {
@@ -53,13 +67,6 @@ public class PlayerControl : MonoBehaviour
             animator.ResetTrigger("Fall");
         }
         
-
-        /*if (rb.velocity.y < -0.5)
-        {
-            animator.SetTrigger("Fall");
-            animator.ResetTrigger("Jump");
-            animator.ResetTrigger("Normal");
-        }*/
 
         //prevents jumping when paused button is pressed
         if (!EventSystem.current.IsPointerOverGameObject())
@@ -111,7 +118,7 @@ public class PlayerControl : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Wave"))
         {
-            rb.velocity = new Vector3(initialPlayerSpeed, rb.velocity.y, 0.0f);
+            rb.velocity = new Vector3(initialPlayerSpeed + speedIncremented, rb.velocity.y, 0.0f);
         }
     }
 }
