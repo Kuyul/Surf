@@ -10,11 +10,13 @@ public class GameControl : MonoBehaviour {
     public GameObject gameOverPanel;
     public GameObject pausePanel;
     public GameObject pauseButtonPanel;  
-
+    
     public AudioSource backgroundMusic;
     public AudioSource onEdibleTakeSound;
     public AudioSource balloonPopSound;
 
+    public int scoreIncremental = 10;
+    private int frameIncremental = 1;
     public Text scoreTextInGame;
     public Text scoreTextAtEnd;
     public Text highScoreTextAtEnd;
@@ -49,19 +51,30 @@ public class GameControl : MonoBehaviour {
 
     public void IncrementScore()
     {
-        currentScore = currentScore + 1;
+        currentScore = currentScore + scoreIncremental;
+        UpdateScoreboard();
+    }
+
+    public void IncrementScorePerFrame()
+    {
+        currentScore = currentScore + frameIncremental;
+        UpdateScoreboard();
+    }
+
+    public void UpdateScoreboard()
+    {
         scoreTextInGame.text = "Score: " + currentScore;
 
-        if (currentScore > PlayerPrefs.GetInt("highscore",0))
+        if (currentScore > PlayerPrefs.GetInt("highscore", 0))
         {
             PlayerPrefs.SetInt("highscore", currentScore);
         }
-
     }
 
     public void Die()
     {
         scoreTextInGame.text = "";
+        frameIncremental = 0;
         isDead = true;
         backgroundMusic.Pause();
         pauseButtonPanel.SetActive(false);

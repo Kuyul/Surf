@@ -17,6 +17,7 @@ public class PlayerControl : MonoBehaviour
     private float angle;
     private bool jump = true;
     private Animator animator;
+
     //Variables used to calculate incremental speed
     private float startPos;
     private float nextPos;
@@ -39,6 +40,9 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Increment score per frame
+        GameControl.instance.IncrementScorePerFrame();
+
         //Check whether speed incremental distance was met
         if (transform.position.x > nextPos)
         {
