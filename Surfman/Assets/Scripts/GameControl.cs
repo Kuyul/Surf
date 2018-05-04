@@ -85,6 +85,11 @@ public class GameControl : MonoBehaviour {
         frameIncremental = frame;
     }
 
+   // public void ResetHighscore()
+  //  {
+   //     PlayerPrefs.DeleteKey("highscore");
+   // }
+
     public void Die()
     {
         scoreTextInGame.text = "";

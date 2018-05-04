@@ -48,4 +48,10 @@ public class PauseResumeRestart : MonoBehaviour {
     {
         SceneManager.LoadScene(level);
     }
+
+    public void ResetHighscore()
+    {
+        PlayerPrefs.DeleteKey("highscore");
+    }
+
 }
