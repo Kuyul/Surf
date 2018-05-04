@@ -16,6 +16,7 @@ public class PauseResumeRestart : MonoBehaviour {
             GameControl.instance.SetFrameIncremental(0);
             GameControl.instance.backgroundMusic.Pause();
             GameControl.instance.pausePanel.SetActive(true);
+            GameControl.instance.scoreTextInPause.text = "Your Highscore is " + PlayerPrefs.GetInt("highscore");
         }
     }
 

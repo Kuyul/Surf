@@ -21,6 +21,7 @@ public class GameControl : MonoBehaviour {
     public Text scoreTextInGame;
     public Text scoreTextAtEnd;
     public Text highScoreTextAtEnd;
+    public Text scoreTextInPause;
 
     public int scrollSpeed;
 
