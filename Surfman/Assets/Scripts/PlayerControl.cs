@@ -42,8 +42,7 @@ public class PlayerControl : MonoBehaviour
     {
         //make sure velocity stays the same
         rb.velocity = new Vector3(initialPlayerSpeed + speedIncremented, rb.velocity.y, 0.0f);
-        //Increment score per frame
-        GameControl.instance.IncrementScorePerFrame();
+
 
         //Check whether speed incremental distance was met
         if (transform.position.x > nextPos)

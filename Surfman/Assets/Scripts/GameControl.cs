@@ -24,7 +24,7 @@ public class GameControl : MonoBehaviour {
 
     public int scrollSpeed;
 
-    public bool isDead = false;
+    public bool isDead = false; 
 
     private int currentScore = 0;
 
@@ -47,13 +47,21 @@ public class GameControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+
+        //Increment score per frame
+        if (!isDead) 
+        {
+            IncrementScorePerFrame();
+        }
+    }
 
     public void IncrementScore()
     {
-        currentScore = currentScore + scoreIncremental;
-        UpdateScoreboard();
+        if (!isDead)
+        {
+            currentScore = currentScore + scoreIncremental;
+            UpdateScoreboard();
+        }
     }
 
     public void IncrementScorePerFrame()
@@ -70,6 +78,11 @@ public class GameControl : MonoBehaviour {
         {
             PlayerPrefs.SetInt("highscore", currentScore);
         }
+    }
+
+    public void SetFrameIncremental(int frame)
+    {
+        frameIncremental = frame;
     }
 
     public void Die()
