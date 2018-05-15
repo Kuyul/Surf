@@ -52,7 +52,9 @@ public class PauseResumeRestart : MonoBehaviour {
 
     public void ResetHighscore()
     {
+  
         PlayerPrefs.DeleteKey("highscore");
+        
     }
 
 }
