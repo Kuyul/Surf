@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "6700380680",
+    "firebase_url": "https://surfman-389c5.firebaseio.com",
+    "project_id": "surfman-389c5",
+    "storage_bucket": "surfman-389c5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:6700380680:android:170f77f984fc1eca",
+        "android_client_info": {
+          "package_name": "com.KSent.Surfman"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "6700380680-g3bs2b5n95ld4voi5tn1jskvqj5lo0k3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCa5Yfbu3_NSRmOZ80LIEY4FdxWVaKC0JI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
