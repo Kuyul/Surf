@@ -248,8 +248,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/Kyle/Documents/Gamedev/Surf/Surfman/surfman.keystore
-  AndroidKeyaliasName: surfman
+  AndroidKeystoreName: C:/Users/Kyle/Documents/Gamedev/Surf/Surfman/keystore.jks
+  AndroidKeyaliasName: upload
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   AndroidEnableTango: 0

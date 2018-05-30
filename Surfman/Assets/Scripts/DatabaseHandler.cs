@@ -33,14 +33,15 @@ public class DatabaseHandler : MonoBehaviour {
     public Text scoreText;
     public Text nameText;
     public Text leaderBoardText;
+    public List<object> LeaderboardList { get; set; }
 
-  private const int MaxScores = 5;
-  private string logText = "";
-  private string email = "";
-    byte[] profilepic;
+    private const int MaxScores = 5;
+    private string logText = "";
+    private string email = "";
     private int score = 100;
     private string firstName = "";
-  protected bool UIEnabled = true;
+    protected bool UIEnabled = true;
+    protected Firebase.Auth.FirebaseAuth auth;
 
   const int kMaxLogSize = 16382;
   DependencyStatus dependencyStatus = DependencyStatus.UnavailableOther;
@@ -49,6 +50,7 @@ public class DatabaseHandler : MonoBehaviour {
     // the required dependencies to use Firebase, and if not,
     // add them if possible.
     protected virtual void Start() {
+    auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
     DontDestroyOnLoad(this.gameObject);
     leaderBoard.Clear();
     leaderBoard.Add("Firebase Top " + MaxScores.ToString() + " Scores");
@@ -76,9 +78,7 @@ public class DatabaseHandler : MonoBehaviour {
   }
 
   protected void StartListener() {
-    FirebaseDatabase.DefaultInstance
-      .GetReference("Leaders").OrderByChild("score")
-      .ValueChanged += (object sender2, ValueChangedEventArgs e2) => {
+    FirebaseDatabase.DefaultInstance.GetReference("Leaders").OrderByChild("score").ValueChanged += (object sender2, ValueChangedEventArgs e2) => {
       if (e2.DatabaseError != null) {
         Debug.LogError(e2.DatabaseError.Message);
         return;
@@ -89,16 +89,12 @@ public class DatabaseHandler : MonoBehaviour {
       leaderBoard.Add(title);
       if (e2.Snapshot != null && e2.Snapshot.ChildrenCount > 0) {
         foreach (var childSnapshot in e2.Snapshot.Children) {
-          if (childSnapshot.Child("score") == null
-            || childSnapshot.Child("score").Value == null) {
+          if (childSnapshot.Child("score") == null || childSnapshot.Child("score").Value == null) {
             Debug.LogError("Bad data in sample.  Did you forget to call SetEditorDatabaseUrl with your project id?");
             break;
           } else {
-            Debug.Log("Leaders entry : " +
-              childSnapshot.Child("name").Value.ToString() + " - " +
-              childSnapshot.Child("score").Value.ToString());
-            leaderBoard.Insert(1, childSnapshot.Child("score").Value.ToString()
-              + "  " + childSnapshot.Child("name").Value.ToString());
+            Debug.Log("Leaders entry : " + childSnapshot.Child("name").Value.ToString() + " - " + childSnapshot.Child("score").Value.ToString());
+              leaderBoard.Insert(1, childSnapshot.Child("score").Value.ToString() + "  " + childSnapshot.Child("name").Value.ToString());
                       leaderBoardText.text = "";
                       //set leaderboard text box with updated values
                       foreach(string item in leaderBoard)
@@ -178,17 +174,16 @@ public class DatabaseHandler : MonoBehaviour {
             newScoreMap["email"] = email;
             leaders.Add(newScoreMap);
 
-        Debug.Log(leaders);
-
     // You must set the Value to indicate data at that location has changed.
     mutableData.Value = leaders;
+    LeaderboardList = leaders;
     return TransactionResult.Success(mutableData);
   }
 
   public void AddScore() {
-        score = Int32.Parse(scoreText.text);
+        score = PlayerPrefs.GetInt("highscore", 0);
         firstName = FacebookManager.Instance.ProfileName;
-        email = FacebookManager.Instance.Email;
+        email = auth.CurrentUser.Email;
 
     if (score == 0 || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(firstName)) {
       DebugLog("invalid score or email.");

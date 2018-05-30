@@ -11,7 +11,7 @@ public class FBScript : MonoBehaviour {
     public GameObject DialogLoggedOut;
     public GameObject DialogUsername;
     public GameObject DialogProfilepic;
-    public GameObject LoginHandler;
+    public LoginHandler LoginHandler;
 
     private void Awake()
     {
@@ -57,6 +57,8 @@ public class FBScript : MonoBehaviour {
                 FacebookManager.Instance.IsLoggedIn = true;
                 FacebookManager.Instance.GetProfile();
                 Debug.Log("FB is logged in");
+                //Sign into Firebase
+                LoginHandler.SigninWithCredentialAsync();
             }
             else
             {
@@ -70,20 +72,18 @@ public class FBScript : MonoBehaviour {
     {
         if (isLoggedIn)
         {
-            //We don't want to reference the gameobjects that are specific to one scene in FacebookManager singleton
-            DialogLoggedIn.SetActive(true);
-            DialogLoggedOut.SetActive(false);
+
 
             if (FacebookManager.Instance.ProfileName != null)
             {
                 Text userName = DialogUsername.GetComponent<Text>();
-                userName.text = "Hi, " + FacebookManager.Instance.ProfileName + ", " + FacebookManager.Instance.Email;
+                userName.text = "Hi, " + FacebookManager.Instance.ProfileName;
             }
             else
             {
                 StartCoroutine("WaitForProfileName");
             }
-
+            //Wait until Profile Pic is retrieved from Facebook
             if (FacebookManager.Instance.ProfilePic != null)
             {
                 Image profilePic = DialogProfilepic.GetComponent<Image>();
@@ -93,12 +93,28 @@ public class FBScript : MonoBehaviour {
             {
                 StartCoroutine("WaitForProfilePic");
             }
+            if (LoginHandler.getEmail() == "")
+            {
+                StartCoroutine("WaitForFirebaseAuth");
+            }
+            //We don't want to reference the gameobjects that are specific to one scene in FacebookManager singleton
+            //DialogLoggedIn.SetActive(true);
+            //DialogLoggedOut.SetActive(false);
         }
         else
         {
             DialogLoggedIn.SetActive(false);
             DialogLoggedOut.SetActive(true);
         }
+    }
+    IEnumerator WaitForFirebaseAuth()
+    {
+        while(LoginHandler.getEmail() == "")
+        {
+            yield return null;
+        }
+
+        DealWithFBMenus(FacebookManager.Instance.IsLoggedIn);
     }
 
     IEnumerator WaitForProfileName()

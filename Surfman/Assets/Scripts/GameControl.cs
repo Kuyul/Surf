@@ -74,11 +74,6 @@ public class GameControl : MonoBehaviour {
     public void UpdateScoreboard()
     {
         scoreTextInGame.text = "Score: " + currentScore;
-
-        if (currentScore > PlayerPrefs.GetInt("highscore", 0))
-        {
-            PlayerPrefs.SetInt("highscore", currentScore);
-        }
     }
 
     public void SetFrameIncremental(int frame)
@@ -96,6 +91,11 @@ public class GameControl : MonoBehaviour {
         gameOverPanel.SetActive(true);
         scoreTextAtEnd.text = "Your Score is " + currentScore;
         highScoreTextAtEnd.text = "Your HighScore is " + PlayerPrefs.GetInt("highscore");
+        if (currentScore > PlayerPrefs.GetInt("highscore", 0))
+        {
+            PlayerPrefs.SetInt("highscore", currentScore);
+        }
+        LeaderboardControl.Instance.UpdateHighScore();
     }
 
 

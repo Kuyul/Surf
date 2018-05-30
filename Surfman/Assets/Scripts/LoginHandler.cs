@@ -25,10 +25,8 @@ using UnityEngine.SceneManagement;
 // necessary setup (initializing the firebase app, etc) on
 // startup.
 public class LoginHandler : MonoBehaviour {
-
-    public Text emailText;
-    public Text passwordText;
-
+    public GameObject DialogLoggedIn;
+    public GameObject DialogLoggedOut;
   protected Firebase.Auth.FirebaseAuth auth;
   protected Firebase.Auth.FirebaseAuth otherAuth;
   protected Dictionary<string, Firebase.Auth.FirebaseUser> userByAuth =
@@ -65,6 +63,11 @@ public class LoginHandler : MonoBehaviour {
       }
     });
   }
+    //Fetch Email
+    public string getEmail()
+    {
+        return email;
+    }
 
   // Handle initialization of the necessary firebase modules:
   protected void InitializeFirebase() {
@@ -85,8 +88,6 @@ public class LoginHandler : MonoBehaviour {
 
     public void CreateUserAsync()
     {
-        email = emailText.text;
-        password = passwordText.text;
 
         DebugLog(String.Format("Attempting to create user {0}...", email));
         //Do something to prevent while database is updating
@@ -149,9 +150,6 @@ public class LoginHandler : MonoBehaviour {
 
     public void SigninAsync()
     {
-        email = emailText.text;
-        password = passwordText.text;
-
         DebugLog(String.Format("Attempting to sign in as {0}...", email));
         DisableUI();
         auth.SignInWithEmailAndPasswordAsync(email, password)
@@ -166,7 +164,6 @@ public class LoginHandler : MonoBehaviour {
         DebugLog(String.Format("Attempting to sign in as {0}...", email));
         DisableUI();
         Firebase.Auth.Credential cred = Firebase.Auth.FacebookAuthProvider.GetCredential(FacebookManager.Instance.getAccessToken());
-        //Firebase.Auth.Credential cred = Firebase.Auth.FacebookAuthProvider.GetCredential("EAABtl2cxZC3YBAN0mb0Jy7479zvquP8dUxR0tvpTH2JTZCzopzmDZCvAxi3D3uxbUSke0VLDHzXvqYPart3rH9zkEEsSXsHV4v0endrl214NoMcWygCNIktjGVu88A1TobK7uApDZACpIGFqNWYPKl2GCfawnB0TNdS4zUHJNAWPLXJBR6ce0dH9wXgjlu8ZD");
         auth.SignInWithCredentialAsync(cred).ContinueWith(HandleSigninResult);
     }
 
@@ -228,6 +225,7 @@ public class LoginHandler : MonoBehaviour {
 
   // Track state changes of the auth object.
   void AuthStateChanged(object sender, System.EventArgs eventArgs) {
+        //event is sent by Firebase.Auth.FirebaseAuth class
     Firebase.Auth.FirebaseAuth senderAuth = sender as Firebase.Auth.FirebaseAuth;
     Firebase.Auth.FirebaseUser user = null;
     if (senderAuth != null) userByAuth.TryGetValue(senderAuth.App.Name, out user);
@@ -235,14 +233,18 @@ public class LoginHandler : MonoBehaviour {
       bool signedIn = user != senderAuth.CurrentUser && senderAuth.CurrentUser != null;
       if (!signedIn && user != null) {
         DebugLog("Signed out " + user.UserId);
-      }
+            DialogLoggedIn.SetActive(false);
+            DialogLoggedOut.SetActive(true);
+        }
       user = senderAuth.CurrentUser;
       userByAuth[senderAuth.App.Name] = user;
       if (signedIn) {
         DebugLog("Signed in " + user.UserId);
         displayName = user.DisplayName ?? "";
         DisplayDetailedUserInfo(user, 1);
-      }
+        DialogLoggedIn.SetActive(true);
+        DialogLoggedOut.SetActive(false);
+        }
     }
   }
 
