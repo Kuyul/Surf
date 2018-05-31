@@ -31,6 +31,7 @@ public class LeaderboardControl : MonoBehaviour {
     public DatabaseHandler DbHandler;
     public StorageHandler StorageHandler;
     public List<Dictionary<string, object>> Leaderboard { get; set; }
+    public GameObject LeaderboardHolder;
     protected Firebase.Auth.FirebaseAuth auth;
 
     private void Awake()
@@ -47,11 +48,6 @@ public class LeaderboardControl : MonoBehaviour {
     }
 
     public void PopulateLeaderBoard()
-    {
-        GetLeaderBoard();
-    }
-
-    public void GetLeaderBoard()
     {
         FirebaseDatabase.DefaultInstance
       .GetReference("Leaders").OrderByChild("score")
@@ -78,11 +74,13 @@ public class LeaderboardControl : MonoBehaviour {
                           scoreMap["name"] = childSnapshot.Child("name").Value;
                           scoreMap["score"] = childSnapshot.Child("score").Value;
                           scoreMap["email"] = childSnapshot.Child("email").Value;
+                          scoreMap["entry"] = new LeaderboardEntry(scoreMap["name"].ToString(), scoreMap["score"].ToString());
                           scoreMap = GetProfilePic(scoreMap);
                           Leaderboard.Add(scoreMap); 
                           Debug.Log(childSnapshot.Child("name").Value + " " + childSnapshot.Child("score").Value);
                       }
                   }
+                  DisplayLoaderboard();
               }
           }
       });
@@ -109,7 +107,10 @@ public class LeaderboardControl : MonoBehaviour {
                 Debug.Log("Finished downloading!");
                 tex.LoadImage(fileContents);
                 Sprite profilePic = Sprite.Create(tex, new Rect(0, 0, 130, 130), new Vector2());
-                scoreMap["profilePic"] = profilePic;
+                scoreMap["sprite"] = profilePic;
+                LeaderboardEntry e = (LeaderboardEntry)scoreMap["entry"];
+                e.AddSprite(profilePic);
+
             }
         });
         return scoreMap;
@@ -136,5 +137,25 @@ public class LeaderboardControl : MonoBehaviour {
     public string GetEmail()
     {
         return LoginHandler.getEmail();
+    }
+
+    public void DisplayLoaderboard()
+    {
+        float entryPos = 0.0f;
+        Leaderboard.Reverse();
+        foreach (Dictionary<string, object> scoreEntry in Leaderboard)
+        {
+            //Sprite sprite = (Sprite)scoreEntry["sprite"];
+            string name = scoreEntry["name"].ToString();
+            string score = scoreEntry["score"].ToString();
+            //LeaderboardEntry e = new LeaderboardEntry(name, score);
+            LeaderboardEntry e = (LeaderboardEntry)scoreEntry["entry"];
+            GameObject entry = e.MakeGameObject();
+            RectTransform rf = entry.AddComponent<RectTransform>();
+            rf.SetParent(LeaderboardHolder.transform);
+            rf.localPosition = new Vector3(0.0f, entryPos, 0.0f);
+            rf.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            entryPos -= 200.0f;
+        }
     }
 }

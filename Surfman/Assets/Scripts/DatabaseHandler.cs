@@ -30,8 +30,6 @@ public class DatabaseHandler : MonoBehaviour {
 
   ArrayList leaderBoard = new ArrayList();
 
-    public Text scoreText;
-    public Text nameText;
     public Text leaderBoardText;
     public List<object> LeaderboardList { get; set; }
 

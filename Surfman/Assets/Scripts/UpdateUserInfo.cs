@@ -18,5 +18,7 @@ public class UpdateUserInfo : MonoBehaviour {
     {
         LeaderboardControl.Instance.UpdateHighScore();
         LeaderboardControl.Instance.UpdateProfilePic();
+        LeaderboardControl.Instance.PopulateLeaderBoard();
+        //LeaderboardControl.Instance.DisplayLoaderboard();
     }
 }
