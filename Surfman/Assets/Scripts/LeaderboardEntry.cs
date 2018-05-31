@@ -83,6 +83,22 @@ public class LeaderboardEntry {
 
     public void AddSprite(Sprite pic)
     {
+        this.ProfilePic = pic;
         ImageObj.GetComponent<Image>().sprite = pic;
+    }
+
+    public GameObject GetImageObj()
+    {
+        return ImageObj;
+    }
+
+    public GameObject GetNameObj()
+    {
+        return NameObj;
+    }
+
+    public GameObject GetScoreObj()
+    {
+        return ScoreObj;
     }
 }
