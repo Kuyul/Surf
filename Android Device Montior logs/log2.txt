@@ -1,0 +1,1 @@
+06-04 14:22:06.060: I/Unity(22122): Invalid key hash. The key hash 93CBlUMcq1PovBWIpKMlLlugYM4= does not match any stored key hashes. Configure your app key hashes at https://developers.facebook.com/apps/120497038819190/

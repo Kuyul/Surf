@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class GameControl : MonoBehaviour {
 
     public static GameControl instance;
+    //Next Highscore components
+    public GameObject nextProfilePic;
+    public GameObject nextScore;
 
     public GameObject gameOverPanel;
     public GameObject pausePanel;
@@ -43,8 +46,8 @@ public class GameControl : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
-	}
+        UpdateNextHighscore();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -98,5 +101,12 @@ public class GameControl : MonoBehaviour {
         LeaderboardControl.Instance.UpdateHighScore();
     }
 
-
+    public void UpdateNextHighscore()
+    {
+        LeaderboardEntry e = LeaderboardControl.Instance.Leaders[1];
+        Image image = nextProfilePic.GetComponent<Image>();
+        image.sprite = e.getProfileSprite();
+        Text text = nextScore.GetComponent<Text>();
+        text.text = e.getScore();
+    }
 }

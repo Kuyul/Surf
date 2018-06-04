@@ -6,7 +6,7 @@ public class UpdateUserInfo : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        
 	}
 	
 	// Update is called once per frame
@@ -17,8 +17,8 @@ public class UpdateUserInfo : MonoBehaviour {
     private void OnEnable()
     {
         LeaderboardControl.Instance.UpdateHighScore();
-        LeaderboardControl.Instance.UpdateProfilePic();
         LeaderboardControl.Instance.PopulateLeaderBoard();
-        //LeaderboardControl.Instance.DisplayLoaderboard();
+        LeaderboardControl.Instance.UpdateProfilePic();
+        LeaderboardControl.Instance.DisplayLoaderboard();
     }
 }

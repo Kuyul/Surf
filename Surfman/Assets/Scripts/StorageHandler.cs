@@ -73,6 +73,7 @@ public class StorageHandler : MonoBehaviour {
     protected virtual void Start() {
         //Initialise Auth
         auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
+        
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
       dependencyStatus = task.Result;
       if (dependencyStatus == DependencyStatus.Available) {
@@ -82,7 +83,7 @@ public class StorageHandler : MonoBehaviour {
           "Could not resolve all Firebase dependencies: " + dependencyStatus);
       }
     });
-  }
+    }
 
   protected virtual void InitializeFirebase() {
     var appBucket = FirebaseApp.DefaultInstance.Options.StorageBucket;

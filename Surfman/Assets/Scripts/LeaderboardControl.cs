@@ -31,12 +31,17 @@ public class LeaderboardControl : MonoBehaviour {
     public DatabaseHandler DbHandler;
     public StorageHandler StorageHandler;
     public List<Dictionary<string, object>> Leaderboard { get; set; }
+    public List<LeaderboardEntry> Leaders { get; set; }
     public GameObject LeaderboardHolder;
     protected Firebase.Auth.FirebaseAuth auth;
+
+    //Menu items
+
 
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
+        Leaders = new List<LeaderboardEntry>();
         _instance = this;
     }
 
@@ -74,10 +79,13 @@ public class LeaderboardControl : MonoBehaviour {
                           scoreMap["name"] = childSnapshot.Child("name").Value;
                           scoreMap["score"] = childSnapshot.Child("score").Value;
                           scoreMap["email"] = childSnapshot.Child("email").Value;
-                          scoreMap["entry"] = new LeaderboardEntry(scoreMap["name"].ToString(), scoreMap["score"].ToString());
+                          LeaderboardEntry entry = new LeaderboardEntry(scoreMap["name"].ToString(), scoreMap["score"].ToString());
+                          scoreMap["entry"] = entry;
+                          //Add to list of LeaderboardEntries (accessible between all screens)
+                          //Leaders.Add(entry);
+                          //Download user profile picture stored by each users' Email value from Firebase Storage
                           scoreMap = GetProfilePic(scoreMap);
                           Leaderboard.Add(scoreMap); 
-                          Debug.Log(childSnapshot.Child("name").Value + " " + childSnapshot.Child("score").Value);
                       }
                   }
                   DisplayLoaderboard();
@@ -148,7 +156,6 @@ public class LeaderboardControl : MonoBehaviour {
             //Sprite sprite = (Sprite)scoreEntry["sprite"];
             string name = scoreEntry["name"].ToString();
             string score = scoreEntry["score"].ToString();
-            //LeaderboardEntry e = new LeaderboardEntry(name, score);
             LeaderboardEntry e = (LeaderboardEntry)scoreEntry["entry"];
             GameObject entry = e.MakeGameObject();
             RectTransform rf = entry.AddComponent<RectTransform>();

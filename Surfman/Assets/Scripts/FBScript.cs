@@ -54,11 +54,16 @@ public class FBScript : MonoBehaviour {
         {
             if (FB.IsLoggedIn)
             {
-                FacebookManager.Instance.IsLoggedIn = true;
-                FacebookManager.Instance.GetProfile();
-                Debug.Log("FB is logged in");
-                //Sign into Firebase
-                LoginHandler.SigninWithCredentialAsync();
+                if (Firebase.Auth.FirebaseAuth.DefaultInstance.CurrentUser == null)
+                {
+                    FacebookManager.Instance.IsLoggedIn = true;
+                    FacebookManager.Instance.GetProfile();
+                    Debug.Log("FB is logged in");
+                    //Sign into Firebase
+                    DialogLoggedIn.SetActive(false);
+                    DialogLoggedOut.SetActive(false);
+                    LoginHandler.SigninWithCredentialAsync();
+                }
             }
             else
             {
@@ -97,9 +102,6 @@ public class FBScript : MonoBehaviour {
             {
                 StartCoroutine("WaitForFirebaseAuth");
             }
-            //We don't want to reference the gameobjects that are specific to one scene in FacebookManager singleton
-            //DialogLoggedIn.SetActive(true);
-            //DialogLoggedOut.SetActive(false);
         }
         else
         {

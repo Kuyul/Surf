@@ -1,7 +1,7 @@
 // Copyright 2016 Google Inc. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
+// you may not use this file except in compliance with the License.auth
 // You may obtain a copy of the License at
 //
 //     http://www.apache.org/licenses/LICENSE-2.0
@@ -30,7 +30,6 @@ public class DatabaseHandler : MonoBehaviour {
 
   ArrayList leaderBoard = new ArrayList();
 
-    public Text leaderBoardText;
     public List<object> LeaderboardList { get; set; }
 
     private const int MaxScores = 5;
@@ -51,8 +50,7 @@ public class DatabaseHandler : MonoBehaviour {
     auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
     DontDestroyOnLoad(this.gameObject);
     leaderBoard.Clear();
-    leaderBoard.Add("Firebase Top " + MaxScores.ToString() + " Scores");
-
+        leaderBoard.Add("Firebase Top " + MaxScores.ToString() + " Scores");
     FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
       dependencyStatus = task.Result;
       if (dependencyStatus == DependencyStatus.Available) {
@@ -63,7 +61,7 @@ public class DatabaseHandler : MonoBehaviour {
       }
     });
 
-  }
+    }
 
   // Initialize the Firebase database:
   protected virtual void InitializeFirebase() {
@@ -93,12 +91,6 @@ public class DatabaseHandler : MonoBehaviour {
           } else {
             Debug.Log("Leaders entry : " + childSnapshot.Child("name").Value.ToString() + " - " + childSnapshot.Child("score").Value.ToString());
               leaderBoard.Insert(1, childSnapshot.Child("score").Value.ToString() + "  " + childSnapshot.Child("name").Value.ToString());
-                      leaderBoardText.text = "";
-                      //set leaderboard text box with updated values
-                      foreach(string item in leaderBoard)
-                      {
-                          leaderBoardText.text += "\n" + item;
-                      }
           }
         }
       }

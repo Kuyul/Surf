@@ -101,4 +101,19 @@ public class LeaderboardEntry {
     {
         return ScoreObj;
     }
+
+    public Sprite getProfileSprite()
+    {
+        return this.ProfilePic;
+    }
+
+    public string getName()
+    {
+        return this.Name;
+    }
+
+    public string getScore()
+    {
+        return this.Score;
+    }
 }
