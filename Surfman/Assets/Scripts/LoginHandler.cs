@@ -161,7 +161,7 @@ public class LoginHandler : MonoBehaviour {
     // different sources of authentication.
     public void SigninWithCredentialAsync()
     {
-        DebugLog(String.Format("Attempting to sign in as {0}...", email));
+         DebugLog(String.Format("Attempting to sign in as {0}...", FacebookManager.Instance.getAccessToken()));
         DisableUI();
         Firebase.Auth.Credential cred = Firebase.Auth.FacebookAuthProvider.GetCredential(FacebookManager.Instance.getAccessToken());
         auth.SignInWithCredentialAsync(cred).ContinueWith(HandleSigninResult);
@@ -233,8 +233,6 @@ public class LoginHandler : MonoBehaviour {
       bool signedIn = user != senderAuth.CurrentUser && senderAuth.CurrentUser != null;
       if (!signedIn && user != null) {
         DebugLog("Signed out " + user.UserId);
-            DialogLoggedIn.SetActive(false);
-            DialogLoggedOut.SetActive(true);
         }
       user = senderAuth.CurrentUser;
       userByAuth[senderAuth.App.Name] = user;
@@ -242,8 +240,6 @@ public class LoginHandler : MonoBehaviour {
         DebugLog("Signed in " + user.UserId);
         displayName = user.DisplayName ?? "";
         DisplayDetailedUserInfo(user, 1);
-        DialogLoggedIn.SetActive(true);
-        DialogLoggedOut.SetActive(false);
         }
     }
   }
@@ -277,7 +273,9 @@ public class LoginHandler : MonoBehaviour {
     } else if (task.IsCompleted) {
       DebugLog(operation + " completed");
       complete = true;
-    }
+      DialogLoggedIn.SetActive(true);
+      DialogLoggedOut.SetActive(false);
+        }
     return complete;
   }
 
@@ -286,7 +284,7 @@ public class LoginHandler : MonoBehaviour {
   void HandleSigninResult(Task<Firebase.Auth.FirebaseUser> authTask) {
     EnableUI();
     LogTaskCompletion(authTask, "Sign-in");
-  }
+    }
 
   public void ReloadUser() {
     if (auth.CurrentUser == null) {

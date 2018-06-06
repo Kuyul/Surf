@@ -4,21 +4,16 @@ using UnityEngine;
 
 public class UpdateUserInfo : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-        
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public bool Initialised = false;
 
     private void OnEnable()
     {
+        if (!Initialised)
+        {
+            LeaderboardControl.Instance.PopulateLeaderBoard();
+            LeaderboardControl.Instance.UpdateProfilePic();
+            Initialised = true;
+        }
         LeaderboardControl.Instance.UpdateHighScore();
-        LeaderboardControl.Instance.PopulateLeaderBoard();
-        LeaderboardControl.Instance.UpdateProfilePic();
-        LeaderboardControl.Instance.DisplayLoaderboard();
     }
 }

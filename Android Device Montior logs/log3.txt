@@ -1,0 +1,1 @@
+06-05 16:23:03.840: E/Unity(17761): java.net.UnknownHostException: Unable to resolve host "config.uca.cloud.unity3d.com": No address associated with hostname

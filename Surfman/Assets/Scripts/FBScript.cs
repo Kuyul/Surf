@@ -16,7 +16,7 @@ public class FBScript : MonoBehaviour {
     private void Awake()
     {
         FacebookManager.Instance.InitFB();
-        DealWithFBMenus(FB.IsLoggedIn);
+
     }
 
     public void FBlogin()
@@ -26,21 +26,6 @@ public class FBScript : MonoBehaviour {
         permissions.Add("email");
 
         FB.LogInWithReadPermissions(permissions, AuthCallBack); //we need to declare permissions
-    }
-
-    public void FBlogout()
-    {
-        FB.LogOut();
-
-        if (FB.IsLoggedIn)
-        {
-            Debug.Log("FB is logged in");
-        }
-        else
-        {
-            Debug.Log("FB is not logged in");
-        }
-        DealWithFBMenus(FB.IsLoggedIn);
     }
 
     void AuthCallBack(IResult result)
@@ -54,16 +39,10 @@ public class FBScript : MonoBehaviour {
         {
             if (FB.IsLoggedIn)
             {
-                if (Firebase.Auth.FirebaseAuth.DefaultInstance.CurrentUser == null)
-                {
-                    FacebookManager.Instance.IsLoggedIn = true;
-                    FacebookManager.Instance.GetProfile();
-                    Debug.Log("FB is logged in");
-                    //Sign into Firebase
-                    DialogLoggedIn.SetActive(false);
-                    DialogLoggedOut.SetActive(false);
-                    LoginHandler.SigninWithCredentialAsync();
-                }
+                FacebookManager.Instance.IsLoggedIn = true;
+                FacebookManager.Instance.GetProfile();
+                Debug.Log("FB is logged in");
+                //Sign into Firebase
             }
             else
             {
@@ -72,12 +51,12 @@ public class FBScript : MonoBehaviour {
             DealWithFBMenus(FB.IsLoggedIn);
         }
     }
-
-    void DealWithFBMenus(bool isLoggedIn)
+    
+    public void DealWithFBMenus(bool isLoggedIn)
     {
         if (isLoggedIn)
         {
-
+            LoginHandler.SigninWithCredentialAsync();
 
             if (FacebookManager.Instance.ProfileName != null)
             {

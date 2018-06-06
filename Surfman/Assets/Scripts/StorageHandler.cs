@@ -38,7 +38,7 @@ public class StorageHandler : MonoBehaviour {
   protected bool UIEnabled = false;
 
   // Cloud Storage location to download from / upload to.
-  protected string storageLocation;
+  protected string storageLocation = "gs://surfman-389c5.appspot.com";
   // String to upload to storageLocation or the contents of the file downloaded from
   // storageLocation.
   protected string fileContents;
@@ -120,34 +120,44 @@ public class StorageHandler : MonoBehaviour {
   });
     }
 
-    public void DownloadFile()
+    public void DownloadLeaderboardProfiles(List<Dictionary<string, object>> Leaderboard)
     {
-        Texture2D tex = new Texture2D(130, 130, TextureFormat.PVRTC_RGBA4, false);
-        //Download to byte array
-        Firebase.Storage.FirebaseStorage storage = Firebase.Storage.FirebaseStorage.DefaultInstance;
-        Firebase.Storage.StorageReference storage_ref = storage.GetReferenceFromUrl("gs://surfman-389c5.appspot.com");
-        var profilePicReference = storage_ref.Child("images/" + auth.CurrentUser.Email);
-        const long maxAllowedSize = 1 * 1024 * 1024;
-        profilePicReference.GetBytesAsync(maxAllowedSize).ContinueWith((Task<byte[]> task) => {
-            if (task.IsFaulted || task.IsCanceled)
-            {
-                Debug.Log(task.Exception.ToString());
-                // Uh-oh, an error occurred!
-            }
-            else
-            {
-                byte[] fileContents = task.Result;
-                Debug.Log("Finished downloading!");
-                tex.LoadImage(fileContents);
-                Image profilePic = ProfilePicImage.GetComponent<Image>();
-                profilePic.sprite = Sprite.Create(tex, new Rect(0, 0, 130, 130), new Vector2());
-            }
-        });
-        
+        foreach (Dictionary<string, object> scoreEntry in Leaderboard)
+        {
+            IEnumerator Couroutine = DownloadBytesWithEmail(scoreEntry);
+            StartCoroutine(Couroutine);
+        }
     }
 
-  // Exit if escape (or back, on mobile) is pressed.
-  protected virtual void Update() {
+    // Download from Cloud Storage into a byte array.
+    protected IEnumerator DownloadBytesWithEmail(Dictionary<string, object> scoreEntry)
+    {
+        var storageReference = GetStorageReference();
+        var imageReference = storageReference.Child("images/" + scoreEntry["email"].ToString());
+        //Texture
+        Texture2D tex = new Texture2D(130, 130, TextureFormat.PVRTC_RGBA4, false);
+        DebugLog(String.Format("Downloading {0} ...", imageReference.Path));
+        var task = imageReference.GetBytesAsync(
+          0, new StorageProgress<DownloadState>(DisplayDownloadState),
+          cancellationTokenSource.Token);
+        yield return new WaitForTaskCompletion(this, task);
+        if (!(task.IsFaulted || task.IsCanceled))
+        {
+            DebugLog("Finished downloading bytes");
+            //Add sprite
+            fileContents = System.Text.Encoding.Default.GetString(task.Result);
+            tex.LoadImage(task.Result);
+            Sprite profilePic = Sprite.Create(tex, new Rect(0, 0, 130, 130), new Vector2());
+            scoreEntry["sprite"] = profilePic;
+            LeaderboardEntry e = (LeaderboardEntry)scoreEntry["entry"];
+            e.AddSprite(profilePic);
+            DebugLog(String.Format("File Size {0} bytes\n", fileContents.Length));
+        }
+    }
+
+
+    // Exit if escape (or back, on mobile) is pressed.
+    protected virtual void Update() {
     if (Input.GetKeyDown(KeyCode.Escape)) {
       Application.Quit();
     }
@@ -339,6 +349,7 @@ public class StorageHandler : MonoBehaviour {
   // Download from Cloud Storage into a byte array.
   protected IEnumerator DownloadBytes() {
     var storageReference = GetStorageReference();
+        storageReference.Child("images/" + auth.CurrentUser.Email);
     DebugLog(String.Format("Downloading {0} ...", storageReference.Path));
     var task = storageReference.GetBytesAsync(
       0, new StorageProgress<DownloadState>(DisplayDownloadState),

@@ -2,24 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestScript : MonoBehaviour {
+public class LeaderboardPanelManager : MonoBehaviour {
 
+    public FBScript FacebookScript;
     public GameObject DatabaseHandler;
     public GameObject StorageHandler;
     public GameObject LeaderboardController;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     private void OnEnable()
     {
+        FacebookScript.DealWithFBMenus(FacebookManager.Instance.IsLoggedIn);
         DatabaseHandler.SetActive(true);
         StorageHandler.SetActive(true);
         LeaderboardController.SetActive(true);

@@ -1,1 +1,1 @@
-06-04 12:54:11.380: V/com.facebook.unity.FB(14237): sending to Unity OnInitComplete({"key_hash":"93CBlUMcq1PovBWIpKMlLlugYM4=\n"})
+06-05 16:23:12.385: I/Unity(17761): AuthError.NetworkRequestFailed: Firebase.FirebaseException: A network error (such as timeout, interrupted connection or unreachable host) has occurred.

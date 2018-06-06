@@ -54,6 +54,8 @@ public class FacebookManager : MonoBehaviour {
         if (FB.IsLoggedIn)
         {
             Debug.Log("FB is logged in");
+            //For when user is already logged in
+            GetProfile();
         }
         else
         {
