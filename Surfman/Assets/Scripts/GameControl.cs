@@ -12,7 +12,7 @@ public class GameControl : MonoBehaviour {
 
     public GameObject gameOverPanel;
     public GameObject pausePanel;
-    public GameObject pauseButtonPanel;  
+    public GameObject pausedButtonPanel;  
     
     public AudioSource backgroundMusic;
     public AudioSource onEdibleTakeSound;
@@ -90,7 +90,7 @@ public class GameControl : MonoBehaviour {
         frameIncremental = 0;
         isDead = true;
         backgroundMusic.Pause();
-        pauseButtonPanel.SetActive(false);
+        pausedButtonPanel.SetActive(false);
         gameOverPanel.SetActive(true);
         scoreTextAtEnd.text = "Your Score is " + currentScore;
         highScoreTextAtEnd.text = "Your HighScore is " + PlayerPrefs.GetInt("highscore");
