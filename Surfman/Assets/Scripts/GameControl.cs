@@ -32,7 +32,7 @@ public class GameControl : MonoBehaviour {
 
     public int scrollSpeed;
 
-    public bool isDead = false; 
+    public bool isDead = false;
 
     private int currentScore = 0;
 

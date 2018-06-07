@@ -2355,20 +2355,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56f46376921b85a47be1104d732399e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DialogLoggedIn: {fileID: 0}
-  DialogLoggedOut: {fileID: 0}
+  DialogLoggedIn: {fileID: 1448545954}
+  DialogLoggedOut: {fileID: 1150320558}
 --- !u!4 &924392593
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 924392591}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 439.15213, y: 270.17743, z: 0.8423515}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 21.867584, y: 8.031799, z: -5.6793256}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1483081346}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &939412471
 GameObject:
@@ -2842,19 +2842,19 @@ MonoBehaviour:
   LoginHandler: {fileID: 924392592}
   DbHandler: {fileID: 1941079725}
   StorageHandler: {fileID: 1703315596}
-  LeaderboardHolder: {fileID: 0}
+  LeaderboardHolder: {fileID: 885250985}
 --- !u!4 &1228142128
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1228142126}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 417.28455, y: 262.14563, z: 6.521677}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 1483081346}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1264889167
 GameObject:
@@ -3652,6 +3652,54 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1483081345
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1483081346}
+  - component: {fileID: 1483081347}
+  m_Layer: 0
+  m_Name: FirebaseRelatedObjects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1483081346
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1483081345}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 417.28455, y: 262.14563, z: 6.521677}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 924392593}
+  - {fileID: 1941079726}
+  - {fileID: 1703315597}
+  - {fileID: 1228142128}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1483081347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1483081345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273a4d37685872144907256089fd5ab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoginHandler: {fileID: 924392591}
+  DatabaseHandler: {fileID: 1941079724}
+  StorageHandler: {fileID: 1703315595}
+  LeaderboardController: {fileID: 1228142126}
 --- !u!1 &1484996739
 GameObject:
   m_ObjectHideFlags: 0
@@ -4492,19 +4540,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storageLocationString: 
-  ProfilePicImage: {fileID: 0}
+  ProfilePicImage: {fileID: 862879579}
 --- !u!4 &1703315597
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1703315595}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 417.1915, y: 239.12904, z: 6.6832757}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.093048096, y: -23.016586, z: 0.16159868}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1483081346}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1721232873
 GameObject:
@@ -4775,7 +4823,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1738581273}
         m_MethodName: FBlogin
         m_Mode: 1
         m_Arguments:
@@ -4907,7 +4955,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 385828529}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -5190,12 +5238,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1941079724}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 433.8088, y: 269.84186, z: 1.0635666}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 16.524261, y: 7.696228, z: -5.4581103}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1483081346}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1970282788
 GameObject:

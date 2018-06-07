@@ -2830,6 +2830,16 @@ Prefab:
       propertyPath: pausedButtonPanel
       value: 
       objectReference: {fileID: 1855793864}
+    - target: {fileID: 114704133016199134, guid: 6e838ae051b1b61439d056b3c814b246,
+        type: 2}
+      propertyPath: nextScoreText
+      value: 
+      objectReference: {fileID: 1546214996}
+    - target: {fileID: 114704133016199134, guid: 6e838ae051b1b61439d056b3c814b246,
+        type: 2}
+      propertyPath: nextProfilePic
+      value: 
+      objectReference: {fileID: 357069562}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e838ae051b1b61439d056b3c814b246, type: 2}
   m_IsPrefabParent: 0
@@ -3020,7 +3030,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c414425a1f1c9c94d96375e9b2ddfd82, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
