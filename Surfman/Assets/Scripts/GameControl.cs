@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class GameControl : MonoBehaviour {
 
     public static GameControl instance;
+
     //Next Highscore components
     public GameObject nextProfilePic;
-    public GameObject nextScore;
+    public Text nextScoreText;
+    private int nextScoreInt;
+    private int LeaderPos = 0;
 
     public GameObject gameOverPanel;
     public GameObject pausePanel;
@@ -64,6 +68,8 @@ public class GameControl : MonoBehaviour {
         if (!isDead)
         {
             currentScore = currentScore + scoreIncremental;
+            //Update next highscore panel
+            nextScoreInt = nextScoreInt - scoreIncremental;
             UpdateScoreboard();
         }
     }
@@ -71,12 +77,19 @@ public class GameControl : MonoBehaviour {
     public void IncrementScorePerFrame()
     {
         currentScore = currentScore + frameIncremental;
+        //Update next highscore panel
+        nextScoreInt = nextScoreInt - frameIncremental;
         UpdateScoreboard();
     }
 
     public void UpdateScoreboard()
     {
         scoreTextInGame.text = "Score: " + currentScore;
+        nextScoreText.text = "" + nextScoreInt;
+        if (nextScoreInt <= 0)
+        {
+            UpdateNextHighscore();
+        }
     }
 
     public void SetFrameIncremental(int frame)
@@ -101,12 +114,20 @@ public class GameControl : MonoBehaviour {
         LeaderboardControl.Instance.UpdateHighScore();
     }
 
+
+    //Update Next highscore for the player to chase!
     public void UpdateNextHighscore()
     {
-        LeaderboardEntry e = LeaderboardControl.Instance.Leaders[1];
-        Image image = nextProfilePic.GetComponent<Image>();
-        image.sprite = e.getProfileSprite();
-        Text text = nextScore.GetComponent<Text>();
-        text.text = e.getScore();
+        LeaderboardControl.Instance.SortLeaders(false);
+        int count = LeaderboardControl.Instance.Leaders.Count;
+        if (LeaderPos < count)
+        {
+            LeaderboardEntry e = LeaderboardControl.Instance.Leaders[LeaderPos];
+            Image image = nextProfilePic.GetComponent<Image>();
+            image.sprite = e.getProfileSprite();
+            nextScoreInt = Convert.ToInt32(e.getScore()) - currentScore;
+            nextScoreText.text = "" + nextScoreInt;
+            LeaderPos++;
+        }
     }
 }

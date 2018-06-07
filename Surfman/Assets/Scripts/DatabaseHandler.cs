@@ -173,6 +173,7 @@ public class DatabaseHandler : MonoBehaviour {
   public void AddScore() {
         score = PlayerPrefs.GetInt("highscore", 0);
         firstName = FacebookManager.Instance.ProfileName;
+        Debug.Log(score + " " + auth.CurrentUser.Email);
         email = auth.CurrentUser.Email;
 
     if (score == 0 || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(firstName)) {

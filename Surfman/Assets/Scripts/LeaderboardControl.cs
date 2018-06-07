@@ -7,6 +7,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
+using System;
 
 public class LeaderboardControl : MonoBehaviour {
 
@@ -42,6 +44,7 @@ public class LeaderboardControl : MonoBehaviour {
     {
         DontDestroyOnLoad(this.gameObject);
         Leaders = new List<LeaderboardEntry>();
+        Leaderboard = new List<Dictionary<string, object>>();
         _instance = this;
     }
 
@@ -79,12 +82,11 @@ public class LeaderboardControl : MonoBehaviour {
                           scoreMap["name"] = childSnapshot.Child("name").Value;
                           scoreMap["score"] = childSnapshot.Child("score").Value;
                           scoreMap["email"] = childSnapshot.Child("email").Value;
+                          Debug.Log("Retrieved Score for " + scoreMap["name"] + " " + scoreMap["score"]);
                           LeaderboardEntry entry = new LeaderboardEntry(scoreMap["name"].ToString(), scoreMap["score"].ToString());
                           scoreMap["entry"] = entry;
                           //Add to list of LeaderboardEntries (accessible between all screens)
-                          //Leaders.Add(entry);
-                          //Download user profile picture stored by each users' Email value from Firebase Storage
-                          scoreMap = GetProfilePic(scoreMap);
+                          Leaders.Add(entry);
                           Leaderboard.Add(scoreMap); 
                       }
                   }
@@ -92,36 +94,6 @@ public class LeaderboardControl : MonoBehaviour {
               }
           }
       });
-    }
-
-    private Dictionary<string, object> GetProfilePic(Dictionary<string, object> scoreMap)
-    {
-        Texture2D tex = new Texture2D(130, 130, TextureFormat.PVRTC_RGBA4, false);
-        //Download to byte array
-        Firebase.Storage.FirebaseStorage storage = Firebase.Storage.FirebaseStorage.DefaultInstance;
-        Firebase.Storage.StorageReference storage_ref = storage.GetReferenceFromUrl("gs://surfman-389c5.appspot.com");
-        var profilePicReference = storage_ref.Child("images/" + scoreMap["email"]);
-        const long maxAllowedSize = 1 * 1024 * 1024;
-        profilePicReference.GetBytesAsync(maxAllowedSize).ContinueWith((Task<byte[]> task) =>
-        {
-            if (task.IsFaulted || task.IsCanceled)
-            {
-                Debug.Log(task.Exception.ToString());
-                // Uh-oh, an error occurred!
-            }
-            else
-            {
-                byte[] fileContents = task.Result;
-                Debug.Log("Finished downloading!");
-                tex.LoadImage(fileContents);
-                Sprite profilePic = Sprite.Create(tex, new Rect(0, 0, 130, 130), new Vector2());
-                scoreMap["sprite"] = profilePic;
-                LeaderboardEntry e = (LeaderboardEntry)scoreMap["entry"];
-                e.AddSprite(profilePic);
-
-            }
-        });
-        return scoreMap;
     }
 
     //Attempt to add highscore when entering Leaderboard Screen
@@ -147,13 +119,17 @@ public class LeaderboardControl : MonoBehaviour {
         return LoginHandler.getEmail();
     }
 
+    //Create leaderboard entries for each profile then load them onto the panel
     public void DisplayLoaderboard()
     {
+        DownloadLeaderProfiles();
+        Debug.Log("Displaying Leaderboard");
         float entryPos = 0.0f;
-        Leaderboard.Reverse();
+        bool topDown = true;
+        SortLeaderboard(topDown);
+        SortLeaders(topDown);
         foreach (Dictionary<string, object> scoreEntry in Leaderboard)
         {
-            //Sprite sprite = (Sprite)scoreEntry["sprite"];
             string name = scoreEntry["name"].ToString();
             string score = scoreEntry["score"].ToString();
             LeaderboardEntry e = (LeaderboardEntry)scoreEntry["entry"];
@@ -163,6 +139,39 @@ public class LeaderboardControl : MonoBehaviour {
             rf.localPosition = new Vector3(0.0f, entryPos, 0.0f);
             rf.localScale = new Vector3(1.0f, 1.0f, 1.0f);
             entryPos -= 200.0f;
+        }
+    }
+
+    //Download user profile picture stored by each users' Email value from Firebase Storage
+    public void DownloadLeaderProfiles()
+    {
+        StorageHandler.DownloadLeaderboardProfiles(Leaderboard);
+    }
+
+    //Sort Leaderboard - Parameter topDown: true = top down, false = bottom up.
+    public void SortLeaderboard(bool topDown)
+    {
+        //Top down
+        if (topDown)
+        {
+            Leaderboard.Sort((x, y) => Convert.ToInt32(y["score"]).CompareTo(Convert.ToInt32(x["score"])));
+        }
+        //Bottom up
+        else
+        {
+            Leaderboard.Sort((x, y) => Convert.ToInt32(x["score"]).CompareTo(Convert.ToInt32(y["score"])));
+        }
+    }
+
+    public void SortLeaders(bool topDown)
+    {
+        if (topDown)
+        {
+            Leaders.Sort((x, y) => Convert.ToInt32(y.getScore()).CompareTo(Convert.ToInt32(x.getScore())));
+        }
+        else
+        {
+            Leaders.Sort((x, y) => Convert.ToInt32(x.getScore()).CompareTo(Convert.ToInt32(y.getScore())));
         }
     }
 }
