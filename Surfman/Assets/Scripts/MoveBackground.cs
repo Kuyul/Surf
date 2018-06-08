@@ -14,27 +14,27 @@ public class MoveBackground : MonoBehaviour {
             rb.velocity = new Vector2(-GameControl.instance.scrollSpeed, 0);
         }
 
-        if (gameObject.tag == "Wave1")
+        if (gameObject.tag == "Wave1" || gameObject.tag == "Wave1duplicate")
         {
             rb.velocity = new Vector2(-GameControl.instance.waveOneSpeed, 0);
         }
 
-        if (gameObject.tag == "Wave2")
+        if (gameObject.tag == "Wave2" || gameObject.tag == "Wave2duplicate")
         {
             rb.velocity = new Vector2(-GameControl.instance.waveTwoSpeed, 0);
         }
 
-        if (gameObject.tag == "Wave3")
+        if (gameObject.tag == "Wave3" || gameObject.tag == "Wave3duplicate")
         {
             rb.velocity = new Vector2(-GameControl.instance.waveThreeSpeed, 0);
         }
 
-        if (gameObject.tag == "Wave4")
+        if (gameObject.tag == "Wave4" || gameObject.tag == "Wave4duplicate")
         {
             rb.velocity = new Vector2(-GameControl.instance.waveFourSpeed, 0);
         }
 
-        if (gameObject.tag == "Wave5")
+        if (gameObject.tag == "Wave5" || gameObject.tag == "Wave5duplicate")
         {
             rb.velocity = new Vector2(-GameControl.instance.waveFiveSpeed, 0);
         }

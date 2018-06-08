@@ -25,6 +25,11 @@ TagManager:
   - Wave3
   - Wave4
   - Wave5
+  - Wave1duplicate
+  - Wave2duplicate
+  - Wave3duplicate
+  - Wave4duplicate
+  - Wave5duplicate
   layers:
   - Default
   - TransparentFX
