@@ -33,8 +33,6 @@ public class FacebookManager : MonoBehaviour {
     {
         DontDestroyOnLoad(this.gameObject);
         _instance = this;
-
-        IsLoggedIn = true;
     }
 
     public void InitFB()

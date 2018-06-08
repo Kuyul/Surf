@@ -10,10 +10,8 @@ public class UpdateUserInfo : MonoBehaviour {
     {
         if (!Initialised)
         {
-            LeaderboardControl.Instance.PopulateLeaderBoard();
             LeaderboardControl.Instance.UpdateProfilePic();
             Initialised = true;
         }
-        LeaderboardControl.Instance.UpdateHighScore();
     }
 }

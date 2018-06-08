@@ -11,15 +11,26 @@ public class InitialiseFirebaseComponents : MonoBehaviour {
 
     private void Awake()
     {
+        DontDestroyOnLoad(this.gameObject);
+        StartCoroutine(WaitForFacebookLogin());
+    }
+
+    IEnumerator WaitForFacebookLogin()
+    {
+        if (!FacebookManager.Instance.IsLoggedIn)
+        {
+            yield return null;
+        }
         StartCoroutine(Activate());
     }
 
     IEnumerator Activate()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
         LoginHandler.SetActive(true);
         DatabaseHandler.SetActive(true);
         StorageHandler.SetActive(true);
         LeaderboardController.SetActive(true);
+        LeaderboardControl.Instance.PopulateLeaderBoard();
     }
 }

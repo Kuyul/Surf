@@ -52,7 +52,6 @@ public class LeaderboardControl : MonoBehaviour {
 	void Start () {
         FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://surfman-389c5.firebaseio.com/");
         DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
-        Leaderboard = new List<Dictionary<string, object>>();
     }
 
     public void PopulateLeaderBoard()

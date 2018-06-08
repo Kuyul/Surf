@@ -39,6 +39,7 @@ public class DatabaseHandler : MonoBehaviour {
     private string firstName = "";
     protected bool UIEnabled = true;
     protected Firebase.Auth.FirebaseAuth auth;
+    public bool DbInitialised { get; set; }
 
   const int kMaxLogSize = 16382;
   DependencyStatus dependencyStatus = DependencyStatus.UnavailableOther;
@@ -50,11 +51,13 @@ public class DatabaseHandler : MonoBehaviour {
     auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
     DontDestroyOnLoad(this.gameObject);
     leaderBoard.Clear();
-        leaderBoard.Add("Firebase Top " + MaxScores.ToString() + " Scores");
+    DbInitialised = false;
+    leaderBoard.Add("Firebase Top " + MaxScores.ToString() + " Scores");
     FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
       dependencyStatus = task.Result;
       if (dependencyStatus == DependencyStatus.Available) {
         InitializeFirebase();
+        DbInitialised = true;
       } else {
         Debug.LogError(
           "Could not resolve all Firebase dependencies: " + dependencyStatus);
