@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class MovingComponents : MonoBehaviour {
 
-    private Rigidbody2D rb;
     public Transform playerToFollow;
-    private Vector3 originalPosition;
-    private Vector3 playerOriginalPosition;
     private float diff;
 
     // Use this for initialization

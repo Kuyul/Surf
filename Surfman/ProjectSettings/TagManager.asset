@@ -19,6 +19,12 @@ TagManager:
   - Pattern
   - player
   - Balloon
+  - Background
+  - Wave1
+  - Wave2
+  - Wave3
+  - Wave4
+  - Wave5
   layers:
   - Default
   - TransparentFX

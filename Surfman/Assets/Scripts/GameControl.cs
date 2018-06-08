@@ -30,7 +30,12 @@ public class GameControl : MonoBehaviour {
     public Text highScoreTextAtEnd;
     public Text scoreTextInPause;
 
-    public int scrollSpeed;
+    public float scrollSpeed;
+    public float waveOneSpeed;
+    public float waveTwoSpeed;
+    public float waveThreeSpeed;
+    public float waveFourSpeed;
+    public float waveFiveSpeed;
 
     public bool isDead = false;
 
