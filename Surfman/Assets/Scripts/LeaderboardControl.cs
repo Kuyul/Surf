@@ -37,8 +37,16 @@ public class LeaderboardControl : MonoBehaviour {
     public GameObject LeaderboardHolder;
     protected Firebase.Auth.FirebaseAuth auth;
 
-    //Menu items
+    //1st 2nd and 3rd place GameObjects
+    public GameObject FirstPic;
+    public GameObject FirstName;
+    public GameObject SecondPic;
+    public GameObject SecondName;
+    public GameObject ThirdPic;
+    public GameObject ThirdName;
 
+    //Leaderboard entry prefab
+    public GameObject LeaderboardEntry;
 
     private void Awake()
     {
@@ -82,7 +90,8 @@ public class LeaderboardControl : MonoBehaviour {
                           scoreMap["score"] = childSnapshot.Child("score").Value;
                           scoreMap["email"] = childSnapshot.Child("email").Value;
                           Debug.Log("Retrieved Score for " + scoreMap["name"] + " " + scoreMap["score"]);
-                          LeaderboardEntry entry = new LeaderboardEntry(scoreMap["name"].ToString(), scoreMap["score"].ToString());
+                          GameObject leaderEntry = Instantiate(LeaderboardEntry);
+                          LeaderboardEntry entry = new LeaderboardEntry(leaderEntry, scoreMap["name"].ToString(), scoreMap["score"].ToString());
                           scoreMap["entry"] = entry;
                           //Add to list of LeaderboardEntries (accessible between all screens)
                           Leaders.Add(entry);
@@ -127,17 +136,36 @@ public class LeaderboardControl : MonoBehaviour {
         bool topDown = true;
         SortLeaderboard(topDown);
         SortLeaders(topDown);
+        //Insert First, second and third game items.
+        int count = 1;
         foreach (Dictionary<string, object> scoreEntry in Leaderboard)
         {
             string name = scoreEntry["name"].ToString();
             string score = scoreEntry["score"].ToString();
             LeaderboardEntry e = (LeaderboardEntry)scoreEntry["entry"];
-            GameObject entry = e.MakeGameObject();
-            RectTransform rf = entry.AddComponent<RectTransform>();
+            e.MakeGameObject();
+            GameObject entry = e.GetEntryObj();
+            RectTransform rf = entry.GetComponent<RectTransform>();
             rf.SetParent(LeaderboardHolder.transform);
             rf.localPosition = new Vector3(0.0f, entryPos, 0.0f);
             rf.localScale = new Vector3(1.0f, 1.0f, 1.0f);
             entryPos -= 200.0f;
+
+            if (count == 1)
+            {
+                FirstName.GetComponent<Text>().text = name;
+                e.AddTopLeaderPic(FirstPic);
+            }else if(count == 2)
+            {
+                SecondName.GetComponent<Text>().text = name;
+                e.AddTopLeaderPic(SecondPic);
+            }
+            else if(count == 3)
+            {
+                ThirdName.GetComponent<Text>().text = name;
+                e.AddTopLeaderPic(ThirdPic);
+            }
+            count++;
         }
     }
 

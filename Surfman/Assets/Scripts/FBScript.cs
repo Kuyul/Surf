@@ -9,8 +9,6 @@ public class FBScript : MonoBehaviour {
 
     public GameObject DialogLoggedIn;
     public GameObject DialogLoggedOut;
-    public GameObject DialogUsername;
-    public GameObject DialogProfilepic;
     public LoginHandler LoginHandler;
 
     private void Awake()
@@ -57,26 +55,6 @@ public class FBScript : MonoBehaviour {
         if (isLoggedIn)
         {
             LoginHandler.SigninWithCredentialAsync();
-
-            if (FacebookManager.Instance.ProfileName != null)
-            {
-                Text userName = DialogUsername.GetComponent<Text>();
-                userName.text = "Hi, " + FacebookManager.Instance.ProfileName;
-            }
-            else
-            {
-                StartCoroutine("WaitForProfileName");
-            }
-            //Wait until Profile Pic is retrieved from Facebook
-            if (FacebookManager.Instance.ProfilePic != null)
-            {
-                Image profilePic = DialogProfilepic.GetComponent<Image>();
-                profilePic.sprite = FacebookManager.Instance.ProfilePic;
-            }
-            else
-            {
-                StartCoroutine("WaitForProfilePic");
-            }
             if (LoginHandler.getEmail() == "")
             {
                 StartCoroutine("WaitForFirebaseAuth");
