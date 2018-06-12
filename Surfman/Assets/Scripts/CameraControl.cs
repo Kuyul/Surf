@@ -4,21 +4,27 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour {
 
-    public Transform playerToFollow;
-    private Vector3 originalPosition;
-    private Vector3 playerOriginalPosition;
+    private Camera Cam;
+    private float CamOrigSize;
+    private Transform Orig;
+    public Transform PlayerPos;
+    private Transform PlayerOrig;
     private float diff;
 
 	// Use this for initialization
 	void Start () {
-        diff = transform.position.y - playerToFollow.position.y;
-
+        Cam = Camera.main;
+        CamOrigSize = Cam.orthographicSize;
+        Orig = Cam.GetComponent<Transform>();
+        PlayerOrig = PlayerPos;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        Vector3 newPosition = transform.position;
-        newPosition.y = diff + playerToFollow.position.y;
-        transform.position = newPosition;
-	}
+        if (PlayerPos.position.y > 4)
+        {
+            float scale = (PlayerPos.position.y - 4 + Orig.position.y) / Orig.position.y;
+            Cam.orthographicSize = CamOrigSize * (1 + (scale-1) * 0.7f);
+        }
+    }
 }

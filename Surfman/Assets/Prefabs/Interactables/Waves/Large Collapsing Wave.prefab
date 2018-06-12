@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50767864198883074}
   m_Layer: 8
   m_Name: Large Collapsing Wave
-  m_TagString: Untagged
+  m_TagString: Wave
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

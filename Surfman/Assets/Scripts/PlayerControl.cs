@@ -23,6 +23,7 @@ public class PlayerControl : MonoBehaviour
     private float nextPos;
     public float incrementDistance = 100.0f;
     public float incrementSpeed = 0.5f;
+    public float maxFallSpeed = -15f;
     private float speedIncremented = 0.0f;
 
     public BoardCollision board;
@@ -40,8 +41,13 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float yVel = rb.velocity.y;
+        if (rb.velocity.y < maxFallSpeed)
+        {
+            yVel = maxFallSpeed;
+        }
         //make sure velocity stays the same
-        rb.velocity = new Vector3(initialPlayerSpeed + speedIncremented, rb.velocity.y, 0.0f);
+        rb.velocity = new Vector3(initialPlayerSpeed + speedIncremented, yVel, 0.0f);
 
 
         //Check whether speed incremental distance was met
