@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 253889867216024822}
   - component: {fileID: 50148220099715194}
   m_Layer: 8
-  m_Name: Gigantic Tsunami
+  m_Name: Tsunami 1
   m_TagString: Wave
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
