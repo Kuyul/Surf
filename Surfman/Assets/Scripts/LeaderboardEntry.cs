@@ -97,6 +97,11 @@ public class LeaderboardEntry
         return this.Name;
     }
 
+    public void SetName(string name)
+    {
+        this.Name = name;
+    }
+
     public string getScore()
     {
         return this.Score;

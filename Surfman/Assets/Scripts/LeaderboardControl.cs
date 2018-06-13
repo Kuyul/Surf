@@ -48,6 +48,9 @@ public class LeaderboardControl : MonoBehaviour {
     //Leaderboard entry prefab
     public GameObject LeaderboardEntry;
 
+    //Leaderboard content height must be increased if there are more leaderboard entries than it can fit.
+    public GameObject Content;
+
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -140,9 +143,11 @@ public class LeaderboardControl : MonoBehaviour {
         int count = 1;
         foreach (Dictionary<string, object> scoreEntry in Leaderboard)
         {
-            string name = scoreEntry["name"].ToString();
+            string name = "#" + count + "   " + scoreEntry["name"].ToString();
             string score = scoreEntry["score"].ToString();
             LeaderboardEntry e = (LeaderboardEntry)scoreEntry["entry"];
+            //Display rank e.g. "#1   Kyle    30000"
+            e.SetName(name);
             e.MakeGameObject();
             GameObject entry = e.GetEntryObj();
             RectTransform rf = entry.GetComponent<RectTransform>();
@@ -150,19 +155,24 @@ public class LeaderboardControl : MonoBehaviour {
             rf.localPosition = new Vector3(0.0f, entryPos, 0.0f);
             rf.localScale = new Vector3(1.0f, 1.0f, 1.0f);
             entryPos -= 200.0f;
+            //Increase Leaderboard content height
+            RectTransform r = Content.GetComponent<RectTransform>();
+            r.sizeDelta = new Vector2(r.sizeDelta.x, r.sizeDelta.y + 200.0f);
 
+            //You know the three big circles on the left side of the leaderboard panel?
+            //The below if statements populate those :)
             if (count == 1)
             {
-                FirstName.GetComponent<Text>().text = name;
+                FirstName.GetComponent<Text>().text = scoreEntry["name"].ToString();
                 e.AddTopLeaderPic(FirstPic);
             }else if(count == 2)
             {
-                SecondName.GetComponent<Text>().text = name;
+                SecondName.GetComponent<Text>().text = scoreEntry["name"].ToString();
                 e.AddTopLeaderPic(SecondPic);
             }
             else if(count == 3)
             {
-                ThirdName.GetComponent<Text>().text = name;
+                ThirdName.GetComponent<Text>().text = scoreEntry["name"].ToString();
                 e.AddTopLeaderPic(ThirdPic);
             }
             count++;
