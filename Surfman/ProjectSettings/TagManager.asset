@@ -30,6 +30,10 @@ TagManager:
   - Wave3duplicate
   - Wave4duplicate
   - Wave5duplicate
+  - boat
+  - cloud1
+  - cloud2
+  - cloud3
   layers:
   - Default
   - TransparentFX

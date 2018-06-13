@@ -39,13 +39,33 @@ public class MoveBackground : MonoBehaviour {
             rb.velocity = new Vector2(-GameControl.instance.waveFiveSpeed, 0);
         }
 
+        if (gameObject.tag == "boat" )
+        {
+            rb.velocity = new Vector2(-GameControl.instance.boat, 0);
+        }
+
+        if (gameObject.tag == "cloud1")
+        {
+            rb.velocity = new Vector2(-GameControl.instance.cloud1, 0);
+        }
+
+        if (gameObject.tag == "cloud2")
+        {
+            rb.velocity = new Vector2(-GameControl.instance.cloud2, 0);
+        }
+
+        if (gameObject.tag == "cloud3")
+        {
+            rb.velocity = new Vector2(-GameControl.instance.cloud3, 0);
+        }
+
     }
 	
 
 	void Update () {
-		if(GameControl.instance.isDead==true && gameObject.tag=="Background")
-        {
-            rb.velocity = Vector3.zero;
-        }
+		//if(GameControl.instance.isDead==true && gameObject.tag=="boat")
+        //{
+          //  rb.velocity = Vector3.zero;
+        //}
 	}
 }

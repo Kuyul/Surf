@@ -36,6 +36,10 @@ public class GameControl : MonoBehaviour {
     public float waveThreeSpeed;
     public float waveFourSpeed;
     public float waveFiveSpeed;
+    public float boat;
+    public float cloud1;
+    public float cloud2;
+    public float cloud3;
 
     public bool isDead = false;
 

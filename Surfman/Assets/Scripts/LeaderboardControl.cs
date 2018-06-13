@@ -144,7 +144,7 @@ public class LeaderboardControl : MonoBehaviour {
         foreach (Dictionary<string, object> scoreEntry in Leaderboard)
         {
             string name = "#" + count + "   " + scoreEntry["name"].ToString();
-            string score = scoreEntry["score"].ToString();
+            //string score = scoreEntry["score"].ToString();
             LeaderboardEntry e = (LeaderboardEntry)scoreEntry["entry"];
             //Display rank e.g. "#1   Kyle    30000"
             e.SetName(name);

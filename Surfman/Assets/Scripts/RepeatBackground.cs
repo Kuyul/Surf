@@ -84,5 +84,29 @@ public class RepeatBackground : MonoBehaviour {
             Vector3 newTransform = new Vector3(sprite.bounds.extents.x * 4 + transform.position.x, transform.position.y, transform.position.z);
             transform.position = newTransform;
         }
+
+        if (playerTransform.position.x >= transform.position.x + 25 && gameObject.tag == "boat")
+        {
+            Vector3 newTransform = new Vector3(playerTransform.position.x + 45, transform.position.y, transform.position.z);
+            transform.position = newTransform;
+        }
+
+        if (playerTransform.position.x >= transform.position.x + 25 && gameObject.tag == "cloud1")
+        {
+            Vector3 newTransform = new Vector3(playerTransform.position.x + 35, transform.position.y, transform.position.z);
+            transform.position = newTransform;
+        }
+
+        if (playerTransform.position.x >= transform.position.x + 25 && gameObject.tag == "cloud2")
+        {
+            Vector3 newTransform = new Vector3(playerTransform.position.x + 35, transform.position.y, transform.position.z);
+            transform.position = newTransform;
+        }
+
+        if (playerTransform.position.x >= transform.position.x + 25 && gameObject.tag == "cloud3")
+        {
+            Vector3 newTransform = new Vector3(playerTransform.position.x + 35, transform.position.y, transform.position.z);
+            transform.position = newTransform;
+        }
     }
 }
