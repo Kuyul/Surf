@@ -16,7 +16,6 @@ public class MainSceneController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        highScoreInSetting.text = "Current Highscore is " + PlayerPrefs.GetInt("highscore", 0);
 
         //quit game when back button is pressed
         if (Input.GetKeyDown(KeyCode.Escape))
