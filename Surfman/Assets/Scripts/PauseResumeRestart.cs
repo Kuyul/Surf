@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseResumeRestart : MonoBehaviour {
+public class PauseResumeRestart : MonoBehaviour
+{
 
     public bool isPaused = false;
+    public GameObject muteButton;
+    public GameObject unmuteButton;
 
     public void PauseGame()
     {
@@ -23,7 +26,7 @@ public class PauseResumeRestart : MonoBehaviour {
     public void ResumeGame()
     {
         isPaused = false;
-        if(isPaused==false)
+        if (isPaused == false)
         {
             Time.timeScale = 1;
             GameControl.instance.SetFrameIncremental(1);
@@ -50,11 +53,28 @@ public class PauseResumeRestart : MonoBehaviour {
         SceneManager.LoadScene(level);
     }
 
-    public void ResetHighscore()
+    public void MuteSounds()
     {
-  
-        PlayerPrefs.DeleteKey("highscore");
+        PlayerPrefs.SetFloat("gamevolume", 0f);
+
+            muteButton.SetActive(false);
+            unmuteButton.SetActive(true);
         
     }
+
+    public void UnMuteSounds()
+    {
+        PlayerPrefs.SetFloat("gamevolume", 1f);
+
+            unmuteButton.SetActive(false);
+            muteButton.SetActive(true);
+        
+    }
+
+
+    //public void ResetHighscore()
+    //{
+    //      PlayerPrefs.DeleteKey("highscore");
+    //}
 
 }

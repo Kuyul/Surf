@@ -60,7 +60,14 @@ public class GameControl : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
         UpdateNextHighscore();
+
+        backgroundMusic.volume = PlayerPrefs.GetFloat("gamevolume");
+        onEdibleTakeSound.volume = PlayerPrefs.GetFloat("gamevolume");
+        balloonPopSound.volume = PlayerPrefs.GetFloat("gamevolume");
+        jumpSound.volume = PlayerPrefs.GetFloat("gamevolume");
+
     }
 	
 	// Update is called once per frame
@@ -117,6 +124,7 @@ public class GameControl : MonoBehaviour {
         gameOverPanel.SetActive(true);
         scoreTextAtEnd.text = "Your Score is " + currentScore;
         highScoreTextAtEnd.text = "Your HighScore is " + PlayerPrefs.GetInt("highscore");
+
         if (currentScore > PlayerPrefs.GetInt("highscore", 0))
         {
             PlayerPrefs.SetInt("highscore", currentScore);
