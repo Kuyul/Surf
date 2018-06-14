@@ -59,13 +59,44 @@ public class MoveBackground : MonoBehaviour {
             rb.velocity = new Vector2(-GameControl.instance.cloud3, 0);
         }
 
+        if (gameObject.tag == "island")
+        {
+            rb.velocity = new Vector2(-GameControl.instance.island, 0);
+        }
+
     }
 	
 
 	void Update () {
-		//if(GameControl.instance.isDead==true && gameObject.tag=="boat")
-        //{
-          //  rb.velocity = Vector3.zero;
-        //}
-	}
+		if(GameControl.instance.isDead==true && gameObject.tag=="background")
+        {
+            rb.velocity = Vector3.zero;
+        }
+
+        if (GameControl.instance.isDead == true && gameObject.tag == "boat")
+        {
+            rb.velocity = Vector3.zero;
+        }
+
+        if (GameControl.instance.isDead == true && gameObject.tag == "cloud1")
+        {
+            rb.velocity = Vector3.zero;
+        }
+
+        if (GameControl.instance.isDead == true && gameObject.tag == "cloud2")
+        {
+            rb.velocity = Vector3.zero;
+        }
+
+        if (GameControl.instance.isDead == true && gameObject.tag == "cloud3")
+        {
+            rb.velocity = Vector3.zero;
+        }
+
+        if (GameControl.instance.isDead == true && gameObject.tag == "island")
+        {
+            rb.velocity = Vector3.zero;
+        }
+
+    }
 }

@@ -40,6 +40,7 @@ public class GameControl : MonoBehaviour {
     public float cloud1;
     public float cloud2;
     public float cloud3;
+    public float island;
 
     public bool isDead = false;
 

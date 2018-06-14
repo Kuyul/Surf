@@ -87,7 +87,7 @@ public class RepeatBackground : MonoBehaviour {
 
         if (playerTransform.position.x >= transform.position.x + 25 && gameObject.tag == "boat")
         {
-            Vector3 newTransform = new Vector3(playerTransform.position.x + 45, transform.position.y, transform.position.z);
+            Vector3 newTransform = new Vector3(playerTransform.position.x + 55, transform.position.y, transform.position.z);
             transform.position = newTransform;
         }
 
@@ -106,6 +106,12 @@ public class RepeatBackground : MonoBehaviour {
         if (playerTransform.position.x >= transform.position.x + 25 && gameObject.tag == "cloud3")
         {
             Vector3 newTransform = new Vector3(playerTransform.position.x + 35, transform.position.y, transform.position.z);
+            transform.position = newTransform;
+        }
+
+        if (playerTransform.position.x >= transform.position.x + 30 && gameObject.tag == "island")
+        {
+            Vector3 newTransform = new Vector3(playerTransform.position.x + 50, transform.position.y, transform.position.z);
             transform.position = newTransform;
         }
     }

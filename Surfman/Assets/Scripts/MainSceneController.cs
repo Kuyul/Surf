@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class MainSceneController : MonoBehaviour {
 
-    public Text highScoreInSetting;
-    public Text highScoreInMainMenu;
+    //public Text highScoreInSetting;
+    //public Text highScoreInMainMenu;
 
 	// Use this for initialization
 	void Start () {
