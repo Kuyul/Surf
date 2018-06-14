@@ -12,7 +12,7 @@ public class LoadingScene : MonoBehaviour {
 
     IEnumerator LoadMainScene()
     {
-        yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(0);
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(1);
     }
 }
