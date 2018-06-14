@@ -11,6 +11,7 @@ public class UpdateUserInfo : MonoBehaviour {
         if (!Initialised)
         {
             LeaderboardControl.Instance.UpdateProfilePic();
+            LeaderboardControl.Instance.UpdateHighScore();
             Initialised = true;
         }
     }
