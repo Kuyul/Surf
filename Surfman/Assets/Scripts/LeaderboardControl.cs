@@ -1,16 +1,13 @@
 ﻿using Firebase;
 using Firebase.Database;
 using Firebase.Unity.Editor;
-using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Linq;
 using System;
 
-public class LeaderboardControl : MonoBehaviour {
+public class LeaderboardControl : MonoBehaviour
+{
 
     private static LeaderboardControl _instance;
 
@@ -59,8 +56,9 @@ public class LeaderboardControl : MonoBehaviour {
         _instance = this;
     }
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://surfman-389c5.firebaseio.com/");
         DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
     }
@@ -68,43 +66,44 @@ public class LeaderboardControl : MonoBehaviour {
     public void PopulateLeaderBoard()
     {
         FirebaseDatabase.DefaultInstance
-      .GetReference("Leaders").OrderByChild("score")
-      .GetValueAsync().ContinueWith(task => {
-          if (task.IsFaulted)
-          {
-              // Handle the error...
-          }
-          else if (task.IsCompleted)
-          {
-              DataSnapshot snapshot = task.Result;
-              if (snapshot != null && snapshot.ChildrenCount > 0)
-              {
-                  foreach (var childSnapshot in snapshot.Children)
-                  {
-                      if (childSnapshot.Child("score") == null || childSnapshot.Child("score").Value == null)
-                      {
-                          Debug.LogError("Bad data in sample.  Did you forget to call SetEditorDatabaseUrl with your project id?");
-                          break;
-                      }
-                      else
-                      {
-                          Dictionary<string, object> scoreMap = new Dictionary<string, object>();
-                          scoreMap["name"] = childSnapshot.Child("name").Value;
-                          scoreMap["score"] = childSnapshot.Child("score").Value;
-                          scoreMap["email"] = childSnapshot.Child("email").Value;
-                          Debug.Log("Retrieved Score for " + scoreMap["name"] + " " + scoreMap["score"]);
-                          GameObject leaderEntry = Instantiate(LeaderboardEntry);
-                          LeaderboardEntry entry = new LeaderboardEntry(leaderEntry, scoreMap["name"].ToString(), scoreMap["score"].ToString());
-                          scoreMap["entry"] = entry;
-                          //Add to list of LeaderboardEntries (accessible between all screens)
-                          Leaders.Add(entry);
-                          Leaderboard.Add(scoreMap); 
-                      }
-                  }
-                  DisplayLoaderboard();
-              }
-          }
-      });
+        .GetReference("Leaders").OrderByChild("score")
+        .GetValueAsync().ContinueWith(task =>
+        {
+            if (task.IsFaulted)
+            {
+            // Handle the error...
+        }
+            else if (task.IsCompleted)
+            {
+                DataSnapshot snapshot = task.Result;
+                if (snapshot != null && snapshot.ChildrenCount > 0)
+                {
+                    foreach (var childSnapshot in snapshot.Children)
+                    {
+                        if (childSnapshot.Child("score") == null || childSnapshot.Child("score").Value == null)
+                        {
+                            Debug.LogError("Bad data in sample.  Did you forget to call SetEditorDatabaseUrl with your project id?");
+                            break;
+                        }
+                        else
+                        {
+                            Dictionary<string, object> scoreMap = new Dictionary<string, object>();
+                            scoreMap["name"] = childSnapshot.Child("name").Value;
+                            scoreMap["score"] = childSnapshot.Child("score").Value;
+                            scoreMap["email"] = childSnapshot.Child("email").Value;
+                            Debug.Log("Retrieved Score for " + scoreMap["name"] + " " + scoreMap["score"]);
+                            GameObject leaderEntry = Instantiate(LeaderboardEntry);
+                            LeaderboardEntry entry = new LeaderboardEntry(leaderEntry, scoreMap["name"].ToString(), scoreMap["score"].ToString());
+                            scoreMap["entry"] = entry;
+                        //Add to list of LeaderboardEntries (accessible between all screens)
+                        Leaders.Add(entry);
+                            Leaderboard.Add(scoreMap);
+                        }
+                    }
+                    DisplayLoaderboard();
+                }
+            }
+        });
     }
 
     //Attempt to add highscore when entering Leaderboard Screen
@@ -144,7 +143,6 @@ public class LeaderboardControl : MonoBehaviour {
         foreach (Dictionary<string, object> scoreEntry in Leaderboard)
         {
             string name = "#" + count + "   " + scoreEntry["name"].ToString();
-            //string score = scoreEntry["score"].ToString();
             LeaderboardEntry e = (LeaderboardEntry)scoreEntry["entry"];
             //Display rank e.g. "#1   Kyle    30000"
             e.SetName(name);
@@ -165,12 +163,13 @@ public class LeaderboardControl : MonoBehaviour {
             {
                 FirstName.GetComponent<Text>().text = scoreEntry["name"].ToString();
                 e.AddTopLeaderPic(FirstPic);
-            }else if(count == 2)
+            }
+            else if (count == 2)
             {
                 SecondName.GetComponent<Text>().text = scoreEntry["name"].ToString();
                 e.AddTopLeaderPic(SecondPic);
             }
-            else if(count == 3)
+            else if (count == 3)
             {
                 ThirdName.GetComponent<Text>().text = scoreEntry["name"].ToString();
                 e.AddTopLeaderPic(ThirdPic);

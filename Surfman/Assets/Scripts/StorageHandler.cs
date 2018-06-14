@@ -32,7 +32,6 @@ public class StorageHandler : MonoBehaviour {
   private const int kMaxLogSize = 16382;
   protected static string UriFileScheme = Uri.UriSchemeFile + "://";
 
-  public string storageLocationString;
   private string logText = "";
   private Vector2 scrollViewVector = Vector2.zero;
   protected bool UIEnabled = false;
@@ -65,7 +64,6 @@ public class StorageHandler : MonoBehaviour {
   protected Task previousTask;
     //Authorisation
   protected Firebase.Auth.FirebaseAuth auth;
-    public GameObject ProfilePicImage;
 
     // When the app starts, check to make sure that we have
     // the required dependencies to use Firebase, and if not,

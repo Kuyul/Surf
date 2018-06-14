@@ -26,7 +26,7 @@ public class InitialiseFirebaseComponents : MonoBehaviour {
 
     IEnumerator Activate()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(0);
         LoginHandler.SetActive(true);
         DatabaseHandler.SetActive(true);
         StorageHandler.SetActive(true);
