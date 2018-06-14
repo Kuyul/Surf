@@ -58,8 +58,7 @@ public class PauseResumeRestart : MonoBehaviour
         PlayerPrefs.SetFloat("gamevolume", 0f);
 
             muteButton.SetActive(false);
-            unmuteButton.SetActive(true);
-        
+            unmuteButton.SetActive(true); 
     }
 
     public void UnMuteSounds()
@@ -67,8 +66,7 @@ public class PauseResumeRestart : MonoBehaviour
         PlayerPrefs.SetFloat("gamevolume", 1f);
 
             unmuteButton.SetActive(false);
-            muteButton.SetActive(true);
-        
+            muteButton.SetActive(true); 
     }
 
 

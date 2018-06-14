@@ -63,10 +63,10 @@ public class GameControl : MonoBehaviour {
 
         UpdateNextHighscore();
 
-        backgroundMusic.volume = PlayerPrefs.GetFloat("gamevolume");
-        onEdibleTakeSound.volume = PlayerPrefs.GetFloat("gamevolume");
-        balloonPopSound.volume = PlayerPrefs.GetFloat("gamevolume");
-        jumpSound.volume = PlayerPrefs.GetFloat("gamevolume");
+        backgroundMusic.volume = PlayerPrefs.GetFloat("gamevolume",1f);
+        onEdibleTakeSound.volume = PlayerPrefs.GetFloat("gamevolume",1f);
+        balloonPopSound.volume = PlayerPrefs.GetFloat("gamevolume",1f);
+        jumpSound.volume = PlayerPrefs.GetFloat("gamevolume",1f);
 
         InvokeRepeating("IncrementScorePerFrame", 0.0f, 0.0166f);
     }
