@@ -68,15 +68,16 @@ public class GameControl : MonoBehaviour {
         balloonPopSound.volume = PlayerPrefs.GetFloat("gamevolume");
         jumpSound.volume = PlayerPrefs.GetFloat("gamevolume");
 
+        InvokeRepeating("IncrementScorePerFrame", 0.0f, 0.0166f);
     }
 	
 	// Update is called once per frame
 	void Update () {
 
         //Increment score per frame
-        if (!isDead) 
+        if (isDead) 
         {
-            IncrementScorePerFrame();
+            CancelInvoke();
         }
     }
 
