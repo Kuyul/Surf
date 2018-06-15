@@ -51,7 +51,6 @@ public class PauseResumeRestart : MonoBehaviour
 
     public void LoadGame(int level)
     {
-        buttonFeedback.Play();
         SceneManager.LoadScene(level);
     }
 
@@ -69,6 +68,11 @@ public class PauseResumeRestart : MonoBehaviour
 
             unmuteButton.SetActive(false);
             muteButton.SetActive(true); 
+    }
+
+    public void PlayFeedback()
+    {
+        buttonFeedback.Play();
     }
 
 
