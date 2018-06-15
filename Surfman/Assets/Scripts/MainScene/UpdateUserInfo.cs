@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,9 +11,18 @@ public class UpdateUserInfo : MonoBehaviour {
     {
         if (!Initialised)
         {
-            LeaderboardControl.Instance.UpdateProfilePic();
-            LeaderboardControl.Instance.UpdateHighScore();
-            Initialised = true;
+            try
+            {
+                LeaderboardControl.Instance.UpdateProfilePic();
+                LeaderboardControl.Instance.UpdateHighScore();
+                Initialised = true;
+            }
+            catch (Exception e1)
+            {
+                Debug.Log(e1.ToString());
+                // do nothing
+            }
+
         }
     }
 }

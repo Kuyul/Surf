@@ -9,10 +9,13 @@ public class InitialiseFirebaseComponents : MonoBehaviour {
     public GameObject StorageHandler;
     public GameObject LeaderboardController;
 
+    public GameObject StartPanel;
+
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
         StartCoroutine(WaitForFacebookLogin());
+        StartCoroutine(ActivateStartPanel());
     }
 
     IEnumerator WaitForFacebookLogin()
@@ -26,11 +29,17 @@ public class InitialiseFirebaseComponents : MonoBehaviour {
 
     IEnumerator Activate()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         LoginHandler.SetActive(true);
         DatabaseHandler.SetActive(true);
         StorageHandler.SetActive(true);
         LeaderboardController.SetActive(true);
         LeaderboardControl.Instance.PopulateLeaderBoard();
+    }
+
+    IEnumerator ActivateStartPanel()
+    {
+        yield return new WaitForSeconds(1);
+        StartPanel.SetActive(true);
     }
 }
