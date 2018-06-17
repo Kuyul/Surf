@@ -2989,7 +2989,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1389187811650778}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2, y: -1.52, z: 0}
+  m_LocalPosition: {x: 1.2, y: -1.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4429934513314084}
@@ -20453,7 +20453,7 @@ BuoyancyEffector2D:
     m_Bits: 4294967295
   m_SurfaceLevel: 0
   m_Density: 5
-  m_LinearDrag: 20
+  m_LinearDrag: 30
   m_AngularDrag: 5
   m_FlowAngle: 0
   m_FlowMagnitude: 0
