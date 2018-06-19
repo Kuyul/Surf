@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4465745900898696}
   - component: {fileID: 212534793877153294}
-  - component: {fileID: 60343297490477420}
+  - component: {fileID: 61481968481122828}
   m_Layer: 0
   m_Name: Pink starfish
   m_TagString: Coin
@@ -35,14 +35,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1404061197528566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 44.812695, y: 7.1437225, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60343297490477420
-PolygonCollider2D:
+--- !u!61 &61481968481122828
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -63,59 +63,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.24000001, y: -0.224}
-      - {x: 0.30800003, y: -0.172}
-      - {x: 0.4, y: -0.116000004}
-      - {x: 0.45200002, y: -0.080000006}
-      - {x: 0.48800004, y: -0.052}
-      - {x: 0.5, y: -0.032}
-      - {x: 0.5, y: 0.008}
-      - {x: 0.492, y: 0.028}
-      - {x: 0.46, y: 0.060000002}
-      - {x: 0.41200003, y: 0.09200001}
-      - {x: 0.28800002, y: 0.18}
-      - {x: 0.256, y: 0.21200001}
-      - {x: 0.216, y: 0.36}
-      - {x: 0.192, y: 0.47200003}
-      - {x: 0.164, y: 0.512}
-      - {x: 0.09200001, y: 0.512}
-      - {x: 0.076000005, y: 0.504}
-      - {x: 0.036000002, y: 0.476}
-      - {x: -0.104, y: 0.37600002}
-      - {x: -0.148, y: 0.35200003}
-      - {x: -0.192, y: 0.35200003}
-      - {x: -0.32000002, y: 0.36}
-      - {x: -0.432, y: 0.36400002}
-      - {x: -0.44400004, y: 0.36}
-      - {x: -0.47200003, y: 0.34}
-      - {x: -0.48000002, y: 0.32000002}
-      - {x: -0.48000002, y: 0.27600002}
-      - {x: -0.47200003, y: 0.23600002}
-      - {x: -0.46, y: 0.19600001}
-      - {x: -0.43600002, y: 0.14}
-      - {x: -0.432, y: 0.108}
-      - {x: -0.41200003, y: 0.064}
-      - {x: -0.404, y: 0.048}
-      - {x: -0.404, y: 0.008}
-      - {x: -0.416, y: -0.028}
-      - {x: -0.492, y: -0.22000001}
-      - {x: -0.5, y: -0.24400002}
-      - {x: -0.5, y: -0.284}
-      - {x: -0.49600002, y: -0.296}
-      - {x: -0.47200003, y: -0.32000002}
-      - {x: -0.44400004, y: -0.33200002}
-      - {x: -0.18, y: -0.328}
-      - {x: -0.17600001, y: -0.33200002}
-      - {x: -0.14, y: -0.34800002}
-      - {x: -0.116000004, y: -0.36800003}
-      - {x: 0.048, y: -0.504}
-      - {x: 0.060000002, y: -0.512}
-      - {x: 0.124000005, y: -0.512}
-      - {x: 0.15200001, y: -0.492}
-      - {x: 0.16800001, y: -0.448}
-      - {x: 0.22800002, y: -0.252}
+  serializedVersion: 2
+  m_Size: {x: 1.024, y: 1.024}
+  m_EdgeRadius: 0
 --- !u!212 &212534793877153294
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -129,6 +79,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -149,7 +100,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: b56e424d1a6e432499f53a13de660f7c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
