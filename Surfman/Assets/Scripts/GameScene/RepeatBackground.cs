@@ -51,7 +51,7 @@ public class RepeatBackground : MonoBehaviour {
     {
         if(playerTransform.position.x >= transform.position.x+sprite.bounds.extents.x*2 && gameObject.tag=="Background")
         {
-            Vector3 newTransform = new Vector3(sprite.bounds.extents.x * 4 + transform.position.x, transform.position.y, transform.position.z);
+            Vector3 newTransform = new Vector3(sprite.bounds.extents.x * 4 + transform.position.x - 3, transform.position.y, transform.position.z);
             transform.position = newTransform;  
         }
 

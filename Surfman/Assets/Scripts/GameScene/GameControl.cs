@@ -121,7 +121,7 @@ public class GameControl : MonoBehaviour {
         scoreTextInGame.text = "";
         frameIncremental = 0;
         isDead = true;
-        backgroundMusic.Pause();
+        //backgroundMusic.Pause();
         pausedButtonPanel.SetActive(false);
         gameOverPanel.SetActive(true);
         scoreTextAtEnd.text = "Your Score is " + currentScore;
