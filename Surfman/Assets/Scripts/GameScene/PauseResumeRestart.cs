@@ -9,6 +9,7 @@ public class PauseResumeRestart : MonoBehaviour
     public bool isPaused = false;
     public GameObject muteButton;
     public GameObject unmuteButton;
+    public AudioSource buttonFeedback;
 
     public void PauseGame()
     {
@@ -67,6 +68,11 @@ public class PauseResumeRestart : MonoBehaviour
 
             unmuteButton.SetActive(false);
             muteButton.SetActive(true); 
+    }
+
+    public void PlayFeedback()
+    {
+        buttonFeedback.Play();
     }
 
 
