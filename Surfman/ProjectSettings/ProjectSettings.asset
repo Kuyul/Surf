@@ -474,7 +474,6 @@ PlayerSettings:
   switchAllowsRuntimeAddOnContentInstall: 0
   switchDataLossConfirmation: 0
   switchSupportedNpadStyles: 3
-  switchNativeFsCacheSize: 32
   switchSocketConfigEnabled: 0
   switchTcpInitialSendBufferSize: 32
   switchTcpInitialReceiveBufferSize: 64
@@ -710,9 +709,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 3f649e31-ff76-4428-9403-0d1d45ce8e60
+  cloudProjectId: 6798b129-7e4c-48f3-b2b8-208ae63cd6c5
   projectName: Surfman
-  organizationId: peyopeyo92
+  organizationId: kyun1991
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
