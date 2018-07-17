@@ -20,6 +20,7 @@ public class PlayerControl : MonoBehaviour
 
     public GameObject balloonExplosion;
     public GameObject starExplosion;
+    public GameObject waveExplosion;
 
     //Variables used to calculate incremental speed
     private float startPos;
@@ -149,10 +150,20 @@ public class PlayerControl : MonoBehaviour
             rb.velocity = Vector3.zero;
         }
 
+        Destroy(GameObject.Find("balloonExplosion(Clone)"), 0.6f);
+        Destroy(GameObject.Find("starExplosion(Clone)"), 1f);
+        Destroy(GameObject.Find("waveExplosion(Clone)"), 0.9f);
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.gameObject.CompareTag("Sea"))
+        {
+            Instantiate(waveExplosion,transform.position, Quaternion.identity);
+        }
+
         if (other.gameObject.CompareTag("Coin"))
         {
             GameControl.instance.onEdibleTakeSound.Play();
@@ -186,7 +197,7 @@ public class PlayerControl : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Wave"))
+        if (other.gameObject.CompareTag("Wave") || other.gameObject.CompareTag("Sea"))
         {
             rb.velocity = new Vector3(initialPlayerSpeed + speedIncremented, rb.velocity.y, 0.0f);
         }

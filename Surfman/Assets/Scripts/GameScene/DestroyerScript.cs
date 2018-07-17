@@ -13,7 +13,7 @@ public class DestroyerScript : MonoBehaviour
             Debug.Break();
         }
 
-        if (other.tag == "Obstacle" || other.tag == "Coin" || other.tag == "Wave")
+        if (other.tag == "Obstacle" || other.tag == "Coin" || other.tag == "Wave" || other.tag == "Sea")
         {
             Destroy(other.gameObject);
         }

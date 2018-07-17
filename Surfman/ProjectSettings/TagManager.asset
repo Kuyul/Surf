@@ -35,6 +35,8 @@ TagManager:
   - cloud2
   - cloud3
   - island
+  - Star
+  - Sea
   layers:
   - Default
   - TransparentFX

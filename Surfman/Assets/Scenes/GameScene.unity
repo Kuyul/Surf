@@ -1312,6 +1312,12 @@ Prefab:
       value: 
       objectReference: {fileID: 1363887355615284, guid: 3dc61d9212844c441ac6e76620b83c79,
         type: 2}
+    - target: {fileID: 114642115862082220, guid: f75b4a318add665478a9d1ba2a8275ec,
+        type: 2}
+      propertyPath: waveExplosion
+      value: 
+      objectReference: {fileID: 1013273022284322, guid: f34facecf2155c74aaac2240eb9e550d,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f75b4a318add665478a9d1ba2a8275ec, type: 2}
   m_IsPrefabParent: 0
@@ -1832,6 +1838,10 @@ Prefab:
         type: 2}
       propertyPath: m_LinearDrag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878636286978124, guid: 614cfc654f50a1d4d8b8187e15a04d0e, type: 2}
+      propertyPath: m_TagString
+      value: Sea
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 50939698635070482, guid: 614cfc654f50a1d4d8b8187e15a04d0e, type: 2}
@@ -5074,7 +5084,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c414425a1f1c9c94d96375e9b2ddfd82, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
   Loop: 1

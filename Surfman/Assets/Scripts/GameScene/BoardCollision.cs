@@ -13,7 +13,7 @@ public class BoardCollision : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Wave"))
+        if (collision.gameObject.CompareTag("Wave") || collision.gameObject.CompareTag("Sea"))
         {
             onSea = true;
         }
@@ -21,7 +21,7 @@ public class BoardCollision : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Wave"))
+        if (collision.gameObject.CompareTag("Wave") || collision.gameObject.CompareTag("Sea"))
         {
             onSea = false;
         }
