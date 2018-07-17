@@ -18,6 +18,9 @@ public class PlayerControl : MonoBehaviour
     private bool jump = true;
     private Animator animator;
 
+    public GameObject balloonExplosion;
+    public GameObject starExplosion;
+
     //Variables used to calculate incremental speed
     private float startPos;
     private float nextPos;
@@ -156,7 +159,15 @@ public class PlayerControl : MonoBehaviour
             other.gameObject.SetActive(false);
             GameControl.instance.IncrementScore();
         }
-        
+
+        if (other.gameObject.CompareTag("Star"))
+        {
+            GameControl.instance.starSound.Play();
+            other.gameObject.SetActive(false);        
+            Instantiate(starExplosion, other.transform.position, Quaternion.identity);
+            GameControl.instance.IncrementScore();
+        }
+
         if (other.gameObject.CompareTag("Obstacle"))
         {
             //SceneManager.LoadScene(1);
@@ -169,6 +180,7 @@ public class PlayerControl : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, balloonVel);
             jump = true;
             other.gameObject.SetActive(false);
+            Instantiate(balloonExplosion, other.transform.position,Quaternion.identity);
         }
     }
 

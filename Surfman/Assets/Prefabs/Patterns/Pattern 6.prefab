@@ -542,7 +542,7 @@ GameObject:
   - component: {fileID: 61081408035714740}
   m_Layer: 0
   m_Name: Big starfish
-  m_TagString: Coin
+  m_TagString: Star
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1135,7 +1135,7 @@ GameObject:
   - component: {fileID: 61114692703377242}
   m_Layer: 0
   m_Name: Big starfish
-  m_TagString: Coin
+  m_TagString: Star
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

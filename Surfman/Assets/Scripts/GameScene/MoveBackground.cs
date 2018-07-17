@@ -68,7 +68,7 @@ public class MoveBackground : MonoBehaviour {
 	
 
 	void Update () {
-		if(GameControl.instance.isDead==true && gameObject.tag=="background")
+		if(GameControl.instance.isDead==true && gameObject.tag=="Background")
         {
             rb.velocity = Vector3.zero;
         }

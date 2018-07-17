@@ -1953,7 +1953,7 @@ GameObject:
   - component: {fileID: 61254042295498114}
   m_Layer: 0
   m_Name: Big starfish
-  m_TagString: Coin
+  m_TagString: Star
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
