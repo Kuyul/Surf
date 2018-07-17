@@ -23,8 +23,14 @@ public class PlayerControl : MonoBehaviour
     private float nextPos;
     public float incrementDistance = 100.0f;
     public float incrementSpeed = 0.5f;
-    public float maxFallSpeed = -15f;
+    public float maxFallSpeed = -15.0f;
     private float speedIncremented = 0.0f;
+
+    //Swipe variable
+    public float downSpeed = -10.0f;
+    private Vector3 touchPosition;
+    private float swipeResistanceY = 10.0f;
+    private bool isDragging = false;
 
     public BoardCollision board;
 
@@ -50,6 +56,39 @@ public class PlayerControl : MonoBehaviour
         rb.velocity = new Vector3(initialPlayerSpeed + speedIncremented, yVel, 0.0f);
 
 
+        //SwipeManager
+        bool up = false;
+        bool down = false;
+        if (Input.GetMouseButtonDown(0))
+        {
+            touchPosition = Input.mousePosition;
+            isDragging = true;
+        }
+
+        //While dragging is true, either jump or fall.
+        if (isDragging)
+        {
+            Vector2 deltaSwipe = touchPosition - Input.mousePosition;
+            if (Mathf.Abs(deltaSwipe.y) > swipeResistanceY)
+            {
+                if (deltaSwipe.y < 0)
+                {
+                    up = true;
+                }
+                else
+                {
+                    down = true;
+                }
+                isDragging = false;
+            }
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            isDragging = false;
+            
+        }
+
         //Check whether speed incremental distance was met
         if (transform.position.x > nextPos)
         {
@@ -67,9 +106,9 @@ public class PlayerControl : MonoBehaviour
         //Swipe down to fall at maximum velocity
         if (!onSea)
         {
-            if (SwipeManager.Instance.IsSwiping(SwipeDirection.Down))
+            if (down)
             {
-                rb.velocity = new Vector3(initialPlayerSpeed + speedIncremented, maxFallSpeed, 0.0f);
+                rb.velocity = new Vector3(initialPlayerSpeed + speedIncremented, downSpeed, 0.0f);
             }
         }
 
@@ -90,7 +129,7 @@ public class PlayerControl : MonoBehaviour
         if (!EventSystem.current.IsPointerOverGameObject())
         {
             //jump
-            if (Input.GetMouseButtonDown(0) && jump)
+            if (up && jump)
             {
                 GameControl.instance.jumpSound.Play();
                 rb.velocity = new Vector2(rb.velocity.x, jumpVel);
