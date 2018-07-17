@@ -64,20 +64,27 @@ public class PlayerControl : MonoBehaviour
             jump = true;
         }
 
+        //Swipe down to fall at maximum velocity
+        if (!onSea)
+        {
+            if (SwipeManager.Instance.IsSwiping(SwipeDirection.Down))
+            {
+                rb.velocity = new Vector3(initialPlayerSpeed + speedIncremented, maxFallSpeed, 0.0f);
+            }
+        }
+
+        //Control player animation
         if (rb.velocity.y > 1)
         {
             animator.SetTrigger("Jump");
             animator.ResetTrigger("Normal");
-            animator.ResetTrigger("Fall");
         }
 
         if (rb.velocity.y > -0.5 & rb.velocity.y < 0.5)
         {
             animator.SetTrigger("Normal");
             animator.ResetTrigger("Jump");
-            animator.ResetTrigger("Fall");
         }
-        
 
         //prevents jumping when paused button is pressed
         if (!EventSystem.current.IsPointerOverGameObject())
