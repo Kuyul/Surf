@@ -153,7 +153,7 @@ PlayerSettings:
     Android: com.KSent.Surfman
     Standalone: unity.DefaultCompany._2D v3
     Tizen: com.Company.ProductName
-    iOS: com.Company.ProductName
+    iOS: com.KSent.Surfman
     tvOS: com.Company.ProductName
   buildNumber:
     iOS: 0

@@ -133,7 +133,7 @@ public class StorageHandler : MonoBehaviour {
         var storageReference = GetStorageReference();
         var imageReference = storageReference.Child("images/" + scoreEntry["email"].ToString());
         //Texture
-        Texture2D tex = new Texture2D(130, 130, TextureFormat.PVRTC_RGBA4, false);
+        Texture2D tex = new Texture2D(128, 128, TextureFormat.PVRTC_RGBA4, false);
         DebugLog(String.Format("Downloading {0} ...", imageReference.Path));
         var task = imageReference.GetBytesAsync(
           0, new StorageProgress<DownloadState>(DisplayDownloadState),
@@ -145,7 +145,7 @@ public class StorageHandler : MonoBehaviour {
             //Add sprite
             fileContents = System.Text.Encoding.Default.GetString(task.Result);
             tex.LoadImage(task.Result);
-            Sprite profilePic = Sprite.Create(tex, new Rect(0, 0, 130, 130), new Vector2());
+            Sprite profilePic = Sprite.Create(tex, new Rect(0, 0, 128, 128), new Vector2());
             scoreEntry["sprite"] = profilePic;
             LeaderboardEntry e = (LeaderboardEntry)scoreEntry["entry"];
             e.AddSprite(profilePic);
