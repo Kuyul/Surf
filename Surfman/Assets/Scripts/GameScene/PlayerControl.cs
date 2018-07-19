@@ -114,6 +114,7 @@ public class PlayerControl : MonoBehaviour
             if (down)
             {
                 rb.velocity = new Vector3(initialPlayerSpeed + speedIncremented, downSpeed, 0.0f);
+                //Set animation trigger to Fall
                 playerAnimator.SetTrigger("Fall");
                 playerAnimator.ResetTrigger("Jump");
                 playerAnimator.ResetTrigger("DJump");
@@ -132,6 +133,7 @@ public class PlayerControl : MonoBehaviour
         {
             boardAnimator.SetTrigger("Normal");
             boardAnimator.ResetTrigger("Jump");
+            //Set animation trigger to Normal
             playerAnimator.SetTrigger("Normal");
             playerAnimator.ResetTrigger("Jump");
             playerAnimator.ResetTrigger("DJump");
@@ -151,6 +153,7 @@ public class PlayerControl : MonoBehaviour
                 if (!onSea)
                 {
                     jump = false;
+                    //Set animation trigger to Double Jump
                     playerAnimator.SetTrigger("DJump");
                     playerAnimator.ResetTrigger("Normal");
                     playerAnimator.ResetTrigger("Fall");
@@ -159,6 +162,7 @@ public class PlayerControl : MonoBehaviour
                 //normal jump
                 else
                 {
+                    //Set animation trigger to Jump
                     playerAnimator.SetTrigger("Jump");
                     playerAnimator.ResetTrigger("Normal");
                     playerAnimator.ResetTrigger("Fall");
@@ -205,6 +209,12 @@ public class PlayerControl : MonoBehaviour
         {
             //SceneManager.LoadScene(1);
             GameControl.instance.Die();
+            //Set animation trigger to Die
+            playerAnimator.SetTrigger("Die");
+            playerAnimator.ResetTrigger("Normal");
+            playerAnimator.ResetTrigger("Fall");
+            playerAnimator.ResetTrigger("Jump");
+            playerAnimator.ResetTrigger("DJump");
         }
 
         if (other.gameObject.CompareTag("Balloon"))

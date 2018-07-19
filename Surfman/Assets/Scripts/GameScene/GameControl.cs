@@ -119,20 +119,10 @@ public class GameControl : MonoBehaviour {
 
     public void Die()
     {
+        StartCoroutine(WaitDieAnimation());
         scoreTextInGame.text = "";
         frameIncremental = 0;
         isDead = true;
-        //backgroundMusic.Pause();
-        pausedButtonPanel.SetActive(false);
-        gameOverPanel.SetActive(true);
-        scoreTextAtEnd.text = "Your Score is " + currentScore;
-        highScoreTextAtEnd.text = "Your HighScore is " + PlayerPrefs.GetInt("highscore");
-
-        if (currentScore > PlayerPrefs.GetInt("highscore", 0))
-        {
-            PlayerPrefs.SetInt("highscore", currentScore);
-        }
-        LeaderboardControl.Instance.UpdateHighScore();
     }
 
 
@@ -150,5 +140,21 @@ public class GameControl : MonoBehaviour {
             nextScoreText.text = "" + nextScoreInt;
             LeaderPos++;
         }
+    }
+
+    //Wait two seconds before showing
+    IEnumerator WaitDieAnimation()
+    {
+        yield return new WaitForSeconds(1);
+        pausedButtonPanel.SetActive(false);
+        gameOverPanel.SetActive(true);
+        scoreTextAtEnd.text = "Your Score is " + currentScore;
+        highScoreTextAtEnd.text = "Your HighScore is " + PlayerPrefs.GetInt("highscore");
+
+        if (currentScore > PlayerPrefs.GetInt("highscore", 0))
+        {
+            PlayerPrefs.SetInt("highscore", currentScore);
+        }
+        LeaderboardControl.Instance.UpdateHighScore();
     }
 }
