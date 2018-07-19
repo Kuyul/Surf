@@ -114,10 +114,11 @@ public class PlayerControl : MonoBehaviour
             if (down)
             {
                 rb.velocity = new Vector3(initialPlayerSpeed + speedIncremented, downSpeed, 0.0f);
+                playerAnimator.SetTrigger("Fall");
+                playerAnimator.ResetTrigger("Jump");
+                playerAnimator.ResetTrigger("DJump");
+                playerAnimator.ResetTrigger("Normal");
             }
-            playerAnimator.SetTrigger("Fall");
-            playerAnimator.ResetTrigger("Jump");
-            playerAnimator.ResetTrigger("Normal");
         }
 
         //Control player animation
@@ -125,9 +126,6 @@ public class PlayerControl : MonoBehaviour
         {
             boardAnimator.SetTrigger("Jump");
             boardAnimator.ResetTrigger("Normal");
-            playerAnimator.SetTrigger("Jump");
-            playerAnimator.ResetTrigger("Normal");
-            playerAnimator.ResetTrigger("Fall");
         }
 
         if (rb.velocity.y > -0.5 & rb.velocity.y < 0.5)
@@ -136,6 +134,7 @@ public class PlayerControl : MonoBehaviour
             boardAnimator.ResetTrigger("Jump");
             playerAnimator.SetTrigger("Normal");
             playerAnimator.ResetTrigger("Jump");
+            playerAnimator.ResetTrigger("DJump");
             playerAnimator.ResetTrigger("Fall");
         }
 
@@ -148,9 +147,22 @@ public class PlayerControl : MonoBehaviour
                 GameControl.instance.jumpSound.Play();
                 rb.velocity = new Vector2(rb.velocity.x, jumpVel);
 
+                //double Jump
                 if (!onSea)
                 {
                     jump = false;
+                    playerAnimator.SetTrigger("DJump");
+                    playerAnimator.ResetTrigger("Normal");
+                    playerAnimator.ResetTrigger("Fall");
+                    playerAnimator.ResetTrigger("Jump");
+                }
+                //normal jump
+                else
+                {
+                    playerAnimator.SetTrigger("Jump");
+                    playerAnimator.ResetTrigger("Normal");
+                    playerAnimator.ResetTrigger("Fall");
+                    playerAnimator.ResetTrigger("DJump");
                 }
             }
         }
