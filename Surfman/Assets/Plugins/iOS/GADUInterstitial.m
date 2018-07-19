@@ -8,7 +8,7 @@
 #import "GADUPluginUtil.h"
 #import "UnityAppController.h"
 
-@interface GADUInterstitial ()<GADInterstitialDelegate>
+@interface GADUInterstitial () <GADInterstitialDelegate>
 @end
 
 @implementation GADUInterstitial
@@ -45,6 +45,10 @@
   }
 }
 
+- (NSString *)mediationAdapterClassName {
+  return [self.interstitial adNetworkClassName];
+}
+
 #pragma mark GADInterstitialDelegate implementation
 
 - (void)interstitialDidReceiveAd:(GADInterstitial *)ad {
@@ -62,6 +66,10 @@
 }
 
 - (void)interstitialWillPresentScreen:(GADInterstitial *)ad {
+  if ([GADUPluginUtil pauseOnBackground]) {
+    UnityPause(YES);
+  }
+
   if (self.willPresentCallback) {
     self.willPresentCallback(self.interstitialClient);
   }
@@ -72,6 +80,10 @@
 }
 
 - (void)interstitialDidDismissScreen:(GADInterstitial *)ad {
+  if (UnityIsPaused()) {
+    UnityPause(NO);
+  }
+
   if (self.didDismissCallback) {
     self.didDismissCallback(self.interstitialClient);
   }

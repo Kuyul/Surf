@@ -8,7 +8,7 @@
 #import "GADUPluginUtil.h"
 #import "UnityAppController.h"
 
-@interface GADURewardBasedVideoAd ()<GADRewardBasedVideoAdDelegate>
+@interface GADURewardBasedVideoAd () <GADRewardBasedVideoAdDelegate>
 @end
 
 @implementation GADURewardBasedVideoAd
@@ -50,6 +50,9 @@
   }
 }
 
+- (NSString *)mediationAdapterClassName {
+  return [self.rewardBasedVideo adNetworkClassName];
+}
 #pragma mark GADRewardBasedVideoAdDelegate implementation
 
 - (void)rewardBasedVideoAdDidReceiveAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd {
@@ -69,6 +72,10 @@
 }
 
 - (void)rewardBasedVideoAdDidOpen:(GADRewardBasedVideoAd *)rewardBasedVideoAd {
+  if ([GADUPluginUtil pauseOnBackground]) {
+    UnityPause(YES);
+  }
+
   if (self.didOpenCallback) {
     self.didOpenCallback(self.rewardBasedVideoAdClient);
   }
@@ -81,6 +88,10 @@
 }
 
 - (void)rewardBasedVideoAdDidClose:(GADRewardBasedVideoAd *)rewardBasedVideoAd {
+  if (UnityIsPaused()) {
+    UnityPause(NO);
+  }
+
   if (self.didCloseCallback) {
     self.didCloseCallback(self.rewardBasedVideoAdClient);
   }
