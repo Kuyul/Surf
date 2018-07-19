@@ -16,7 +16,8 @@ public class PlayerControl : MonoBehaviour
     //surfboard Transform properties
     private float angle;
     private bool jump = true;
-    private Animator animator;
+    private Animator boardAnimator;
+    public Animator playerAnimator;
 
     public GameObject balloonExplosion;
     public GameObject starExplosion;
@@ -43,7 +44,7 @@ public class PlayerControl : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector3(initialPlayerSpeed, 0.0f, 0.0f);
-        animator = GetComponent<Animator>();
+        boardAnimator = GetComponent<Animator>();
         startPos = transform.position.x;
         nextPos = startPos + incrementDistance;
     }
@@ -114,19 +115,28 @@ public class PlayerControl : MonoBehaviour
             {
                 rb.velocity = new Vector3(initialPlayerSpeed + speedIncremented, downSpeed, 0.0f);
             }
+            playerAnimator.SetTrigger("Fall");
+            playerAnimator.ResetTrigger("Jump");
+            playerAnimator.ResetTrigger("Normal");
         }
 
         //Control player animation
         if (rb.velocity.y > 1)
         {
-            animator.SetTrigger("Jump");
-            animator.ResetTrigger("Normal");
+            boardAnimator.SetTrigger("Jump");
+            boardAnimator.ResetTrigger("Normal");
+            playerAnimator.SetTrigger("Jump");
+            playerAnimator.ResetTrigger("Normal");
+            playerAnimator.ResetTrigger("Fall");
         }
 
         if (rb.velocity.y > -0.5 & rb.velocity.y < 0.5)
         {
-            animator.SetTrigger("Normal");
-            animator.ResetTrigger("Jump");
+            boardAnimator.SetTrigger("Normal");
+            boardAnimator.ResetTrigger("Jump");
+            playerAnimator.SetTrigger("Normal");
+            playerAnimator.ResetTrigger("Jump");
+            playerAnimator.ResetTrigger("Fall");
         }
 
         //prevents jumping when paused button is pressed
