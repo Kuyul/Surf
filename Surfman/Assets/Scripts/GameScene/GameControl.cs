@@ -8,6 +8,11 @@ public class GameControl : MonoBehaviour {
 
     public static GameControl instance;
 
+    //Parameters required for first patter spawn Logic
+    public Transform SpawnPoint;
+    public GameObject TutorialPattern;
+    public GameObject StartPattern;
+
     //Next Highscore components
     public GameObject nextProfilePic;
     public Text nextScoreText;
@@ -25,7 +30,7 @@ public class GameControl : MonoBehaviour {
     public AudioSource starSound;
 
     public int scoreIncremental = 10;
-    private int frameIncremental = 1;
+    private int timeIncremental = 1;
     public Text scoreTextInGame;
     public Text scoreTextAtEnd;
     public Text highScoreTextAtEnd;
@@ -49,6 +54,14 @@ public class GameControl : MonoBehaviour {
 
     private void Awake()
     {
+        if (PlayerPrefs.GetInt("ComTutorial") == 0)
+        {
+            TutorialPattern.SetActive(true);
+        }
+        else
+        {
+            StartPattern.SetActive(true);
+        }
         Application.targetFrameRate = 300;
         if (instance == null)
         {
@@ -70,6 +83,7 @@ public class GameControl : MonoBehaviour {
         balloonPopSound.volume = PlayerPrefs.GetFloat("gamevolume",1f);
         jumpSound.volume = PlayerPrefs.GetFloat("gamevolume",1f);
 
+        //Increase score every millisecond
         InvokeRepeating("IncrementScorePerFrame", 0.0f, 0.0166f);
     }
 	
@@ -96,9 +110,9 @@ public class GameControl : MonoBehaviour {
 
     public void IncrementScorePerFrame()
     {
-        currentScore = currentScore + frameIncremental;
+        currentScore = currentScore + timeIncremental;
         //Update next highscore panel
-        nextScoreInt = nextScoreInt - frameIncremental;
+        nextScoreInt = nextScoreInt - timeIncremental;
         UpdateScoreboard();
     }
 
@@ -112,16 +126,16 @@ public class GameControl : MonoBehaviour {
         }
     }
 
-    public void SetFrameIncremental(int frame)
+    public void SetTimeIncremental(int frame)
     {
-        frameIncremental = frame;
+        timeIncremental = frame;
     }
 
     public void Die()
     {
         StartCoroutine(WaitDieAnimation());
         scoreTextInGame.text = "";
-        frameIncremental = 0;
+        timeIncremental = 0;
         isDead = true;
     }
 
