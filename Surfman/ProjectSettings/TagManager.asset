@@ -46,8 +46,8 @@ TagManager:
   - UI
   - 
   - 
-  - Sea
-  - Squid
+  - 
+  - 
   - 
   - 
   - 
@@ -74,18 +74,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Default
-    uniqueID: 3363470833
+  - name: parallax
+    uniqueID: 4015560257
     locked: 0
-  - name: Background
-    uniqueID: 1535931219
+  - name: obstacles
+    uniqueID: 2951823277
     locked: 0
-  - name: Character
+  - name: edible
+    uniqueID: 3645545089
+    locked: 0
+  - name: character
     uniqueID: 2511236001
     locked: 0
-  - name: Foreground
-    uniqueID: 1024582385
-    locked: 0
-  - name: UI
+  - name: waves123
     uniqueID: 149272721
     locked: 0
