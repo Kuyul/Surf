@@ -13,6 +13,8 @@ public class InitialiseFirebaseComponents : MonoBehaviour {
 
     private void Awake()
     {
+        //Instantiate ad manger
+        Admob.Instance.Awake();
         DontDestroyOnLoad(this.gameObject);
         StartCoroutine(WaitForFacebookLogin());
         StartCoroutine(ActivateStartPanel());

@@ -14,7 +14,6 @@ public class FBScript : MonoBehaviour {
     private void Awake()
     {
         FacebookManager.Instance.InitFB();
-
     }
 
     public void FBlogin()

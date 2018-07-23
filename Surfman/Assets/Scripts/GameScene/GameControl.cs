@@ -51,17 +51,11 @@ public class GameControl : MonoBehaviour {
     public bool isDead = false;
 
     private int currentScore = 0;
+    //variable to decide when to show interstitial ad
+    private int deathCount = 0;
 
     private void Awake()
     {
-        if (PlayerPrefs.GetInt("ComTutorial") == 0)
-        {
-            TutorialPattern.SetActive(true);
-        }
-        else
-        {
-            StartPattern.SetActive(true);
-        }
         Application.targetFrameRate = 300;
         if (instance == null)
         {
@@ -76,6 +70,16 @@ public class GameControl : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
+        if (PlayerPrefs.GetInt("ComTutorial") == 0)
+        {
+            TutorialPattern.SetActive(true);
+        }
+        else
+        {
+            StartPattern.SetActive(true);
+        }
+
+        //Display the last guy on the leaderboard
         UpdateNextHighscore();
 
         backgroundMusic.volume = PlayerPrefs.GetFloat("gamevolume",1f);
@@ -133,6 +137,7 @@ public class GameControl : MonoBehaviour {
 
     public void Die()
     {
+        //Functions to perform after death
         StartCoroutine(WaitDieAnimation());
         scoreTextInGame.text = "";
         timeIncremental = 0;
@@ -156,10 +161,11 @@ public class GameControl : MonoBehaviour {
         }
     }
 
-    //Wait two seconds before showing
+    //Wait 1 second before showing death panel
     IEnumerator WaitDieAnimation()
     {
         yield return new WaitForSeconds(1);
+        Admob.Instance.ShowInterstitial();
         pausedButtonPanel.SetActive(false);
         gameOverPanel.SetActive(true);
         scoreTextAtEnd.text = "Your Score is " + currentScore;
