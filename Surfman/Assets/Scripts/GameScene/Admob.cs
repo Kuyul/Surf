@@ -38,11 +38,11 @@ public class Admob : MonoBehaviour
     {
         #if UNITY_ANDROID
                 string appId = "ca-app-pub-3529204849708317~6637326357";
-        #elif UNITY_IPHONE
-                            string appId = "ca-app-pub-3529204849708317/5448638549";
-        #else
+#elif UNITY_IPHONE
+                            string appId = "ca-app-pub-3529204849708317~8162431790";
+#else
                             string appId = "unexpected_platform";
-        #endif
+#endif
 
         // Initialize the Google Mobile Ads SDK.
         MobileAds.Initialize(appId);
@@ -56,20 +56,20 @@ public class Admob : MonoBehaviour
     {
         #if UNITY_ANDROID
                 string adUnitId = "ca-app-pub-3529204849708317/8272288608";
-        #elif UNITY_IPHONE
-                            string adUnitId = "ca-app-pub-3529204849708317/1317821843";
-        #else
+#elif UNITY_IPHONE
+                            string adUnitId = "ca-app-pub-3529204849708317/5448638549";
+#else
                             string adUnitId = "unexpected_platform";
-        #endif
+#endif
 
         // Create a 320x50 banner at the top of the screen.
-        bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Top);
+        bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
 
         // Create an empty ad request.
         AdRequest request = new AdRequest.Builder().Build();
 
         // Load the banner with the request.
-        bannerView.LoadAd(request);
+        //bannerView.LoadAd(request);
     }
 
     public void RequestInterstitial()
