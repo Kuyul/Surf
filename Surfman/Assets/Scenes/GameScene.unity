@@ -1101,6 +1101,56 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 303868586}
+--- !u!1001 &308342118
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4361603735612062, guid: dad7992e7aa134f4ab6780b34c9ef8b2, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4361603735612062, guid: dad7992e7aa134f4ab6780b34c9ef8b2, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4361603735612062, guid: dad7992e7aa134f4ab6780b34c9ef8b2, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4361603735612062, guid: dad7992e7aa134f4ab6780b34c9ef8b2, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4361603735612062, guid: dad7992e7aa134f4ab6780b34c9ef8b2, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4361603735612062, guid: dad7992e7aa134f4ab6780b34c9ef8b2, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4361603735612062, guid: dad7992e7aa134f4ab6780b34c9ef8b2, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4361603735612062, guid: dad7992e7aa134f4ab6780b34c9ef8b2, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4846507186948202, guid: dad7992e7aa134f4ab6780b34c9ef8b2, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 4695458531243026, guid: dad7992e7aa134f4ab6780b34c9ef8b2, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.58
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: dad7992e7aa134f4ab6780b34c9ef8b2, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &311844192
 GameObject:
   m_ObjectHideFlags: 0
