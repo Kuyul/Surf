@@ -99,6 +99,9 @@ public class GameControl : MonoBehaviour {
         {
             CancelInvoke();
         }
+
+        //
+
     }
 
     public void IncrementScore()
@@ -143,7 +146,6 @@ public class GameControl : MonoBehaviour {
         timeIncremental = 0;
         isDead = true;
     }
-
 
     //Update Next highscore for the player to chase!
     public void UpdateNextHighscore()

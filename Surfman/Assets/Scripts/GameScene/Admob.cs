@@ -76,11 +76,11 @@ public class Admob : MonoBehaviour
     {
         #if UNITY_ANDROID
                 string adUnitId = "ca-app-pub-3529204849708317/1997674232";
-        #elif UNITY_IPHONE
-                string adUnitId = "ca-app-pub-3940256099942544/4411468910";
-        #else
+#elif UNITY_IPHONE
+                string adUnitId = "ca-app-pub-3529204849708317/1317821843";
+#else
                 string adUnitId = "unexpected_platform";
-        #endif
+#endif
 
         // Initialize an InterstitialAd.
         interstitial = new InterstitialAd(adUnitId);

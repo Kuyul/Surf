@@ -64,7 +64,7 @@ public class TutorialScript : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Freeze the player's rigidbody
-        PlayerR.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+        Time.timeScale = 0;
         //To prevent further collision while the player is still in contact with this collider
         ThisCollider.enabled = false;
         //Disable score update
@@ -73,7 +73,7 @@ public class TutorialScript : MonoBehaviour {
 
     private void Release()
     {
-        PlayerR.constraints = RigidbodyConstraints2D.FreezeRotation;
+        Time.timeScale = 1;
         //Enable next trigger when the successfuly performs the action described here
         if (NextTrigger != null)
         {
@@ -86,7 +86,5 @@ public class TutorialScript : MonoBehaviour {
             PlayerPrefs.SetInt("ComTutorial", 1);
         }
         IsDragging = false;
-        //Enable score update
-        GameControl.instance.SetTimeIncremental(1);
     }
 }
