@@ -100,10 +100,16 @@ public class Admob : MonoBehaviour
         }
         else
         {
-            deathCount = 0;
             if (interstitial.IsLoaded())
             {
+                deathCount = 0;
+                Debug.Log("Ad Is Loaded");
                 interstitial.Show();
+                RequestInterstitial();
+            }
+            else
+            {
+                Debug.Log("Ad is not Loaded");
             }
         }
     }
