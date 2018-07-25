@@ -68,7 +68,6 @@ public class TutorialScript : MonoBehaviour {
         //To prevent further collision while the player is still in contact with this collider
         ThisCollider.enabled = false;
         //Disable score update
-        GameControl.instance.SetTimeIncremental(0);
     }
 
     private void Release()
