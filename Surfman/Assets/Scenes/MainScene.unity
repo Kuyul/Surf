@@ -758,7 +758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &385828530
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1041,7 +1041,6 @@ GameObject:
   - component: {fileID: 559973533}
   - component: {fileID: 559973532}
   - component: {fileID: 559973531}
-  - component: {fileID: 559973534}
   m_Layer: 5
   m_Name: UnMuteButton
   m_TagString: Untagged
@@ -1175,21 +1174,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 559973529}
---- !u!114 &559973534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 559973529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c9fe66def25ff64ea29e77269ed86b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPaused: 0
-  muteButton: {fileID: 789185513}
-  unmuteButton: {fileID: 559973529}
-  buttonFeedback: {fileID: 0}
 --- !u!1 &609082645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1635,7 +1619,6 @@ GameObject:
   - component: {fileID: 789185517}
   - component: {fileID: 789185516}
   - component: {fileID: 789185515}
-  - component: {fileID: 789185518}
   m_Layer: 5
   m_Name: MuteButton
   m_TagString: Untagged
@@ -1769,21 +1752,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 789185513}
---- !u!114 &789185518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 789185513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c9fe66def25ff64ea29e77269ed86b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPaused: 0
-  muteButton: {fileID: 789185513}
-  unmuteButton: {fileID: 559973529}
-  buttonFeedback: {fileID: 0}
 --- !u!1 &816468717
 GameObject:
   m_ObjectHideFlags: 0
@@ -5915,7 +5883,6 @@ GameObject:
   - component: {fileID: 2078143864}
   - component: {fileID: 2078143863}
   - component: {fileID: 2078143862}
-  - component: {fileID: 2078143866}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -6038,21 +6005,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2078143860}
---- !u!114 &2078143866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2078143860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c9fe66def25ff64ea29e77269ed86b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPaused: 0
-  muteButton: {fileID: 0}
-  unmuteButton: {fileID: 0}
-  buttonFeedback: {fileID: 1821502522}
 --- !u!1 &2118298753
 GameObject:
   m_ObjectHideFlags: 0

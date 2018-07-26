@@ -11,6 +11,11 @@ public class PauseResumeRestart : MonoBehaviour
     public GameObject unmuteButton;
     public AudioSource buttonFeedback;
 
+    public void Awake()
+    {
+        
+    }
+
     public void PauseGame()
     {
         isPaused = true;
