@@ -67,8 +67,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1123629974322694}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.85, y: 6.29, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 161.92, y: 5.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4733322245631774}
@@ -83,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1843212756829366}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.98, y: -4.73, z: 0}
+  m_LocalPosition: {x: 2.78, y: -4.84, z: 0}
   m_LocalScale: {x: 0.339464, y: 0.36440796, z: 0.22637464}
   m_Children: []
   m_Father: {fileID: 4651314822408998}
@@ -210,17 +210,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.4718223, y: -4.6252184}
-      - {x: 1.2184691, y: -4.6408715}
-      - {x: 0.9447379, y: -4.6984487}
-      - {x: 1.0690513, y: -4.844706}
-      - {x: 1.1505904, y: -4.9111843}
+    - - {x: 1.2973785, y: -5.048853}
+      - {x: 1.280777, y: -5.0395865}
+      - {x: 1.2562256, y: -4.9601054}
+      - {x: 1.10643, y: -4.919465}
+      - {x: 1.113205, y: -4.9111843}
       - {x: 1.2220149, y: -5.0866966}
       - {x: 1.2788424, y: -5.2973595}
       - {x: 1.239903, y: -5.54136}
       - {x: 1.1151805, y: -5.80099}
       - {x: 1.7471242, y: -5.7895117}
-      - {x: 1.6272514, y: -4.9652934}
+      - {x: 1.3282318, y: -5.0649724}
 --- !u!212 &212019927206444602
 SpriteRenderer:
   m_ObjectHideFlags: 1
