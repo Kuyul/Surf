@@ -89,3 +89,6 @@ TagManager:
   - name: waves123
     uniqueID: 149272721
     locked: 0
+  - name: canvas
+    uniqueID: 3593380361
+    locked: 0

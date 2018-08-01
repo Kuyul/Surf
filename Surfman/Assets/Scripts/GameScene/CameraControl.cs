@@ -18,9 +18,9 @@ public class CameraControl : MonoBehaviour {
         Orig = Cam.GetComponent<Transform>();
         PlayerOrig = PlayerPos;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
         if (PlayerPos.position.y > 4)
         {
             float scale = (PlayerPos.position.y - 4 + Orig.position.y) / Orig.position.y;
