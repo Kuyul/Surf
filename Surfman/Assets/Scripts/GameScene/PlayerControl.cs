@@ -207,7 +207,8 @@ public class PlayerControl : MonoBehaviour
 
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            //SceneManager.LoadScene(1);
+            //Die Sound
+            AudioController.instance.PlayDieToObstacleSound(other.gameObject);
             GameControl.instance.Die();
             //Set animation trigger to Die
             playerAnimator.SetTrigger("Die");
