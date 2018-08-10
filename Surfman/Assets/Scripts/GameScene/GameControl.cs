@@ -8,6 +8,11 @@ public class GameControl : MonoBehaviour {
 
     public static GameControl instance;
 
+    //Patterns to spawn - Easy/Normal/Hard
+    public GameObject[] EasyPatterns;
+    public GameObject[] NormalPatterns;
+    public GameObject[] HardPatterns;
+
     //Parameters required for first patter spawn Logic
     public Transform SpawnPoint;
     public GameObject TutorialPattern;
