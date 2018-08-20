@@ -4044,9 +4044,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9fb05c53c2cf64ba813a58f90fa877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bdBuyButton: []
-  bdEquipButton: []
-  bdEquippedButton: []
+  bdBuyButton:
+  - {fileID: 486926035}
+  - {fileID: 968127207}
+  - {fileID: 1289475093}
+  bdEquipButton:
+  - {fileID: 281417086}
+  - {fileID: 1603755022}
+  - {fileID: 2022750976}
+  bdEquippedButton:
+  - {fileID: 352361519}
+  - {fileID: 989102332}
+  - {fileID: 2126223657}
   chBuyButton: []
   chEquipButton: []
   chEquippedButton: []
