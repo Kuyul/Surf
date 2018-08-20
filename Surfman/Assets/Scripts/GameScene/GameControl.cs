@@ -8,6 +8,8 @@ public class GameControl : MonoBehaviour {
 
     public static GameControl instance;
 
+    public GameObject[] boardTypes;
+
     //Patterns to spawn - Easy/Normal/Hard
     public GameObject[] EasyPatterns;
     public GameObject[] NormalPatterns;
@@ -70,6 +72,21 @@ public class GameControl : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+
+        for (int i = 0; i < boardTypes.Length; i++)
+        {
+            if(PlayerPrefs.GetInt("board"+i) == 2)
+            {
+                boardTypes[i].SetActive(true);
+            }
+
+            if (PlayerPrefs.GetInt("board" + i) != 2)
+            {
+                boardTypes[i].SetActive(false);
+            }
+        }
+
+
     }
 
     // Use this for initialization
@@ -91,6 +108,7 @@ public class GameControl : MonoBehaviour {
         onEdibleTakeSound.volume = PlayerPrefs.GetFloat("gamevolume",1f);
         balloonPopSound.volume = PlayerPrefs.GetFloat("gamevolume",1f);
         jumpSound.volume = PlayerPrefs.GetFloat("gamevolume",1f);
+        starSound.volume = PlayerPrefs.GetFloat("gamevolume", 1f);
 
         //Increase score every millisecond
         InvokeRepeating("IncrementScorePerFrame", 0.0f, 0.0166f);
