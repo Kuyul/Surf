@@ -14,7 +14,7 @@ TextureImporter:
     21300018: PW Skin_9
     21300020: PW Skin_10
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 5
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -32,8 +32,6 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
-  streamingMipmaps: 0
-  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -56,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -109,11 +107,11 @@ TextureImporter:
       name: PW Skin_0
       rect:
         serializedVersion: 2
-        x: 146
-        y: 652
-        width: 314
-        height: 354
-      alignment: 0
+        x: 141
+        y: 647
+        width: 324
+        height: 364
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -130,11 +128,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 754
-        y: 831
-        width: 107
-        height: 112
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 828
+        width: 112
+        height: 120
+      alignment: 9
+      pivot: {x: 0.029471263, y: -0.08602295}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -149,12 +147,12 @@ TextureImporter:
       name: PW Skin_2
       rect:
         serializedVersion: 2
-        x: 1016
-        y: 858
-        width: 105
-        height: 92
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 1010.99994
+        y: 853
+        width: 115.00006
+        height: 102
+      alignment: 9
+      pivot: {x: 0.50000024, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -169,12 +167,12 @@ TextureImporter:
       name: PW Skin_3
       rect:
         serializedVersion: 2
-        x: 656
-        y: 588
-        width: 179
-        height: 119
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 651
+        y: 583
+        width: 189
+        height: 129
+      alignment: 9
+      pivot: {x: 0.49999997, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,11 +187,11 @@ TextureImporter:
       name: PW Skin_4
       rect:
         serializedVersion: 2
-        x: 996
-        y: 643
-        width: 147
-        height: 70
-      alignment: 0
+        x: 991
+        y: 638
+        width: 157
+        height: 80
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -209,12 +207,12 @@ TextureImporter:
       name: PW Skin_5
       rect:
         serializedVersion: 2
-        x: 1412
-        y: 580
-        width: 220
-        height: 134
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 1407
+        y: 575
+        width: 230
+        height: 144
+      alignment: 9
+      pivot: {x: 0.49999997, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -229,11 +227,11 @@ TextureImporter:
       name: PW Skin_6
       rect:
         serializedVersion: 2
-        x: 316
-        y: 282
-        width: 195
-        height: 258
-      alignment: 0
+        x: 311
+        y: 277
+        width: 205
+        height: 268
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -249,11 +247,11 @@ TextureImporter:
       name: PW Skin_7
       rect:
         serializedVersion: 2
-        x: 1433
-        y: 352
-        width: 83
-        height: 140
-      alignment: 0
+        x: 1428
+        y: 347
+        width: 93
+        height: 150
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -269,12 +267,12 @@ TextureImporter:
       name: PW Skin_8
       rect:
         serializedVersion: 2
-        x: 1631
-        y: 380
-        width: 112
-        height: 123
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 1626
+        y: 375
+        width: 122
+        height: 133
+      alignment: 9
+      pivot: {x: 0.49999997, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -289,12 +287,12 @@ TextureImporter:
       name: PW Skin_9
       rect:
         serializedVersion: 2
-        x: 1426
-        y: 74
-        width: 83
-        height: 204
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 1421
+        y: 69
+        width: 93
+        height: 214
+      alignment: 9
+      pivot: {x: 0.5, y: 0.49999997}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -309,11 +307,11 @@ TextureImporter:
       name: PW Skin_10
       rect:
         serializedVersion: 2
-        x: 1680
-        y: 120
-        width: 74
-        height: 170
-      alignment: 0
+        x: 1675
+        y: 115
+        width: 84
+        height: 180
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -334,8 +332,6 @@ TextureImporter:
     edges: []
     weights: []
   spritePackingTag: 
-  pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
-  userData: 
+  userData: 636698393192251960
   assetBundleName: 
   assetBundleVariant: 

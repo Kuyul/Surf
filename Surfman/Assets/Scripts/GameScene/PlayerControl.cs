@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 
 public class PlayerControl : MonoBehaviour
 {
+    public GameObject[] Players;
+    public GameObject[] Boards;
 
     public LayerMask whatIsSea;
     public float initialPlayerSpeed;
