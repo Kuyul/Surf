@@ -6,11 +6,14 @@ using UnityEngine.EventSystems;
 
 public class PlayerControl : MonoBehaviour
 {
+
+    public static PlayerControl instance;
+
     public GameObject[] Players;
     public GameObject[] Boards;
 
     public LayerMask whatIsSea;
-    public float initialPlayerSpeed;
+    public float PlayerSpeed;
     public float jumpVel = 5.0f;
     public float balloonVel = 20.0f;
     private Rigidbody2D rb;
@@ -28,8 +31,6 @@ public class PlayerControl : MonoBehaviour
     //Variables used to calculate incremental speed
     private float startPos;
     private float nextPos;
-    public float incrementDistance = 100.0f;
-    public float incrementSpeed = 0.5f;
     public float maxFallSpeed = -15.0f;
     private float speedIncremented = 0.0f;
 
@@ -42,17 +43,29 @@ public class PlayerControl : MonoBehaviour
     public BoardCollision board;
 
     // Use this for initialization
-    void Start()
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = new Vector3(initialPlayerSpeed, 0.0f, 0.0f);
+        rb.velocity = new Vector3(PlayerSpeed, 0.0f, 0.0f);
         boardAnimator = GetComponent<Animator>();
         startPos = transform.position.x;
-        nextPos = startPos + incrementDistance;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         float yVel = rb.velocity.y;
         if (rb.velocity.y < maxFallSpeed)
@@ -60,7 +73,7 @@ public class PlayerControl : MonoBehaviour
             yVel = maxFallSpeed;
         }
         //make sure velocity stays the same
-        rb.velocity = new Vector3(initialPlayerSpeed + speedIncremented, yVel, 0.0f);
+        rb.velocity = new Vector3(PlayerSpeed, yVel, 0.0f);
 
 
         //SwipeManager
@@ -96,14 +109,6 @@ public class PlayerControl : MonoBehaviour
             
         }
 
-        //Check whether speed incremental distance was met
-        if (transform.position.x > nextPos)
-        {
-            startPos = nextPos;
-            nextPos = startPos + incrementDistance;
-            speedIncremented += incrementSpeed;
-        }
-
         onSea = board.getOnSea();
         if (onSea)
         {
@@ -115,7 +120,7 @@ public class PlayerControl : MonoBehaviour
         {
             if (down)
             {
-                rb.velocity = new Vector3(initialPlayerSpeed + speedIncremented, downSpeed, 0.0f);
+                rb.velocity = new Vector3(PlayerSpeed, downSpeed, 0.0f);
                 //Set animation trigger to Fall
                 playerAnimator.SetTrigger("Fall");
                 playerAnimator.ResetTrigger("Jump");
@@ -234,7 +239,7 @@ public class PlayerControl : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Wave") || other.gameObject.CompareTag("Sea"))
         {
-            rb.velocity = new Vector3(initialPlayerSpeed + speedIncremented, rb.velocity.y, 0.0f);
+            rb.velocity = new Vector3(PlayerSpeed, rb.velocity.y, 0.0f);
         }
     }
 }

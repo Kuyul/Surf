@@ -14,6 +14,8 @@ public class GameControl : MonoBehaviour {
     public GameObject[] EasyPatterns;
     public GameObject[] NormalPatterns;
     public GameObject[] HardPatterns;
+    public int NextLevelScore = 10000;
+    public int PlayerSpeedIncremental = 2;
 
     //Parameters required for first patter spawn Logic
     public Transform SpawnPoint;
@@ -122,9 +124,6 @@ public class GameControl : MonoBehaviour {
         {
             CancelInvoke();
         }
-
-        //
-
     }
 
     public void IncrementScore()
@@ -201,5 +200,24 @@ public class GameControl : MonoBehaviour {
             PlayerPrefs.SetInt("highscore", currentScore);
         }
         LeaderboardControl.Instance.UpdateHighScore();
+    }
+
+    public GameObject[] FetchPatterns()
+    {
+        //return set of patterns for the pattern generator to use based on the current score
+        if (currentScore < NextLevelScore)
+        {
+            return EasyPatterns;
+        }
+        else if (currentScore >= NextLevelScore && currentScore < 2*NextLevelScore)
+        {
+            PlayerControl.instance.PlayerSpeed = 9;
+            return NormalPatterns;
+        }
+        else
+        {
+            PlayerControl.instance.PlayerSpeed = 11;
+            return HardPatterns;
+        }
     }
 }

@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class PatternGeneration : MonoBehaviour {
 
-    public GameObject[] obj;
     public GameObject patternSpawn;
     private bool spawned = false;
 
+    private void Start()
+    {
+        
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        GameObject[] obj = GameControl.instance.FetchPatterns();
+
         if (collision.gameObject.tag == "player" && spawned == false)
         {
             Transform tr = patternSpawn.GetComponent<Transform>();
