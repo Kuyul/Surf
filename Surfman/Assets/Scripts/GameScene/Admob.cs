@@ -44,6 +44,7 @@ public class Admob : MonoBehaviour
         this.RequestBanner();
         this.RequestInterstitial();
         this.rewardBasedVideo = RewardBasedVideoAd.Instance;
+        RequestRewardBasedVideo();
     }
 
     // Update is called once per frame
