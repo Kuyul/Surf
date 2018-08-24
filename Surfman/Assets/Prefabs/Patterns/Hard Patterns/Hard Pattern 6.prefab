@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 58900998191108132}
   m_Layer: 0
   m_Name: Clam (5)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 58943437622417920}
   m_Layer: 0
   m_Name: Clam (20)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 58962106194348238}
   m_Layer: 0
   m_Name: Clam (40)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 58910608802432318}
   m_Layer: 0
   m_Name: Starfish (3)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 58573704672125512}
   m_Layer: 0
   m_Name: Fish (21)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 58617090203082478}
   m_Layer: 0
   m_Name: Starfish (4)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 58921443773816356}
   m_Layer: 0
   m_Name: Clam (30)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 58313957117209636}
   m_Layer: 0
   m_Name: Clam (51)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 58024486429689724}
   m_Layer: 0
   m_Name: Clam (18)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 58200938937254774}
   m_Layer: 0
   m_Name: Fish (32)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 58046856077548782}
   m_Layer: 0
   m_Name: Starfish
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 58682034255110604}
   m_Layer: 0
   m_Name: Fish (13)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 58258665209505106}
   m_Layer: 0
   m_Name: Clam (32)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 58363797366065604}
   m_Layer: 0
   m_Name: Starfish
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 58974563081496754}
   m_Layer: 0
   m_Name: Clam (43)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 58997091888659512}
   m_Layer: 0
   m_Name: Starfish (9)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 58429556569969140}
   m_Layer: 0
   m_Name: Clam (36)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 58739159327939680}
   m_Layer: 0
   m_Name: Clam
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 58384894585791280}
   m_Layer: 0
   m_Name: Starfish (9)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 58216908034107968}
   m_Layer: 0
   m_Name: Fish (23)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 58072999748258934}
   m_Layer: 0
   m_Name: Fish (22)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -380,7 +380,7 @@ GameObject:
   - component: {fileID: 58926710756952710}
   m_Layer: 0
   m_Name: Fish (30)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -397,7 +397,7 @@ GameObject:
   - component: {fileID: 58692160976195694}
   m_Layer: 0
   m_Name: Clam (26)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 58736624541456738}
   m_Layer: 0
   m_Name: Fish
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -431,7 +431,7 @@ GameObject:
   - component: {fileID: 58233039123665446}
   m_Layer: 0
   m_Name: Clam (44)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -448,7 +448,7 @@ GameObject:
   - component: {fileID: 58795173716251186}
   m_Layer: 0
   m_Name: Clam (12)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 58820996440464302}
   m_Layer: 0
   m_Name: Clam (16)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -482,7 +482,7 @@ GameObject:
   - component: {fileID: 58632959871030592}
   m_Layer: 0
   m_Name: Starfish (11)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -499,7 +499,7 @@ GameObject:
   - component: {fileID: 58663542305499754}
   m_Layer: 0
   m_Name: Clam (54)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 58770470811444588}
   m_Layer: 0
   m_Name: Clam (8)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -533,7 +533,7 @@ GameObject:
   - component: {fileID: 58478034398130196}
   m_Layer: 0
   m_Name: Starfish (4)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -550,7 +550,7 @@ GameObject:
   - component: {fileID: 58301387706901172}
   m_Layer: 0
   m_Name: Fish (5)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -567,7 +567,7 @@ GameObject:
   - component: {fileID: 58581942908582152}
   m_Layer: 0
   m_Name: Fish (10)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -584,7 +584,7 @@ GameObject:
   - component: {fileID: 58262342143785616}
   m_Layer: 0
   m_Name: Fish (15)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -601,7 +601,7 @@ GameObject:
   - component: {fileID: 58045823509355036}
   m_Layer: 0
   m_Name: Clam (15)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -637,7 +637,7 @@ GameObject:
   - component: {fileID: 58960963913192724}
   m_Layer: 0
   m_Name: Starfish (3)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -654,7 +654,7 @@ GameObject:
   - component: {fileID: 58673996751608762}
   m_Layer: 0
   m_Name: Clam (17)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -671,7 +671,7 @@ GameObject:
   - component: {fileID: 58054959934248282}
   m_Layer: 0
   m_Name: Clam (1)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -688,7 +688,7 @@ GameObject:
   - component: {fileID: 58077253395042896}
   m_Layer: 0
   m_Name: Fish (8)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -705,7 +705,7 @@ GameObject:
   - component: {fileID: 58341906139244098}
   m_Layer: 0
   m_Name: Fish (11)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -737,7 +737,7 @@ GameObject:
   - component: {fileID: 58885205428394274}
   m_Layer: 0
   m_Name: Starfish (7)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -754,7 +754,7 @@ GameObject:
   - component: {fileID: 58404265291164090}
   m_Layer: 0
   m_Name: Starfish (11)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -771,7 +771,7 @@ GameObject:
   - component: {fileID: 58399815240993932}
   m_Layer: 0
   m_Name: Fish (2)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -806,7 +806,7 @@ GameObject:
   - component: {fileID: 58287485068368052}
   m_Layer: 0
   m_Name: Clam (39)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -823,7 +823,7 @@ GameObject:
   - component: {fileID: 58561295223460348}
   m_Layer: 0
   m_Name: Fish (18)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -840,7 +840,7 @@ GameObject:
   - component: {fileID: 58294205229723540}
   m_Layer: 0
   m_Name: Fish (6)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -873,7 +873,7 @@ GameObject:
   - component: {fileID: 58364525677215472}
   m_Layer: 0
   m_Name: Clam (46)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -890,7 +890,7 @@ GameObject:
   - component: {fileID: 58701468619960566}
   m_Layer: 0
   m_Name: Clam (23)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -907,7 +907,7 @@ GameObject:
   - component: {fileID: 58566158460688708}
   m_Layer: 0
   m_Name: Clam (41)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -942,7 +942,7 @@ GameObject:
   - component: {fileID: 58489955182705100}
   m_Layer: 0
   m_Name: Fish (31)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -959,7 +959,7 @@ GameObject:
   - component: {fileID: 58168987323815532}
   m_Layer: 0
   m_Name: Clam (24)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -995,7 +995,7 @@ GameObject:
   - component: {fileID: 58349630764517392}
   m_Layer: 0
   m_Name: Clam (2)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1012,7 +1012,7 @@ GameObject:
   - component: {fileID: 58009017085752596}
   m_Layer: 0
   m_Name: Starfish (12)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1063,7 +1063,7 @@ GameObject:
   - component: {fileID: 58810321749904840}
   m_Layer: 0
   m_Name: Starfish (7)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1098,7 +1098,7 @@ GameObject:
   - component: {fileID: 58831637307952198}
   m_Layer: 0
   m_Name: Starfish (2)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1130,7 +1130,7 @@ GameObject:
   - component: {fileID: 58544897309875354}
   m_Layer: 0
   m_Name: Clam (34)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1147,7 +1147,7 @@ GameObject:
   - component: {fileID: 58794987174563380}
   m_Layer: 0
   m_Name: Starfish (6)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1164,7 +1164,7 @@ GameObject:
   - component: {fileID: 58093416523529198}
   m_Layer: 0
   m_Name: Fish (28)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1181,7 +1181,7 @@ GameObject:
   - component: {fileID: 58160293586253040}
   m_Layer: 0
   m_Name: Clam (22)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1198,7 +1198,7 @@ GameObject:
   - component: {fileID: 58223033145706814}
   m_Layer: 0
   m_Name: Starfish (2)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1215,7 +1215,7 @@ GameObject:
   - component: {fileID: 58598944581149818}
   m_Layer: 0
   m_Name: Starfish (2)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1232,7 +1232,7 @@ GameObject:
   - component: {fileID: 58055662401159352}
   m_Layer: 0
   m_Name: Clam (28)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1249,7 +1249,7 @@ GameObject:
   - component: {fileID: 58930119915253286}
   m_Layer: 0
   m_Name: Clam (53)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1266,7 +1266,7 @@ GameObject:
   - component: {fileID: 58569196930042994}
   m_Layer: 0
   m_Name: Starfish (10)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1283,7 +1283,7 @@ GameObject:
   - component: {fileID: 58136826918397338}
   m_Layer: 0
   m_Name: Clam (55)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1300,7 +1300,7 @@ GameObject:
   - component: {fileID: 58278828223311420}
   m_Layer: 0
   m_Name: Clam (45)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1317,7 +1317,7 @@ GameObject:
   - component: {fileID: 58737762442641410}
   m_Layer: 0
   m_Name: Clam (56)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1334,7 +1334,7 @@ GameObject:
   - component: {fileID: 58539836428471664}
   m_Layer: 0
   m_Name: Starfish (8)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1351,7 +1351,7 @@ GameObject:
   - component: {fileID: 58579334803110098}
   m_Layer: 0
   m_Name: Clam (25)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1368,7 +1368,7 @@ GameObject:
   - component: {fileID: 58558195343183960}
   m_Layer: 0
   m_Name: Starfish (13)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1385,7 +1385,7 @@ GameObject:
   - component: {fileID: 58048835297018276}
   m_Layer: 0
   m_Name: Clam (48)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1435,7 +1435,7 @@ GameObject:
   - component: {fileID: 58696759023665110}
   m_Layer: 0
   m_Name: Fish (4)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1452,7 +1452,7 @@ GameObject:
   - component: {fileID: 58979520900670636}
   m_Layer: 0
   m_Name: Fish (14)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1469,7 +1469,7 @@ GameObject:
   - component: {fileID: 58974551982825782}
   m_Layer: 0
   m_Name: Fish (19)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1486,7 +1486,7 @@ GameObject:
   - component: {fileID: 58161352920260666}
   m_Layer: 0
   m_Name: Starfish (10)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1503,7 +1503,7 @@ GameObject:
   - component: {fileID: 58633345942975376}
   m_Layer: 0
   m_Name: Fish (24)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1520,7 +1520,7 @@ GameObject:
   - component: {fileID: 58816386728212960}
   m_Layer: 0
   m_Name: Fish (7)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1537,7 +1537,7 @@ GameObject:
   - component: {fileID: 58547551368003434}
   m_Layer: 0
   m_Name: Clam (4)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1554,7 +1554,7 @@ GameObject:
   - component: {fileID: 58176271701418598}
   m_Layer: 0
   m_Name: Starfish (1)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1586,7 +1586,7 @@ GameObject:
   - component: {fileID: 58862904194602834}
   m_Layer: 0
   m_Name: Starfish (5)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1603,7 +1603,7 @@ GameObject:
   - component: {fileID: 58037754744890622}
   m_Layer: 0
   m_Name: Fish (17)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1620,7 +1620,7 @@ GameObject:
   - component: {fileID: 58288740260095740}
   m_Layer: 0
   m_Name: Clam (3)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1637,7 +1637,7 @@ GameObject:
   - component: {fileID: 58093723873155788}
   m_Layer: 0
   m_Name: Starfish (7)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1654,7 +1654,7 @@ GameObject:
   - component: {fileID: 58583251945764494}
   m_Layer: 0
   m_Name: Fish (26)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1671,7 +1671,7 @@ GameObject:
   - component: {fileID: 58722669456565210}
   m_Layer: 0
   m_Name: Fish (31)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1688,7 +1688,7 @@ GameObject:
   - component: {fileID: 58438846714615944}
   m_Layer: 0
   m_Name: Starfish (5)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1705,7 +1705,7 @@ GameObject:
   - component: {fileID: 58558939533677932}
   m_Layer: 0
   m_Name: Fish (30)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1722,7 +1722,7 @@ GameObject:
   - component: {fileID: 58599783073116618}
   m_Layer: 0
   m_Name: Clam (31)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1739,7 +1739,7 @@ GameObject:
   - component: {fileID: 58234284456385488}
   m_Layer: 0
   m_Name: Clam (52)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1791,7 +1791,7 @@ GameObject:
   - component: {fileID: 58546705768672820}
   m_Layer: 0
   m_Name: Clam (27)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1824,7 +1824,7 @@ GameObject:
   - component: {fileID: 58528496724966406}
   m_Layer: 0
   m_Name: Clam (19)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1841,7 +1841,7 @@ GameObject:
   - component: {fileID: 58377755769468216}
   m_Layer: 0
   m_Name: Clam (37)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1876,7 +1876,7 @@ GameObject:
   - component: {fileID: 58442264973756624}
   m_Layer: 0
   m_Name: Fish (9)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1893,7 +1893,7 @@ GameObject:
   - component: {fileID: 58134875295179332}
   m_Layer: 0
   m_Name: Starfish (8)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1928,7 +1928,7 @@ GameObject:
   - component: {fileID: 58002702869973352}
   m_Layer: 0
   m_Name: Clam (7)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1960,7 +1960,7 @@ GameObject:
   - component: {fileID: 58728784887523560}
   m_Layer: 0
   m_Name: Starfish (6)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1996,7 +1996,7 @@ GameObject:
   - component: {fileID: 58879423400350410}
   m_Layer: 0
   m_Name: Starfish (8)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2013,7 +2013,7 @@ GameObject:
   - component: {fileID: 58756013011956192}
   m_Layer: 0
   m_Name: Fish (3)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2045,7 +2045,7 @@ GameObject:
   - component: {fileID: 58207374727207084}
   m_Layer: 0
   m_Name: Clam (13)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2062,7 +2062,7 @@ GameObject:
   - component: {fileID: 58831434843298874}
   m_Layer: 0
   m_Name: Clam (11)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2079,7 +2079,7 @@ GameObject:
   - component: {fileID: 58369440771988816}
   m_Layer: 0
   m_Name: Clam (29)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2096,7 +2096,7 @@ GameObject:
   - component: {fileID: 58955392256978594}
   m_Layer: 0
   m_Name: Fish (16)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2131,7 +2131,7 @@ GameObject:
   - component: {fileID: 58748487369028632}
   m_Layer: 0
   m_Name: Starfish (4)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2148,7 +2148,7 @@ GameObject:
   - component: {fileID: 58731301263056900}
   m_Layer: 0
   m_Name: Clam (21)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2165,7 +2165,7 @@ GameObject:
   - component: {fileID: 58938211015725770}
   m_Layer: 0
   m_Name: Fish (25)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2182,7 +2182,7 @@ GameObject:
   - component: {fileID: 58658060683164112}
   m_Layer: 0
   m_Name: Clam (33)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2214,7 +2214,7 @@ GameObject:
   - component: {fileID: 58221268796378370}
   m_Layer: 0
   m_Name: Starfish
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2231,7 +2231,7 @@ GameObject:
   - component: {fileID: 58073671497422788}
   m_Layer: 0
   m_Name: Fish (29)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2248,7 +2248,7 @@ GameObject:
   - component: {fileID: 58116867198124598}
   m_Layer: 0
   m_Name: Starfish (3)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2265,7 +2265,7 @@ GameObject:
   - component: {fileID: 58439650008828498}
   m_Layer: 0
   m_Name: Clam (50)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2297,7 +2297,7 @@ GameObject:
   - component: {fileID: 58335275698898114}
   m_Layer: 0
   m_Name: Fish (27)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2331,7 +2331,7 @@ GameObject:
   - component: {fileID: 58987276300915192}
   m_Layer: 0
   m_Name: Clam (38)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2348,7 +2348,7 @@ GameObject:
   - component: {fileID: 58092682817010806}
   m_Layer: 0
   m_Name: Clam (35)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2365,7 +2365,7 @@ GameObject:
   - component: {fileID: 58557446445391336}
   m_Layer: 0
   m_Name: Clam (42)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2382,7 +2382,7 @@ GameObject:
   - component: {fileID: 58251141517916792}
   m_Layer: 0
   m_Name: Starfish (5)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2399,7 +2399,7 @@ GameObject:
   - component: {fileID: 58034166621334040}
   m_Layer: 0
   m_Name: Starfish (9)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2416,7 +2416,7 @@ GameObject:
   - component: {fileID: 58195683144620874}
   m_Layer: 0
   m_Name: Clam (6)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2433,7 +2433,7 @@ GameObject:
   - component: {fileID: 58183790335912272}
   m_Layer: 0
   m_Name: Starfish (1)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2450,7 +2450,7 @@ GameObject:
   - component: {fileID: 58230827520072994}
   m_Layer: 0
   m_Name: Starfish (1)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2467,7 +2467,7 @@ GameObject:
   - component: {fileID: 58660452608135682}
   m_Layer: 0
   m_Name: Fish (20)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2484,7 +2484,7 @@ GameObject:
   - component: {fileID: 58678913449393688}
   m_Layer: 0
   m_Name: Fish (12)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2501,7 +2501,7 @@ GameObject:
   - component: {fileID: 58045497814936906}
   m_Layer: 0
   m_Name: Starfish (6)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2518,7 +2518,7 @@ GameObject:
   - component: {fileID: 58613419286521100}
   m_Layer: 0
   m_Name: Starfish (7)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2535,7 +2535,7 @@ GameObject:
   - component: {fileID: 58058285994583992}
   m_Layer: 0
   m_Name: Clam (9)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2552,7 +2552,7 @@ GameObject:
   - component: {fileID: 58772258261558366}
   m_Layer: 0
   m_Name: Clam (14)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2569,7 +2569,7 @@ GameObject:
   - component: {fileID: 58593005823601912}
   m_Layer: 0
   m_Name: Fish (1)
-  m_TagString: Coin
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2586,7 +2586,7 @@ GameObject:
   - component: {fileID: 58172399689714446}
   m_Layer: 0
   m_Name: Clam (47)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2603,7 +2603,7 @@ GameObject:
   - component: {fileID: 58444980397718286}
   m_Layer: 0
   m_Name: Clam (10)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2620,7 +2620,7 @@ GameObject:
   - component: {fileID: 58430363427979114}
   m_Layer: 0
   m_Name: Clam (49)
-  m_TagString: Coin
+  m_TagString: Clam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2637,7 +2637,7 @@ GameObject:
   - component: {fileID: 58001753339847804}
   m_Layer: 0
   m_Name: Starfish (8)
-  m_TagString: Coin
+  m_TagString: Starfish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8273,8 +8273,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48d249daaf3a15a428671fc4078d57ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj:
-  - {fileID: 1955968189166812, guid: 12d2c82889168d04993e0ac0c4f55306, type: 2}
   patternSpawn: {fileID: 1858145965007652}
 --- !u!212 &212003474179040520
 SpriteRenderer:

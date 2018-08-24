@@ -43,6 +43,12 @@ public class PauseResumeRestart : MonoBehaviour
 
     public void RestartGame(int level)
     {
+        PlayerPrefs.DeleteKey("Shell");
+        PlayerPrefs.DeleteKey("Clam");
+        PlayerPrefs.DeleteKey("Fish");
+        PlayerPrefs.DeleteKey("Starfish");
+        PlayerPrefs.DeleteKey("Star");
+
         SceneManager.LoadScene(level);
         isPaused = false;
         Time.timeScale = 1;
@@ -56,6 +62,12 @@ public class PauseResumeRestart : MonoBehaviour
 
     public void LoadGame(int level)
     {
+        PlayerPrefs.DeleteKey("Shell");
+        PlayerPrefs.DeleteKey("Clam");
+        PlayerPrefs.DeleteKey("Fish");
+        PlayerPrefs.DeleteKey("Starfish");
+        PlayerPrefs.DeleteKey("Star");
+
         SceneManager.LoadScene(level);
     }
 

@@ -45,6 +45,14 @@ public class GameControl : MonoBehaviour {
     public Text highScoreTextAtEnd;
     public Text scoreTextInPause;
 
+    public Text fishCounterText;
+    public Text starCounterText;
+    public Text starfishCounterText;
+    public Text shellCounterText;
+    public Text clamCounterText;
+
+    public Text totalEarningText;
+
     public float scrollSpeed;
     public float waveOneSpeed;
     public float waveTwoSpeed;
@@ -167,6 +175,14 @@ public class GameControl : MonoBehaviour {
         scoreTextInGame.text = "";
         timeIncremental = 0;
         isDead = true;
+
+        fishCounterText.text = "X " + PlayerPrefs.GetInt("Fish");
+        starCounterText.text = "X " + PlayerPrefs.GetInt("Star");
+        clamCounterText.text = "X " + PlayerPrefs.GetInt("Clam");
+        starfishCounterText.text = "X " + PlayerPrefs.GetInt("Starfish");
+        shellCounterText.text = "X " + PlayerPrefs.GetInt("Shell");
+
+        totalEarningText.text = "Total earnings " + (PlayerPrefs.GetInt("Fish") + PlayerPrefs.GetInt("Star") + PlayerPrefs.GetInt("Clam") + PlayerPrefs.GetInt("Starfish") + PlayerPrefs.GetInt("Shell"));
     }
 
     //Update Next highscore for the player to chase!

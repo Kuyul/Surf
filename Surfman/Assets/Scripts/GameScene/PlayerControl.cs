@@ -197,19 +197,50 @@ public class PlayerControl : MonoBehaviour
             Instantiate(waveExplosion,transform.position, Quaternion.identity);
         }
 
-        if (other.gameObject.CompareTag("Coin"))
+       // if (other.gameObject.CompareTag("Coin"))
+      //  {
+       //     GameControl.instance.onEdibleTakeSound.Play();
+        //    other.gameObject.SetActive(false);
+       //     GameControl.instance.IncrementScore();
+        //}
+
+        if (other.gameObject.CompareTag("Shell"))
         {
+            other.gameObject.SetActive(false);              
+            GameControl.instance.IncrementScore();
             GameControl.instance.onEdibleTakeSound.Play();
+            PlayerPrefs.SetInt("Shell", (PlayerPrefs.GetInt("Shell", 0) + 1));
+        }
+        if (other.gameObject.CompareTag("Starfish"))
+        {
             other.gameObject.SetActive(false);
             GameControl.instance.IncrementScore();
+            GameControl.instance.onEdibleTakeSound.Play();
+            PlayerPrefs.SetInt("Starfish", (PlayerPrefs.GetInt("Starfish", 0) + 1));
+        }
+        if (other.gameObject.CompareTag("Clam"))
+        {
+            other.gameObject.SetActive(false);
+            GameControl.instance.IncrementScore();
+            GameControl.instance.onEdibleTakeSound.Play();
+            PlayerPrefs.SetInt("Clam", (PlayerPrefs.GetInt("Clam", 0) + 1));
+        }
+        if (other.gameObject.CompareTag("Fish"))
+        {
+            other.gameObject.SetActive(false);
+            GameControl.instance.IncrementScore();
+            GameControl.instance.onEdibleTakeSound.Play();
+            PlayerPrefs.SetInt("Fish", (PlayerPrefs.GetInt("Fish", 0) + 1));
         }
 
         if (other.gameObject.CompareTag("Star"))
         {
-            GameControl.instance.starSound.Play();
-            other.gameObject.SetActive(false);        
-            Instantiate(starExplosion, other.transform.position, Quaternion.identity);
+            other.gameObject.SetActive(false);
             GameControl.instance.IncrementScore();
+            GameControl.instance.starSound.Play();
+            PlayerPrefs.SetInt("Star", (PlayerPrefs.GetInt("Star", 0) + 1));
+            Instantiate(starExplosion, other.transform.position, Quaternion.identity);
+
         }
 
         if (other.gameObject.CompareTag("Obstacle"))

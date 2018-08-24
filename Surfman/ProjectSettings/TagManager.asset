@@ -29,6 +29,10 @@ TagManager:
   - island
   - Star
   - Sea
+  - Fish
+  - Clam
+  - Starfish
+  - Shell
   layers:
   - Default
   - TransparentFX
