@@ -7,30 +7,24 @@ public class Admob : MonoBehaviour
 {
     private BannerView bannerView;
     private InterstitialAd interstitial;
+    private RewardBasedVideoAd rewardBasedVideo;
     //Only show interstitial ad on death (5x)
     private int deathCount = 0;
 
     //Singleton Admob
-    private static Admob _instance;
-    public static Admob Instance
-    {
-        get
-        {
-            //create a new gameobject in the scene
-            if (_instance == null)
-            {
-                GameObject Admob = new GameObject("AdManager");
-                Admob.AddComponent<Admob>();
-            }
-
-            return _instance;
-        }
-    }
+    public static Admob Instance;
 
     public void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
-        _instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Use this for initialization
@@ -38,17 +32,18 @@ public class Admob : MonoBehaviour
     {
         #if UNITY_ANDROID
                 string appId = "ca-app-pub-3529204849708317~6637326357";
-#elif UNITY_IPHONE
-                            string appId = "ca-app-pub-3529204849708317~8162431790";
-#else
-                            string appId = "unexpected_platform";
-#endif
+        #elif UNITY_IPHONE
+                                    string appId = "ca-app-pub-3529204849708317~8162431790";
+        #else
+                                    string appId = "unexpected_platform";
+        #endif
 
         // Initialize the Google Mobile Ads SDK.
         MobileAds.Initialize(appId);
 
         this.RequestBanner();
         this.RequestInterstitial();
+        this.rewardBasedVideo = RewardBasedVideoAd.Instance;
     }
 
     // Update is called once per frame
@@ -56,11 +51,11 @@ public class Admob : MonoBehaviour
     {
         #if UNITY_ANDROID
                 string adUnitId = "ca-app-pub-3529204849708317/8272288608";
-#elif UNITY_IPHONE
-                            string adUnitId = "ca-app-pub-3529204849708317/5448638549";
-#else
-                            string adUnitId = "unexpected_platform";
-#endif
+        #elif UNITY_IPHONE
+                                    string adUnitId = "ca-app-pub-3529204849708317/5448638549";
+        #else
+                                    string adUnitId = "unexpected_platform";
+        #endif
 
         // Create a 320x50 banner at the top of the screen.
         bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
@@ -76,11 +71,11 @@ public class Admob : MonoBehaviour
     {
         #if UNITY_ANDROID
                 string adUnitId = "ca-app-pub-3529204849708317/1997674232";
-#elif UNITY_IPHONE
-                string adUnitId = "ca-app-pub-3529204849708317/1317821843";
-#else
-                string adUnitId = "unexpected_platform";
-#endif
+        #elif UNITY_IPHONE
+                        string adUnitId = "ca-app-pub-3529204849708317/1317821843";
+        #else
+                        string adUnitId = "unexpected_platform";
+        #endif
 
         // Initialize an InterstitialAd.
         interstitial = new InterstitialAd(adUnitId);
@@ -89,6 +84,22 @@ public class Admob : MonoBehaviour
         AdRequest request = new AdRequest.Builder().Build();
         // Load the interstitial with the request.
         interstitial.LoadAd(request);
+    }
+
+    private void RequestRewardBasedVideo()
+    {
+        #if UNITY_ANDROID
+                string adUnitId = "ca-app-pub-3940256099942544/5224354917";
+        #elif UNITY_IPHONE
+                    string adUnitId = "ca-app-pub-3940256099942544/1712485313";
+        #else
+                    string adUnitId = "unexpected_platform";
+        #endif
+
+        // Create an empty ad request.
+        AdRequest request = new AdRequest.Builder().Build();
+        // Load the rewarded video ad with the request.
+        this.rewardBasedVideo.LoadAd(request, adUnitId);
     }
 
     public void ShowInterstitial()
@@ -113,4 +124,10 @@ public class Admob : MonoBehaviour
             }
         }
     }
+
+    public void ShowRewardBasedVideo()
+    {
+        rewardBasedVideo.Show();
+    }
+
 }
