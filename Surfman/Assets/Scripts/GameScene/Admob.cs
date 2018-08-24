@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using GoogleMobileAds.Api;
+using System;
 
 public class Admob : MonoBehaviour
 {
@@ -42,8 +43,13 @@ public class Admob : MonoBehaviour
         MobileAds.Initialize(appId);
 
         this.RequestBanner();
+        //Initialise Interstitial Ads
         this.RequestInterstitial();
-        this.rewardBasedVideo = RewardBasedVideoAd.Instance;
+        interstitial.OnAdClosed += HandleRewardInterstitialClosed;
+        //Initialise Rewarded video
+        rewardBasedVideo = RewardBasedVideoAd.Instance;
+        rewardBasedVideo.OnAdRewarded += HandleRewardBasedVideoRewarded;
+        rewardBasedVideo.OnAdClosed += HandleRewardBasedVideoClosed;
         RequestRewardBasedVideo();
     }
 
@@ -117,7 +123,6 @@ public class Admob : MonoBehaviour
                 deathCount = 0;
                 Debug.Log("Ad Is Loaded");
                 interstitial.Show();
-                RequestInterstitial();
             }
             else
             {
@@ -126,9 +131,27 @@ public class Admob : MonoBehaviour
         }
     }
 
+    public void HandleRewardInterstitialClosed(object sender, EventArgs args)
+    {
+        RequestInterstitial();
+    }
+
     public void ShowRewardBasedVideo()
     {
         rewardBasedVideo.Show();
     }
 
+    public void HandleRewardBasedVideoRewarded(object sender, Reward args)
+    {
+        string type = args.Type;
+        double amount = args.Amount;
+        MonoBehaviour.print(
+            "HandleRewardBasedVideoRewarded event received for "
+                        + amount.ToString() + " " + type);
+    }
+
+    public void HandleRewardBasedVideoClosed(object sender, EventArgs args)
+    {
+        this.RequestRewardBasedVideo();
+    }
 }
