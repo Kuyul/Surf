@@ -183,13 +183,8 @@ public class Admob : MonoBehaviour
         //this.RequestRewardBasedVideo();
     }
 
-    public void HandleRewardBasedVideoRewarded(object sender, Reward args)
+    public void HandleRewardBasedVideoRewarded(object sender, EventArgs args)
     {
-        string type = args.Type;
-        double amount = args.Amount;
-        MonoBehaviour.print(
-            "HandleRewardBasedVideoRewarded event received for "
-                        + amount.ToString() + " " + type);
     }
 
     public void HandleRewardBasedVideoLeftApplication(object sender, EventArgs args)
