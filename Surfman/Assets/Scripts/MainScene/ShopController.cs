@@ -18,6 +18,7 @@ public class ShopController : MonoBehaviour {
     public GameObject[] chEquippedButton;
 
     public GameObject purchasePanelDark;
+    public GameObject NoMoneyDark;
 
     public Button yesButton;
     public Button noButton;
@@ -28,6 +29,35 @@ public class ShopController : MonoBehaviour {
     private int boardNumber;
     private int characterNumber;
 
+    public Text bd0;
+    public Text bd1;
+    public Text bd2;
+    public Text bd3;
+
+    public Text ch0;
+    public Text ch1;
+    public Text ch2;
+    public Text ch3;
+
+    // price of boards and characters
+    private int bd0price = 100;
+    private int bd1price = 200;
+    private int bd2price = 300;
+    private int bd3price = 400;
+
+    private int ch0price = 100;
+    private int ch1price = 200;
+    private int ch2price = 300;
+    private int ch3price = 400;
+
+    private int[] bdprice = { 100, 200, 300, 400 };
+    private int[] chprice = { 100, 200, 300, 400 };
+
+    // @@@@@@@@@@ I WANT BELOW !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // private int[] bdprice = { bd0price, bd1price, bd2price, bd3price };
+
+
+
     // Use this for initialization
     void Start () {
 
@@ -36,6 +66,16 @@ public class ShopController : MonoBehaviour {
 
         Button noBtn = noButton.GetComponent<Button>();
         noBtn.onClick.AddListener(DontPurchase);
+
+        bd0.text = bd0price.ToString();
+        bd1.text = bd1price.ToString();
+        bd2.text = bd2price.ToString();
+        bd3.text = bd3price.ToString();
+
+        ch0.text = ch0price.ToString();
+        ch1.text = ch1price.ToString();
+        ch2.text = ch2price.ToString();
+        ch3.text = ch3price.ToString();
     }
 
     // Update is called once per frame
@@ -121,7 +161,6 @@ public class ShopController : MonoBehaviour {
             {
                 PlayerPrefs.SetInt("board" + i, 2);
             }
-
         }
     }
    
@@ -157,19 +196,35 @@ public class ShopController : MonoBehaviour {
 
     public void Purchase()
     {
+
         if (bdbool)
         {
-            PlayerPrefs.SetInt("board" + boardNumber, 1);
-            Debug.Log("boardy" + boardNumber);
-            bdbool = false;
+            if (PlayerPrefs.GetInt("money", 0) - bdprice[boardNumber]  >= 0)
+            {
+                bdbool = false;
+                PlayerPrefs.SetInt("board" + boardNumber, 1);
+                PlayerPrefs.SetInt("money", (PlayerPrefs.GetInt("money", 0) - bdprice[boardNumber]));
+            }
+            else
+            {
+                NoMoneyDark.SetActive(true);
+                bdbool = false;
+            }
         }
         if (chbool)
         {
-            PlayerPrefs.SetInt("character" + characterNumber, 1);
-            Debug.Log("CHCHCHCHCHCH" + characterNumber);
-            chbool = false;
+            if (PlayerPrefs.GetInt("money", 0) - chprice[characterNumber] >= 0)
+            {
+                chbool = false;
+                PlayerPrefs.SetInt("character" + characterNumber, 1);
+                PlayerPrefs.SetInt("money", (PlayerPrefs.GetInt("money", 0) - chprice[characterNumber]));
+            }
+            else
+            {
+                NoMoneyDark.SetActive(true);
+                chbool = false;
+            }
         }
-
     }
 
     public void DontPurchase()

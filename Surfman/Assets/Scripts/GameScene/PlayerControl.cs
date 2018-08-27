@@ -182,12 +182,9 @@ public class PlayerControl : MonoBehaviour
         {
             rb.velocity = Vector3.zero;
         }
-
         Destroy(GameObject.Find("balloonExplosion(Clone)"), 0.6f);
         Destroy(GameObject.Find("starExplosion(Clone)"), 1f);
         Destroy(GameObject.Find("waveExplosion(Clone)"), 0.9f);
-
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -196,13 +193,6 @@ public class PlayerControl : MonoBehaviour
         {
             Instantiate(waveExplosion,transform.position, Quaternion.identity);
         }
-
-       // if (other.gameObject.CompareTag("Coin"))
-      //  {
-       //     GameControl.instance.onEdibleTakeSound.Play();
-        //    other.gameObject.SetActive(false);
-       //     GameControl.instance.IncrementScore();
-        //}
 
         if (other.gameObject.CompareTag("Shell"))
         {

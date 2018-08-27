@@ -8,10 +8,12 @@ public class MainSceneController : MonoBehaviour
     public GameObject muteButton;
     public GameObject unmuteButton;
 
+    public Text currencyTextMain;
+    public Text currencyTextShop;
+
     // Use this for initialization
     void Start()
     {
-
         if (PlayerPrefs.GetFloat("gamevolume", 1) == 1)
         {
             muteButton.SetActive(true);
@@ -28,9 +30,13 @@ public class MainSceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         //quit game when back button is pressed
         if (Input.GetKeyDown(KeyCode.Escape))
+        {
             Application.Quit();
+        }
+
+        currencyTextMain.text = PlayerPrefs.GetInt("money", 0).ToString();
+        currencyTextShop.text = PlayerPrefs.GetInt("money", 0).ToString();
     }
 }
