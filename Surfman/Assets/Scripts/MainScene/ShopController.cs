@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopController : MonoBehaviour {
 
@@ -16,15 +17,30 @@ public class ShopController : MonoBehaviour {
     public GameObject[] chEquipButton;
     public GameObject[] chEquippedButton;
 
+    public GameObject purchasePanelDark;
+
+    public Button yesButton;
+    public Button noButton;
+
+    private bool bdbool;
+    private bool chbool;
+
+    private int boardNumber;
+    private int characterNumber;
 
     // Use this for initialization
     void Start () {
 
-    }
-	
-	// Update is called once per frame
-	void Update () {
+        Button yesBtn = yesButton.GetComponent<Button>();
+        yesBtn.onClick.AddListener(Purchase);
 
+        Button noBtn = noButton.GetComponent<Button>();
+        noBtn.onClick.AddListener(DontPurchase);
+    }
+
+    // Update is called once per frame
+    void Update () {
+        
         // updating board buttons
         for (int i = 0; i < bdEquipButton.Length; i++)
         {
@@ -108,10 +124,12 @@ public class ShopController : MonoBehaviour {
 
         }
     }
-
+   
     public void BuyBoard(int k)
     {
-        PlayerPrefs.SetInt("board" + k, 1);
+        purchasePanelDark.SetActive(true);
+       boardNumber = k;
+       bdbool = true;
     }
 
     public void EquipCharacter(int j)
@@ -127,14 +145,36 @@ public class ShopController : MonoBehaviour {
             {
                 PlayerPrefs.SetInt("character" + i, 2);
             }
-
         }
     }
 
     public void BuyCharacter(int k)
     {
-        PlayerPrefs.SetInt("character" + k, 1);
+        purchasePanelDark.SetActive(true);
+        characterNumber = k;
+        chbool = true;
     }
 
+    public void Purchase()
+    {
+        if (bdbool)
+        {
+            PlayerPrefs.SetInt("board" + boardNumber, 1);
+            Debug.Log("boardy" + boardNumber);
+            bdbool = false;
+        }
+        if (chbool)
+        {
+            PlayerPrefs.SetInt("character" + characterNumber, 1);
+            Debug.Log("CHCHCHCHCHCH" + characterNumber);
+            chbool = false;
+        }
 
+    }
+
+    public void DontPurchase()
+    {
+        bdbool = false;
+        chbool = false;
+    }
 }
