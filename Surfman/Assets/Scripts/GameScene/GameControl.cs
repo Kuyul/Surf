@@ -9,6 +9,7 @@ public class GameControl : MonoBehaviour {
     public static GameControl instance;
 
     public GameObject[] boardTypes;
+    public GameObject[] characterTypes;
 
     //Patterns to spawn - Easy/Normal/Hard
     public GameObject[] EasyPatterns;
@@ -94,6 +95,19 @@ public class GameControl : MonoBehaviour {
             if (PlayerPrefs.GetInt("board" + i) != 2)
             {
                 boardTypes[i].SetActive(false);
+            }
+        }
+
+        for (int i = 0; i < characterTypes.Length; i++)
+        {
+            if (PlayerPrefs.GetInt("character" + i) == 2)
+            {
+                characterTypes[i].SetActive(true);
+            }
+
+            if (PlayerPrefs.GetInt("character" + i) != 2)
+            {
+                characterTypes[i].SetActive(false);
             }
         }
 
