@@ -212,7 +212,7 @@ public class GameControl : MonoBehaviour {
     IEnumerator WaitDieAnimation()
     {
         yield return new WaitForSeconds(1);
-        Admob.Instance.ShowInterstitial();
+        //Admob.Instance.ShowInterstitial();
         pausedButtonPanel.SetActive(false);
         gameOverPanel.SetActive(true);
         scoreTextAtEnd.text = "Your Score is " + currentScore;

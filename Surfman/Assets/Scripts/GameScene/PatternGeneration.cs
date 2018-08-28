@@ -7,10 +7,6 @@ public class PatternGeneration : MonoBehaviour {
     public GameObject patternSpawn;
     private bool spawned = false;
 
-    private void Start()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
