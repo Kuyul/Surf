@@ -40,27 +40,21 @@ public class ShopController : MonoBehaviour {
     public Text ch3;
 
     // price of boards and characters
-    private int bd0price = 100;
-    private int bd1price = 200;
-    private int bd2price = 300;
-    private int bd3price = 400;
+    public int bd0price;
+    public int bd1price;
+    public int bd2price;
+    public int bd3price;
 
-    private int ch0price = 100;
-    private int ch1price = 200;
-    private int ch2price = 300;
-    private int ch3price = 400;
+    public int ch0price;
+    public int ch1price;
+    public int ch2price;
+    public int ch3price; 
 
-    private int[] bdprice = { 100, 200, 300, 400 };
-    private int[] chprice = { 100, 200, 300, 400 };
-
-    // @@@@@@@@@@ I WANT BELOW !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    // private int[] bdprice = { bd0price, bd1price, bd2price, bd3price };
-
-
+    private int[] bdprice;
+    private int[] chprice;
 
     // Use this for initialization
     void Start () {
-
         Button yesBtn = yesButton.GetComponent<Button>();
         yesBtn.onClick.AddListener(Purchase);
 
@@ -76,6 +70,9 @@ public class ShopController : MonoBehaviour {
         ch1.text = ch1price.ToString();
         ch2.text = ch2price.ToString();
         ch3.text = ch3price.ToString();
+
+        bdprice = new int[] {bd0price, bd1price, bd2price, bd3price};
+        chprice = new int[] {ch0price, ch1price, ch2price, ch3price};
     }
 
     // Update is called once per frame
