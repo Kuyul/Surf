@@ -3,11 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShopController : MonoBehaviour {
+public class ShopController : MonoBehaviour
+{
 
     // ****************** IF  NOT BOUGHT, PLAYERPREF INT = 0,
     // ****************** IF IS  BOUGHT, PLAYERPREF INT = 1,
     // ****************** IF EQUIPPED, PLAYERPREF INT = 2,
+
+    public GameObject[] activeCharacter;
+
+    public GameObject[] previewCharacter;
+    public GameObject[] noMoneyPreviewCharacter;
+
+    public GameObject[] previewBoard;
+    public GameObject[] noMoneyPreviewBoard;
 
     public GameObject[] bdBuyButton;
     public GameObject[] bdEquipButton;
@@ -48,13 +57,14 @@ public class ShopController : MonoBehaviour {
     public int ch0price;
     public int ch1price;
     public int ch2price;
-    public int ch3price; 
+    public int ch3price;
 
     private int[] bdprice;
     private int[] chprice;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         Button yesBtn = yesButton.GetComponent<Button>();
         yesBtn.onClick.AddListener(Purchase);
 
@@ -71,17 +81,18 @@ public class ShopController : MonoBehaviour {
         ch2.text = ch2price.ToString();
         ch3.text = ch3price.ToString();
 
-        bdprice = new int[] {bd0price, bd1price, bd2price, bd3price};
-        chprice = new int[] {ch0price, ch1price, ch2price, ch3price};
+        bdprice = new int[] { bd0price, bd1price, bd2price, bd3price };
+        chprice = new int[] { ch0price, ch1price, ch2price, ch3price };
     }
 
     // Update is called once per frame
-    void Update () {
-        
+    void Update()
+    {
+
         // updating board buttons
         for (int i = 0; i < bdEquipButton.Length; i++)
         {
-            if(PlayerPrefs.GetInt("board"+i,0) == 0)
+            if (PlayerPrefs.GetInt("board" + i, 0) == 0)
             {
                 bdBuyButton[i].SetActive(true);
                 bdEquipButton[i].SetActive(false);
@@ -119,6 +130,8 @@ public class ShopController : MonoBehaviour {
                 chBuyButton[i].SetActive(true);
                 chEquipButton[i].SetActive(false);
                 chEquippedButton[i].SetActive(false);
+
+                activeCharacter[i].SetActive(false);
             }
 
             if (PlayerPrefs.GetInt("character" + i, 0) == 1)
@@ -126,6 +139,8 @@ public class ShopController : MonoBehaviour {
                 chBuyButton[i].SetActive(false);
                 chEquipButton[i].SetActive(true);
                 chEquippedButton[i].SetActive(false);
+
+                activeCharacter[i].SetActive(false);
             }
 
             if (PlayerPrefs.GetInt("character" + i, 0) == 2)
@@ -133,6 +148,8 @@ public class ShopController : MonoBehaviour {
                 chBuyButton[i].SetActive(false);
                 chEquipButton[i].SetActive(false);
                 chEquippedButton[i].SetActive(true);
+
+                activeCharacter[i].SetActive(true);
             }
         }
 
@@ -149,9 +166,9 @@ public class ShopController : MonoBehaviour {
     {
         for (int i = 0; i < bdEquipButton.Length; i++)
         {
-            if(i != j && PlayerPrefs.GetInt("board"+ i) == 2)
+            if (i != j && PlayerPrefs.GetInt("board" + i) == 2)
             {
-                PlayerPrefs.SetInt("board" +i, 1);
+                PlayerPrefs.SetInt("board" + i, 1);
             }
 
             if (i == j)
@@ -160,12 +177,13 @@ public class ShopController : MonoBehaviour {
             }
         }
     }
-   
+
     public void BuyBoard(int k)
     {
         purchasePanelDark.SetActive(true);
-       boardNumber = k;
-       bdbool = true;
+        previewBoard[k].SetActive(true);
+        boardNumber = k;
+        bdbool = true;
     }
 
     public void EquipCharacter(int j)
@@ -187,25 +205,26 @@ public class ShopController : MonoBehaviour {
     public void BuyCharacter(int k)
     {
         purchasePanelDark.SetActive(true);
+        previewCharacter[k].SetActive(true);
         characterNumber = k;
         chbool = true;
     }
 
     public void Purchase()
     {
-
         if (bdbool)
         {
-            if (PlayerPrefs.GetInt("money", 0) - bdprice[boardNumber]  >= 0)
+            if (PlayerPrefs.GetInt("money", 0) - bdprice[boardNumber] >= 0)
             {
                 bdbool = false;
                 PlayerPrefs.SetInt("board" + boardNumber, 1);
                 PlayerPrefs.SetInt("money", (PlayerPrefs.GetInt("money", 0) - bdprice[boardNumber]));
+                previewBoard[boardNumber].SetActive(false);
             }
             else
             {
+                noMoneyPreviewBoard[boardNumber].SetActive(true);
                 NoMoneyDark.SetActive(true);
-                bdbool = false;
             }
         }
         if (chbool)
@@ -215,18 +234,45 @@ public class ShopController : MonoBehaviour {
                 chbool = false;
                 PlayerPrefs.SetInt("character" + characterNumber, 1);
                 PlayerPrefs.SetInt("money", (PlayerPrefs.GetInt("money", 0) - chprice[characterNumber]));
+                previewCharacter[characterNumber].SetActive(false);
             }
             else
             {
+                noMoneyPreviewCharacter[characterNumber].SetActive(true);
                 NoMoneyDark.SetActive(true);
-                chbool = false;
             }
         }
     }
 
     public void DontPurchase()
     {
-        bdbool = false;
-        chbool = false;
+        if (bdbool)
+        {
+            previewBoard[boardNumber].SetActive(false);        
+            bdbool = false;
+        }
+
+        if (chbool)
+        {
+            previewCharacter[characterNumber].SetActive(false);
+            chbool = false;
+        }
+    }
+
+    public void NoMoneyOKButton()
+    {
+        if (bdbool)
+        {
+            previewBoard[boardNumber].SetActive(false);
+            noMoneyPreviewBoard[boardNumber].SetActive(false);
+            bdbool = false;
+        }
+
+        if (chbool)
+        {
+            previewCharacter[characterNumber].SetActive(false);
+            noMoneyPreviewCharacter[characterNumber].SetActive(false);
+            chbool = false;
+        }
     }
 }
