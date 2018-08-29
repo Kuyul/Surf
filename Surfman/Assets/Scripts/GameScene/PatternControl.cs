@@ -19,6 +19,9 @@ public class PatternControl : MonoBehaviour {
     public GameObject TutorialPattern;
     public GameObject StartPattern;
 
+    //Level Up Sign
+    public GameObject LevelUpText;
+
     //Level indicator
     private int CurrentLevel = 0;
 
@@ -54,26 +57,34 @@ public class PatternControl : MonoBehaviour {
     public GameObject[] FetchPatterns()
     {
         int currentScore = GameControl.instance.GetCurrentScore();
-        
+        GameObject[] returnPattern;
+        int nextLevel;
+
         if (currentScore < NextLevelScore)
         {
-            return EasyPatterns;
+            nextLevel = 0;
+            returnPattern = EasyPatterns;
         }
         else if (currentScore >= NextLevelScore && currentScore < 2 * NextLevelScore)
         {
             PlayerControl.instance.PlayerSpeed = 9;
-            return NormalPatterns;
+            nextLevel = 1;
+            returnPattern = NormalPatterns;
         }
         else
         {
             PlayerControl.instance.PlayerSpeed = 11;
-            return HardPatterns;
+            nextLevel = 2;
+            returnPattern = HardPatterns;
         }
-    }
-
-    private void UpdateLevel()
-    {
-        
+        //When level changes, display the text
+        if (CurrentLevel < nextLevel)
+        {
+            StartCoroutine(LevelUp());
+        }
+        //Set new Current Level
+        CurrentLevel = nextLevel;
+        return returnPattern;
     }
 
     //Returns a pattern given the current state of the game (score and previous pattern)
@@ -91,5 +102,12 @@ public class PatternControl : MonoBehaviour {
         PreviousNo = n;
 
         return obj[n];
+    }
+
+    IEnumerator LevelUp()
+    {
+        LevelUpText.SetActive(true);
+        yield return new WaitForSeconds(2);
+        LevelUpText.SetActive(false);
     }
 }
