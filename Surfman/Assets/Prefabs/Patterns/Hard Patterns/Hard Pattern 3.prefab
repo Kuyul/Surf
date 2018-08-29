@@ -786,7 +786,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4420053988226218}
   - component: {fileID: 50917772012294088}
-  - component: {fileID: 114244266281825512}
   - component: {fileID: 61425647997591152}
   m_Layer: 0
   m_Name: Hard Pattern 3
@@ -8678,17 +8677,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114244266281825512
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1349616365745196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cfe0b610a6be6c44ac9478e3d87d942, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114502036238774774
 MonoBehaviour:
   m_ObjectHideFlags: 1

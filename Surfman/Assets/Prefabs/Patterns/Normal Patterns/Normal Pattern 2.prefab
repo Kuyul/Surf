@@ -54,7 +54,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4705011007502218}
   - component: {fileID: 50990558749990540}
-  - component: {fileID: 114599429867829990}
   - component: {fileID: 61235628005198628}
   m_Layer: 0
   m_Name: Normal Pattern 2
@@ -8908,17 +8907,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patternSpawn: {fileID: 1053677082047282}
---- !u!114 &114599429867829990
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1019991807270898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cfe0b610a6be6c44ac9478e3d87d942, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212013752754658816
 SpriteRenderer:
   m_ObjectHideFlags: 1

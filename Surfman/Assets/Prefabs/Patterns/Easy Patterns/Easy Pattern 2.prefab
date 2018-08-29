@@ -1305,7 +1305,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4232292775946496}
   - component: {fileID: 50299114550026050}
-  - component: {fileID: 114883899442360476}
   - component: {fileID: 61128499154823394}
   m_Layer: 0
   m_Name: Easy Pattern 2
@@ -5650,17 +5649,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patternSpawn: {fileID: 1499382837003520}
---- !u!114 &114883899442360476
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1679672817956694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cfe0b610a6be6c44ac9478e3d87d942, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212015224260152184
 SpriteRenderer:
   m_ObjectHideFlags: 1

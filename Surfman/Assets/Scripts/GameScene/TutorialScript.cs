@@ -17,7 +17,7 @@ public class TutorialScript : MonoBehaviour {
 
     private void Start()
     {
-        PlayerR = Player.GetComponent<Rigidbody2D>();
+        PlayerR = PlayerControl.instance.gameObject.GetComponent<Rigidbody2D>();
         ThisCollider = this.gameObject.GetComponent<BoxCollider2D>();
     }
 

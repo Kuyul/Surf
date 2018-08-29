@@ -10,12 +10,11 @@ public class PatternGeneration : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject[] obj = GameControl.instance.FetchPatterns();
-
         if (collision.gameObject.tag == "player" && spawned == false)
         {
+            GameObject pattern = PatternControl.Instance.FeedPattern();
             Transform tr = patternSpawn.GetComponent<Transform>();
-            Instantiate(obj[Random.Range(0, obj.GetLength(0))], tr.position, Quaternion.identity);
+            Instantiate(pattern, tr.position, Quaternion.identity);
             spawned = true;
         }
 

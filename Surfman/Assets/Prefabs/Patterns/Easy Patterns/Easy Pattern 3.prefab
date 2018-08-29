@@ -2466,7 +2466,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4955450315665234}
   - component: {fileID: 50897467223775362}
-  - component: {fileID: 114209666544463088}
   - component: {fileID: 61756102142298090}
   m_Layer: 0
   m_Name: Easy Pattern 3
@@ -7613,17 +7612,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114209666544463088
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1902965107478490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cfe0b610a6be6c44ac9478e3d87d942, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114696542788614436
 MonoBehaviour:
   m_ObjectHideFlags: 1
