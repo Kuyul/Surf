@@ -4920,7 +4920,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: a9e507eb2d4489a418e362fd66eda96f, type: 3}
+  - {fileID: 2100000, guid: e5f81b0c057286e4799a1ae6be07caac, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4937,8 +4937,8 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1343144019
+  m_SortingLayer: 2
   m_SortingOrder: 0
 --- !u!23 &23990616937475896
 MeshRenderer:
@@ -8321,10 +8321,10 @@ TextMesh:
   m_FontSize: 50
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: a9e507eb2d4489a418e362fd66eda96f, type: 3}
+  m_Font: {fileID: 12800000, guid: e5f81b0c057286e4799a1ae6be07caac, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4294967295
 --- !u!114 &114387708202422274
 MonoBehaviour:
   m_ObjectHideFlags: 1
