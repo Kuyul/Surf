@@ -12,25 +12,27 @@ public class PlayerControl : MonoBehaviour
     public GameObject[] Players;
     public GameObject[] Boards;
 
+    //Player variables
     public LayerMask whatIsSea;
     public float PlayerSpeed;
     public float jumpVel = 5.0f;
     public float balloonVel = 20.0f;
     private Rigidbody2D rb;
     private bool onSea;
+    private bool Dead;
+
     //surfboard Transform properties
     private float angle;
     private bool jump = true;
     private Animator boardAnimator;
     public Animator playerAnimator;
 
+    //Particle effects
     public GameObject balloonExplosion;
     public GameObject starExplosion;
     public GameObject waveExplosion;
 
     //Variables used to calculate incremental speed
-    private float startPos;
-    private float nextPos;
     public float maxFallSpeed = -15.0f;
     private float speedIncremented = 0.0f;
 
@@ -61,7 +63,7 @@ public class PlayerControl : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector3(PlayerSpeed, 0.0f, 0.0f);
         boardAnimator = GetComponent<Animator>();
-        startPos = transform.position.x;
+        Dead = false;
     }
 
     // Update is called once per frame
@@ -235,15 +237,7 @@ public class PlayerControl : MonoBehaviour
 
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            //Die Sound
-            AudioController.instance.PlayDieToObstacleSound(other.gameObject);
-            GameControl.instance.Die();
-            //Set animation trigger to Die
-            playerAnimator.SetTrigger("Die");
-            playerAnimator.ResetTrigger("Normal");
-            playerAnimator.ResetTrigger("Fall");
-            playerAnimator.ResetTrigger("Jump");
-            playerAnimator.ResetTrigger("DJump");
+            Die();
         }
 
         if (other.gameObject.CompareTag("Balloon"))
@@ -256,6 +250,20 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    private void Die()
+    {
+        if (!Dead)
+        {
+            Dead = true;
+            GameControl.instance.Die();
+            //Set animation trigger to Die
+            playerAnimator.SetTrigger("Die");
+            playerAnimator.ResetTrigger("Normal");
+            playerAnimator.ResetTrigger("Fall");
+            playerAnimator.ResetTrigger("Jump");
+            playerAnimator.ResetTrigger("DJump");
+        }
+    }
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Wave") || other.gameObject.CompareTag("Sea"))
