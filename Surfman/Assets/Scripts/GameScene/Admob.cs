@@ -31,13 +31,13 @@ public class Admob : MonoBehaviour
     // Use this for initialization
     private void Start()
     {
-        #if UNITY_ANDROID
-                string appId = "ca-app-pub-3529204849708317~6637326357";
-        #elif UNITY_IPHONE
+#if UNITY_ANDROID
+        string appId = "ca-app-pub-3529204849708317~6637326357";
+#elif UNITY_IPHONE
                                     string appId = "ca-app-pub-3529204849708317~8162431790";
-        #else
+#else
                                     string appId = "unexpected_platform";
-        #endif
+#endif
 
         // Initialize the Google Mobile Ads SDK.
         MobileAds.Initialize(appId);
@@ -70,13 +70,13 @@ public class Admob : MonoBehaviour
     // Update is called once per frame
     private void RequestBanner()
     {
-        #if UNITY_ANDROID
-                string adUnitId = "ca-app-pub-3529204849708317/8272288608";
-        #elif UNITY_IPHONE
+#if UNITY_ANDROID
+        string adUnitId = "ca-app-pub-3529204849708317/8272288608";
+#elif UNITY_IPHONE
                                     string adUnitId = "ca-app-pub-3529204849708317/5448638549";
-        #else
+#else
                                     string adUnitId = "unexpected_platform";
-        #endif
+#endif
 
         // Create a 320x50 banner at the top of the screen.
         bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
@@ -90,13 +90,13 @@ public class Admob : MonoBehaviour
 
     public void RequestInterstitial()
     {
-        #if UNITY_ANDROID
-                string adUnitId = "ca-app-pub-3529204849708317/1997674232";
-        #elif UNITY_IPHONE
+#if UNITY_ANDROID
+        string adUnitId = "ca-app-pub-3529204849708317/1997674232";
+#elif UNITY_IPHONE
                         string adUnitId = "ca-app-pub-3529204849708317/1317821843";
-        #else
+#else
                         string adUnitId = "unexpected_platform";
-        #endif
+#endif
 
         // Initialize an InterstitialAd.
         interstitial = new InterstitialAd(adUnitId);
@@ -109,13 +109,13 @@ public class Admob : MonoBehaviour
 
     private void RequestRewardBasedVideo()
     {
-        #if UNITY_ANDROID
-                string adUnitId = "ca-app-pub-3940256099942544/5224354917";
-        #elif UNITY_IPHONE
+#if UNITY_ANDROID
+        string adUnitId = "ca-app-pub-3940256099942544/5224354917";
+#elif UNITY_IPHONE
                     string adUnitId = "ca-app-pub-3529204849708317/6003008983";
-        #else
+#else
                     string adUnitId = "unexpected_platform";
-        #endif
+#endif
 
         // Create an empty ad request.
         AdRequest request = new AdRequest.Builder().Build();
@@ -179,7 +179,8 @@ public class Admob : MonoBehaviour
 
     public void HandleRewardBasedVideoOpened(object sender, EventArgs args)
     {
-        MonoBehaviour.print("HandleRewardBasedVideoOpened event received");
+        Debug.Log("HandleRewardBasedVideoOpened event received");
+        this.RequestRewardBasedVideo();
     }
 
     public void HandleRewardBasedVideoStarted(object sender, EventArgs args)
@@ -189,6 +190,7 @@ public class Admob : MonoBehaviour
 
     public void HandleRewardBasedVideoClosed(object sender, EventArgs args)
     {
+        Debug.Log("HandleRewardBasedVideoClosed event received");
         this.RequestRewardBasedVideo();
     }
 

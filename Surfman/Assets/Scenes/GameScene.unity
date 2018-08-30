@@ -5259,7 +5259,7 @@ MonoBehaviour:
   - {fileID: 1804214675495208, guid: b54f010b76ced4240947305bec8ca8b7, type: 2}
   - {fileID: 1866316140816958, guid: 00bfd95becbdcb8448515f289c4d89df, type: 2}
   - {fileID: 1270990450896364, guid: 4e04522305e4d6f4c8c120c3104e49bc, type: 2}
-  NextLevelScore: 1000
+  NextLevelScore: 10000
   PlayerSpeedIncremental: 2
   SpawnPoint: {fileID: 266971985}
   TutorialPattern: {fileID: 1060341043835848, guid: 25b44648a81e5764990604b065fb626a,

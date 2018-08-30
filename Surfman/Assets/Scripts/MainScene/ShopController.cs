@@ -81,7 +81,6 @@ public class ShopController : MonoBehaviour
         bd3.text = bd3price.ToString();
 
         ch0.text = ch0price.ToString();
-        adch1.text = PlayerPrefs.GetInt("adch1", 0).ToString() + "/3";
         ch2.text = ch2price.ToString();
         ch3.text = ch3price.ToString();
 
@@ -92,7 +91,7 @@ public class ShopController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        adch1.text = PlayerPrefs.GetInt("adch1", 0).ToString() + "/3";
         // updating board buttons
         for (int i = 0; i < bdEquipButton.Length; i++)
         {
@@ -216,7 +215,7 @@ public class ShopController : MonoBehaviour
         watchAdPanel.SetActive(false);
 
         previewCharacter[k].SetActive(true);
-        
+
         characterNumber = k;
         chbool = true;
     }
@@ -259,7 +258,7 @@ public class ShopController : MonoBehaviour
     {
         if (bdbool)
         {
-            previewBoard[boardNumber].SetActive(false);        
+            previewBoard[boardNumber].SetActive(false);
             bdbool = false;
         }
 
@@ -303,17 +302,17 @@ public class ShopController : MonoBehaviour
     }
 
     public void WatchAd()
-    {  
+    {
         Admob.Instance.ShowRewardBasedVideo();
-        PlayerPrefs.SetInt("adch"+characterNumber, (PlayerPrefs.GetInt("adch"+characterNumber, 0)+1));
+        PlayerPrefs.SetInt("adch" + characterNumber, (PlayerPrefs.GetInt("adch" + characterNumber, 0) + 1));
 
         purchasePanelDark.SetActive(false);
         adPreviewCharacter[characterNumber].SetActive(false);
 
-        if (PlayerPrefs.GetInt("adch"+characterNumber, 0) == 3)
-            {
+        if (PlayerPrefs.GetInt("adch" + characterNumber, 0) == 3)
+        {
             PlayerPrefs.SetInt("character" + characterNumber, 1);
-            }     
+        }
     }
 
     public void NoWatchAd()
