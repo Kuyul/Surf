@@ -13,6 +13,7 @@ public class ShopController : MonoBehaviour
     public GameObject[] activeCharacter;
 
     public GameObject[] previewCharacter;
+    public GameObject[] adPreviewCharacter;
     public GameObject[] noMoneyPreviewCharacter;
 
     public GameObject[] previewBoard;
@@ -27,6 +28,8 @@ public class ShopController : MonoBehaviour
     public GameObject[] chEquippedButton;
 
     public GameObject purchasePanelDark;
+    public GameObject purchasePanel;
+    public GameObject watchAdPanel;
     public GameObject NoMoneyDark;
 
     public Button yesButton;
@@ -44,7 +47,7 @@ public class ShopController : MonoBehaviour
     public Text bd3;
 
     public Text ch0;
-    public Text ch1;
+    public Text adch1;
     public Text ch2;
     public Text ch3;
 
@@ -55,7 +58,7 @@ public class ShopController : MonoBehaviour
     public int bd3price;
 
     public int ch0price;
-    public int ch1price;
+    public int adch1price;
     public int ch2price;
     public int ch3price;
 
@@ -71,9 +74,6 @@ public class ShopController : MonoBehaviour
 
         Button noBtn = noButton.GetComponent<Button>();
         noBtn.onClick.AddListener(DontPurchase);
-        
-        //Show rewarded based video
-        //Admob.Instance.ShowRewardBasedVideo();
 
         bd0.text = bd0price.ToString();
         bd1.text = bd1price.ToString();
@@ -81,12 +81,12 @@ public class ShopController : MonoBehaviour
         bd3.text = bd3price.ToString();
 
         ch0.text = ch0price.ToString();
-        ch1.text = ch1price.ToString();
+        adch1.text = PlayerPrefs.GetInt("adch1", 0).ToString() + "/3";
         ch2.text = ch2price.ToString();
         ch3.text = ch3price.ToString();
 
         bdprice = new int[] { bd0price, bd1price, bd2price, bd3price };
-        chprice = new int[] { ch0price, ch1price, ch2price, ch3price };
+        chprice = new int[] { ch0price, adch1price, ch2price, ch3price };
     }
 
     // Update is called once per frame
@@ -185,6 +185,9 @@ public class ShopController : MonoBehaviour
     public void BuyBoard(int k)
     {
         purchasePanelDark.SetActive(true);
+        purchasePanel.SetActive(true);
+        watchAdPanel.SetActive(false);
+
         previewBoard[k].SetActive(true);
         boardNumber = k;
         bdbool = true;
@@ -209,7 +212,11 @@ public class ShopController : MonoBehaviour
     public void BuyCharacter(int k)
     {
         purchasePanelDark.SetActive(true);
+        purchasePanel.SetActive(true);
+        watchAdPanel.SetActive(false);
+
         previewCharacter[k].SetActive(true);
+        
         characterNumber = k;
         chbool = true;
     }
@@ -270,6 +277,8 @@ public class ShopController : MonoBehaviour
             previewBoard[boardNumber].SetActive(false);
             noMoneyPreviewBoard[boardNumber].SetActive(false);
             bdbool = false;
+
+            NoMoneyDark.SetActive(false);
         }
 
         if (chbool)
@@ -277,6 +286,39 @@ public class ShopController : MonoBehaviour
             previewCharacter[characterNumber].SetActive(false);
             noMoneyPreviewCharacter[characterNumber].SetActive(false);
             chbool = false;
+
+            NoMoneyDark.SetActive(false);
         }
+    }
+
+    public void AdCharacterBuy(int k)
+    {
+        purchasePanelDark.SetActive(true);
+        purchasePanel.SetActive(false);
+        watchAdPanel.SetActive(true);
+
+        adPreviewCharacter[k].SetActive(true);
+
+        characterNumber = k;
+    }
+
+    public void WatchAd()
+    {  
+        Admob.Instance.ShowRewardBasedVideo();
+        PlayerPrefs.SetInt("adch"+characterNumber, (PlayerPrefs.GetInt("adch"+characterNumber, 0)+1));
+
+        purchasePanelDark.SetActive(false);
+        adPreviewCharacter[characterNumber].SetActive(false);
+
+        if (PlayerPrefs.GetInt("adch"+characterNumber, 0) == 3)
+            {
+            PlayerPrefs.SetInt("character" + characterNumber, 1);
+            }     
+    }
+
+    public void NoWatchAd()
+    {
+        purchasePanelDark.SetActive(false);
+        adPreviewCharacter[characterNumber].SetActive(false);
     }
 }
