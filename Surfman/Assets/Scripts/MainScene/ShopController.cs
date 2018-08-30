@@ -65,11 +65,15 @@ public class ShopController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        //The actual purchase is done in the code
         Button yesBtn = yesButton.GetComponent<Button>();
         yesBtn.onClick.AddListener(Purchase);
 
         Button noBtn = noButton.GetComponent<Button>();
         noBtn.onClick.AddListener(DontPurchase);
+        
+        //Show rewarded based video
+        //Admob.Instance.ShowRewardBasedVideo();
 
         bd0.text = bd0price.ToString();
         bd1.text = bd1price.ToString();
