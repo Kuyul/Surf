@@ -153,7 +153,16 @@ public class Admob : MonoBehaviour
 
     public void ShowRewardBasedVideo()
     {
-        rewardBasedVideo.Show();
+        if (rewardBasedVideo.IsLoaded())
+        {
+            Debug.Log("Reward based video is loaded");
+            rewardBasedVideo.Show();
+        }
+        else
+        {
+            Debug.Log("Reward Based video is not loaded");
+            RequestRewardBasedVideo();
+        }
     }
 
     public void HandleRewardBasedVideoLoaded(object sender, EventArgs args)
@@ -180,7 +189,7 @@ public class Admob : MonoBehaviour
 
     public void HandleRewardBasedVideoClosed(object sender, EventArgs args)
     {
-        //this.RequestRewardBasedVideo();
+        this.RequestRewardBasedVideo();
     }
 
     public void HandleRewardBasedVideoRewarded(object sender, EventArgs args)
