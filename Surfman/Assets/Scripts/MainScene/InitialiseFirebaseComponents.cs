@@ -39,7 +39,7 @@ public class InitialiseFirebaseComponents : MonoBehaviour {
         DatabaseHandler.SetActive(true);
         StorageHandler.SetActive(true);
         LeaderboardController.SetActive(true);
-        //LeaderboardControl.Instance.PopulateLeaderBoard();
+        LeaderboardControl.Instance.PopulateLeaderBoard();
     }
 
     IEnumerator ActivateStartPanel()
