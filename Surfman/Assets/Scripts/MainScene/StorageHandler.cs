@@ -111,7 +111,7 @@ public class StorageHandler : MonoBehaviour {
       {
           // Metadata contains file metadata such as size, content-type, and download URL.
           Firebase.Storage.StorageMetadata metadata = task.Result;
-          string download_url = metadata.DownloadUrl.ToString();
+          string download_url = storage_ref.GetDownloadUrlAsync().ToString();
           Debug.Log("Finished uploading...");
           Debug.Log("download url = " + download_url);
       }
@@ -506,13 +506,9 @@ public class StorageHandler : MonoBehaviour {
                             {"UpdatedTimeMillis", metadata.UpdatedTimeMillis},
                             {"SizeBytes", metadata.SizeBytes},
                             {"Md5Hash", metadata.Md5Hash},
-                            {"DownloadUrl", metadata.DownloadUrl}
+                            //{"DownloadUrl", metadata.DownloadUrl}
                          }) {
         fieldsAndValues[kv.Key] = kv.Value;
-      }
-      var urls = metadata.DownloadUrls;
-      for (int i = 0; i < urls.Count; ++i) {
-        fieldsAndValues[String.Format("DownloadUrls[{0}]", i)] = urls[i];
       }
     }
     foreach (var key in metadata.CustomMetadataKeys) {
