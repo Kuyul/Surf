@@ -114,7 +114,7 @@ public class Admob : MonoBehaviour
     private void RequestRewardBasedVideo()
     {
 #if UNITY_ANDROID
-        string adUnitId = "ca-app-pub-3940256099942544/5224354917";
+        string adUnitId = "ca-app-pub-3529204849708317/2960805455";
 #elif UNITY_IPHONE
                     string adUnitId = "ca-app-pub-3529204849708317/6003008983";
 #else
