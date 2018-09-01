@@ -155,12 +155,12 @@ public class PlayerControl : MonoBehaviour
             //jump
             if (up && jump)
             {
-                GameControl.instance.jumpSound.Play();
                 rb.velocity = new Vector2(rb.velocity.x, jumpVel);
 
                 //double Jump
                 if (!onSea)
                 {
+                    AudioController.instance.PlayDoubleJumpSound();
                     jump = false;
                     //Set animation trigger to Double Jump
                     playerAnimator.SetTrigger("DJump");
@@ -171,6 +171,7 @@ public class PlayerControl : MonoBehaviour
                 //normal jump
                 else
                 {
+                    AudioController.instance.PlayJumpSound();
                     //Set animation trigger to Jump
                     playerAnimator.SetTrigger("Jump");
                     playerAnimator.ResetTrigger("Normal");
@@ -196,31 +197,33 @@ public class PlayerControl : MonoBehaviour
             Instantiate(waveExplosion,transform.position, Quaternion.identity);
         }
 
+        //All collectables are each worth 10 points
+        //Big Star edible is worth 500 points
         if (other.gameObject.CompareTag("Shell"))
         {
             other.gameObject.SetActive(false);              
-            GameControl.instance.IncrementScore();
+            GameControl.instance.IncrementScore(10);
             GameControl.instance.onEdibleTakeSound.Play();
             PlayerPrefs.SetInt("Shell", (PlayerPrefs.GetInt("Shell", 0) + 1));
         }
         if (other.gameObject.CompareTag("Starfish"))
         {
             other.gameObject.SetActive(false);
-            GameControl.instance.IncrementScore();
+            GameControl.instance.IncrementScore(10);
             GameControl.instance.onEdibleTakeSound.Play();
             PlayerPrefs.SetInt("Starfish", (PlayerPrefs.GetInt("Starfish", 0) + 1));
         }
         if (other.gameObject.CompareTag("Clam"))
         {
             other.gameObject.SetActive(false);
-            GameControl.instance.IncrementScore();
+            GameControl.instance.IncrementScore(10);
             GameControl.instance.onEdibleTakeSound.Play();
             PlayerPrefs.SetInt("Clam", (PlayerPrefs.GetInt("Clam", 0) + 1));
         }
         if (other.gameObject.CompareTag("Fish"))
         {
             other.gameObject.SetActive(false);
-            GameControl.instance.IncrementScore();
+            GameControl.instance.IncrementScore(10);
             GameControl.instance.onEdibleTakeSound.Play();
             PlayerPrefs.SetInt("Fish", (PlayerPrefs.GetInt("Fish", 0) + 1));
         }
@@ -228,7 +231,7 @@ public class PlayerControl : MonoBehaviour
         if (other.gameObject.CompareTag("Star"))
         {
             other.gameObject.SetActive(false);
-            GameControl.instance.IncrementScore();
+            GameControl.instance.IncrementScore(500);
             GameControl.instance.starSound.Play();
             PlayerPrefs.SetInt("Star", (PlayerPrefs.GetInt("Star", 0) + 1));
             Instantiate(starExplosion, other.transform.position, Quaternion.identity);

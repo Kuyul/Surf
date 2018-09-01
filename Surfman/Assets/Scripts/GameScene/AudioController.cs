@@ -14,7 +14,12 @@ public class AudioController : MonoBehaviour {
     public AudioSource DieTidalSound;
 
     //Jump Sounds
-    public AudioSource[] JumpSounds;
+    public AudioSource NormalJumpSound;
+    public AudioSource SurfmanJumpSound;
+    public AudioSource BarrelJumpSound;
+    public AudioSource LifeGuardJumpSound;
+    public AudioSource JessJumpSound;
+
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +31,8 @@ public class AudioController : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+
+        
     }
 	
 	//Depending on what the obstacle is, which is defined by its tag, play its sound.
@@ -53,7 +60,30 @@ public class AudioController : MonoBehaviour {
     //Play a random Jumpsound
     public void PlayJumpSound()
     {
-        int ran = Random.Range(0, JumpSounds.GetLength(0));
-        JumpSounds[ran].Play();
+        NormalJumpSound.Play();
+    }
+
+    public void PlayDoubleJumpSound()
+    {
+        int activeCharacter = GameControl.instance.getActiveCharacter();
+
+        switch (activeCharacter)
+        {
+            case 0:
+                SurfmanJumpSound.Play();
+                break;
+            case 1:
+                BarrelJumpSound.Play();
+                break;
+            case 2:
+                JessJumpSound.Play();
+                break;
+            case 3:
+                LifeGuardJumpSound.Play();
+                break;
+            default:
+                NormalJumpSound.Play();
+                break;
+        }
     }
 }

@@ -12,6 +12,10 @@ public class Admob : MonoBehaviour
     //Only show interstitial ad on death (5x)
     private int deathCount = 0;
 
+    //Declare where Rewarded Ad request is coming from
+    private bool Shop = false;
+    private bool Double = false;
+
     //Singleton Admob
     public static Admob Instance;
 
@@ -151,8 +155,16 @@ public class Admob : MonoBehaviour
         RequestInterstitial();
     }
 
-    public void ShowRewardBasedVideo()
+    public void ShowRewardBasedVideo(String where)
     {
+        if (where == "Shop")
+        {
+            Shop = true;
+        }else if (where == "Double")
+        {
+            Double = true;
+        }
+
         if (rewardBasedVideo.IsLoaded())
         {
             Debug.Log("Reward based video is loaded");
@@ -196,7 +208,15 @@ public class Admob : MonoBehaviour
 
     public void HandleRewardBasedVideoRewarded(object sender, Reward args)
     {
-
+        if (Shop)
+        {
+            ShopController.Instance.RewardAd();
+            Shop = false;
+        }else if (Double)
+        {
+            GameControl.instance.RewardAd();
+            Double = false;
+        }
     }
 
     public void HandleRewardBasedVideoLeftApplication(object sender, EventArgs args)

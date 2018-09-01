@@ -29,7 +29,6 @@ public class GameControl : MonoBehaviour {
     public AudioSource jumpSound;
     public AudioSource starSound;
 
-    public int scoreIncremental = 10;
     private int timeIncremental = 1;
     public Text scoreTextInGame;
     public Text scoreTextAtEnd;
@@ -55,6 +54,9 @@ public class GameControl : MonoBehaviour {
     private int currentScore = 0;
     //variable to decide when to show interstitial ad
     private int deathCount = 0;
+
+    //Active Character
+    private int ActiveCharacter;
 
     private void Awake()
     {
@@ -99,6 +101,16 @@ public class GameControl : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
+        //Work out the active character
+        for (int i = 0; i < 4; i++)
+        {
+            if (PlayerPrefs.GetInt("character" + i) == 2)
+            {
+                ActiveCharacter = i;
+            }
+        } 
+
         //Display the last guy on the leaderboard
         UpdateNextHighscore();
 
@@ -127,7 +139,7 @@ public class GameControl : MonoBehaviour {
         return currentScore;
     }
 
-    public void IncrementScore()
+    public void IncrementScore(int scoreIncremental)
     {
         if (!isDead)
         {
@@ -210,12 +222,21 @@ public class GameControl : MonoBehaviour {
 
     public void WatchAd2X()
     {
-        Admob.Instance.ShowRewardBasedVideo();
+        Admob.Instance.ShowRewardBasedVideo("Double");
+    }
+
+    public void RewardAd()
+    {
         watchAdButton.SetActive(false);
 
         int totalEarned = (int)Mathf.Round(currentScore / 100);
-        totalEarnedText.text = (2*totalEarned).ToString();
+        totalEarnedText.text = (2 * totalEarned).ToString();
 
         PlayerPrefs.SetInt("money", (PlayerPrefs.GetInt("money", 0) + totalEarned));
+    }
+
+    public int getActiveCharacter()
+    {
+        return ActiveCharacter;
     }
 }

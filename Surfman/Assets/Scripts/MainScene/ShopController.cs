@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ShopController : MonoBehaviour
 {
+    //Singleton
+    public static ShopController Instance;
 
     // ****************** IF  NOT BOUGHT, PLAYERPREF INT = 0,
     // ****************** IF IS  BOUGHT, PLAYERPREF INT = 1,
@@ -64,6 +66,19 @@ public class ShopController : MonoBehaviour
 
     private int[] bdprice;
     private int[] chprice;
+
+    //Initialise static, so that this controller is callable from anywhere
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Use this for initialization
     void Start()
@@ -303,7 +318,11 @@ public class ShopController : MonoBehaviour
 
     public void WatchAd()
     {
-        Admob.Instance.ShowRewardBasedVideo();
+        Admob.Instance.ShowRewardBasedVideo("Shop");
+    }
+
+    public void RewardAd()
+    {
         PlayerPrefs.SetInt("adch" + characterNumber, (PlayerPrefs.GetInt("adch" + characterNumber, 0) + 1));
 
         purchasePanelDark.SetActive(false);

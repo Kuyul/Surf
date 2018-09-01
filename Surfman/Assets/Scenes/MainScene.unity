@@ -22856,7 +22856,7 @@ GameObject:
   - component: {fileID: 1147025389}
   - component: {fileID: 1147025388}
   m_Layer: 0
-  m_Name: SHOPCONTROLLER
+  m_Name: ShopController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22948,13 +22948,13 @@ MonoBehaviour:
   ch2: {fileID: 1421084058}
   ch3: {fileID: 130404114}
   bd0price: 0
-  bd1price: 10000
-  bd2price: 30000
-  bd3price: 50000
+  bd1price: 1000
+  bd2price: 3000
+  bd3price: 5000
   ch0price: 0
   adch1price: 0
-  ch2price: 50000
-  ch3price: 50000
+  ch2price: 5000
+  ch3price: 5000
 --- !u!4 &1147025389
 Transform:
   m_ObjectHideFlags: 0
@@ -25035,7 +25035,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1427281660
 RectTransform:
   m_ObjectHideFlags: 0

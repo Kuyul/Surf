@@ -1245,7 +1245,7 @@ GameObject:
   - component: {fileID: 345275465}
   - component: {fileID: 345275466}
   m_Layer: 0
-  m_Name: JumpSound1
+  m_Name: Normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1273,7 +1273,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 04d62173b00550747b21ddebc04b2161, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c4700f2d19e51d645bd7d1b53f438cff, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2000,7 +2000,7 @@ GameObject:
   - component: {fileID: 471176264}
   - component: {fileID: 471176265}
   m_Layer: 0
-  m_Name: JumpSound2
+  m_Name: Barrell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2028,7 +2028,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7cbae6bd4bf8d1d4286b7c901f337c3f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5baf0f4dfac6f114f8b5063d92360599, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2289,11 +2289,11 @@ MonoBehaviour:
   DieSeagullSound: {fileID: 468445226}
   DieSharkSound: {fileID: 740992987}
   DieTidalSound: {fileID: 472756153}
-  JumpSounds:
-  - {fileID: 345275466}
-  - {fileID: 471176265}
-  - {fileID: 2060545678}
-  - {fileID: 919202725}
+  NormalJumpSound: {fileID: 345275466}
+  SurfmanJumpSound: {fileID: 345275466}
+  BarrelJumpSound: {fileID: 471176265}
+  LifeGuardJumpSound: {fileID: 919202725}
+  JessJumpSound: {fileID: 2060545678}
 --- !u!1001 &506712790
 Prefab:
   m_ObjectHideFlags: 0
@@ -4167,7 +4167,7 @@ GameObject:
   - component: {fileID: 919202724}
   - component: {fileID: 919202725}
   m_Layer: 0
-  m_Name: JumpSound4
+  m_Name: LifeGuard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4195,7 +4195,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 28194a5db5d08e14fad590beba33c242, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 04d62173b00550747b21ddebc04b2161, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -4427,7 +4427,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 04d62173b00550747b21ddebc04b2161, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c4700f2d19e51d645bd7d1b53f438cff, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -8257,7 +8257,6 @@ MonoBehaviour:
   balloonPopSound: {fileID: 630236715}
   jumpSound: {fileID: 947041725}
   starSound: {fileID: 1885524042}
-  scoreIncremental: 10
   scoreTextInGame: {fileID: 1437225518}
   scoreTextAtEnd: {fileID: 1096123950}
   highScoreTextAtEnd: {fileID: 1638591110}
@@ -9335,7 +9334,7 @@ GameObject:
   - component: {fileID: 2060545677}
   - component: {fileID: 2060545678}
   m_Layer: 0
-  m_Name: JumpSound3
+  m_Name: Jess
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9363,7 +9362,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b6650aabcef9f6946bcb83b831ada7e6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1f416fae15f59c34b9cdfe16ee945c10, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
