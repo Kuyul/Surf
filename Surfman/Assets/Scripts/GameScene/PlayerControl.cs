@@ -155,12 +155,12 @@ public class PlayerControl : MonoBehaviour
             //jump
             if (up && jump)
             {
+                AudioController.instance.PlayJumpSound();
                 rb.velocity = new Vector2(rb.velocity.x, jumpVel);
 
                 //double Jump
                 if (!onSea)
                 {
-                    AudioController.instance.PlayDoubleJumpSound();
                     jump = false;
                     //Set animation trigger to Double Jump
                     playerAnimator.SetTrigger("DJump");
@@ -171,7 +171,6 @@ public class PlayerControl : MonoBehaviour
                 //normal jump
                 else
                 {
-                    AudioController.instance.PlayJumpSound();
                     //Set animation trigger to Jump
                     playerAnimator.SetTrigger("Jump");
                     playerAnimator.ResetTrigger("Normal");

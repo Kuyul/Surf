@@ -25,6 +25,12 @@ public class MainSceneController : MonoBehaviour
             muteButton.SetActive(false);
             unmuteButton.SetActive(true);
         }
+
+        if (PlayerPrefs.GetInt("ResetLeaderboard", 1) == 0)
+        {
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.SetInt("ResetLeaderboard", 1);
+        }
     }
 
     // Update is called once per frame
