@@ -20,6 +20,8 @@ public class GameControl : MonoBehaviour {
     public GameObject gameOverPanel;
     public GameObject pausePanel;
     public GameObject pausedButtonPanel;  
+
+    public GameObject watchAdButton;
     
     public AudioSource backgroundMusic;
     public AudioSource onEdibleTakeSound;
@@ -34,14 +36,7 @@ public class GameControl : MonoBehaviour {
     public Text highScoreTextAtEnd;
     public Text scoreTextInPause;
 
-    public Text fishCounterText;
-    public Text starCounterText;
-    public Text starfishCounterText;
-    public Text shellCounterText;
-    public Text clamCounterText;
-
-    public Text earningText;
-    public Text totalNumCoins;
+    public Text totalEarnedText;
 
     public float scrollSpeed;
     public float waveOneSpeed;
@@ -173,20 +168,6 @@ public class GameControl : MonoBehaviour {
         scoreTextInGame.text = "";
         timeIncremental = 0;
         isDead = true;
-
-        fishCounterText.text = "X " + PlayerPrefs.GetInt("Fish");
-        starCounterText.text = "X " + PlayerPrefs.GetInt("Star");
-        clamCounterText.text = "X " + PlayerPrefs.GetInt("Clam");
-        starfishCounterText.text = "X " + PlayerPrefs.GetInt("Starfish");
-        shellCounterText.text = "X " + PlayerPrefs.GetInt("Shell");
-
-        int totalEarned = (PlayerPrefs.GetInt("Fish") + PlayerPrefs.GetInt("Star") + PlayerPrefs.GetInt("Clam") + PlayerPrefs.GetInt("Starfish") + PlayerPrefs.GetInt("Shell"));
-
-        PlayerPrefs.SetInt("money", PlayerPrefs.GetInt("money",0) + totalEarned);
-
-        earningText.text = "Total earnings " + totalEarned;
-        totalNumCoins.text = PlayerPrefs.GetInt("money", 0).ToString();
-
     }
 
     //Update Next highscore for the player to chase!
@@ -215,10 +196,26 @@ public class GameControl : MonoBehaviour {
         scoreTextAtEnd.text = "Your Score is " + currentScore;
         highScoreTextAtEnd.text = "Your HighScore is " + PlayerPrefs.GetInt("highscore");
 
+        int totalEarned = (int)Mathf.Round(currentScore / 100);
+        totalEarnedText.text = totalEarned.ToString();
+
+        PlayerPrefs.SetInt("money", (PlayerPrefs.GetInt("money", 0) + totalEarned));
+
         if (currentScore > PlayerPrefs.GetInt("highscore", 0))
         {
             PlayerPrefs.SetInt("highscore", currentScore);
         }
         LeaderboardControl.Instance.UpdateHighScore();
+    }
+
+    public void WatchAd2X()
+    {
+        Admob.Instance.ShowRewardBasedVideo();
+        watchAdButton.SetActive(false);
+
+        int totalEarned = (int)Mathf.Round(currentScore / 100);
+        totalEarnedText.text = (2*totalEarned).ToString();
+
+        PlayerPrefs.SetInt("money", (PlayerPrefs.GetInt("money", 0) + totalEarned));
     }
 }
