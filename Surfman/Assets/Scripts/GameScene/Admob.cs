@@ -192,7 +192,7 @@ public class Admob : MonoBehaviour
     public void HandleRewardBasedVideoOpened(object sender, EventArgs args)
     {
         Debug.Log("HandleRewardBasedVideoOpened event received");
-        this.RequestRewardBasedVideo();
+        //this.RequestRewardBasedVideo();
     }
 
     public void HandleRewardBasedVideoStarted(object sender, EventArgs args)
@@ -208,6 +208,7 @@ public class Admob : MonoBehaviour
 
     public void HandleRewardBasedVideoRewarded(object sender, Reward args)
     {
+        Debug.Log("HandleRewardBasedVideoRewarded event received");
         if (Shop)
         {
             ShopController.Instance.RewardAd();

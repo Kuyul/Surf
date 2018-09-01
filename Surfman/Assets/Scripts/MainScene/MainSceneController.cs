@@ -25,8 +25,6 @@ public class MainSceneController : MonoBehaviour
             muteButton.SetActive(false);
             unmuteButton.SetActive(true);
         }
-
-        //PlayerPrefs.SetInt("money", 100000);
     }
 
     // Update is called once per frame
