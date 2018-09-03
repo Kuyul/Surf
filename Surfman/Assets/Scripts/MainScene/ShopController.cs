@@ -107,9 +107,11 @@ public class ShopController : MonoBehaviour
     void Update()
     {
         adch1.text = PlayerPrefs.GetInt("adch1", 0).ToString() + "/3";
-        // updating board buttons
+        
+        // For each Board, update the buttons according to its respective status value stored in playerprefs.
         for (int i = 0; i < bdEquipButton.Length; i++)
         {
+            //If Unpurchased, then set buy button to active
             if (PlayerPrefs.GetInt("board" + i, 0) == 0)
             {
                 bdBuyButton[i].SetActive(true);
@@ -117,6 +119,7 @@ public class ShopController : MonoBehaviour
                 bdEquippedButton[i].SetActive(false);
             }
 
+            //If Bought, but not equipped, set equip button to active
             if (PlayerPrefs.GetInt("board" + i, 0) == 1)
             {
                 bdBuyButton[i].SetActive(false);
@@ -124,6 +127,8 @@ public class ShopController : MonoBehaviour
                 bdEquippedButton[i].SetActive(false);
             }
 
+            //If Equipped, set the equipped button to active
+            //There can only be one eqiupped character/board at one time.
             if (PlayerPrefs.GetInt("board" + i, 0) == 2)
             {
                 bdBuyButton[i].SetActive(false);
@@ -132,6 +137,8 @@ public class ShopController : MonoBehaviour
             }
         }
 
+        //Default Board's playerprefs will start as 0, we want it to be equipped when this is the case.
+        //This statement will only run once when the user first starts the game.
         if (PlayerPrefs.GetInt("board0") == 0)
         {
             PlayerPrefs.SetInt("board0", 2);
@@ -140,9 +147,10 @@ public class ShopController : MonoBehaviour
             bdEquippedButton[0].SetActive(true);
         }
 
-        // updating character buttons
+        // For each character, update the buttons according to its respective status value stored in playerprefs.
         for (int i = 0; i < chEquipButton.Length; i++)
         {
+            //If Unpurchased, then set buy button to active
             if (PlayerPrefs.GetInt("character" + i, 0) == 0)
             {
                 chBuyButton[i].SetActive(true);
@@ -152,6 +160,7 @@ public class ShopController : MonoBehaviour
                 activeCharacter[i].SetActive(false);
             }
 
+            //If Bought, but not equipped, set equip button to active
             if (PlayerPrefs.GetInt("character" + i, 0) == 1)
             {
                 chBuyButton[i].SetActive(false);
@@ -161,6 +170,8 @@ public class ShopController : MonoBehaviour
                 activeCharacter[i].SetActive(false);
             }
 
+            //If Equipped, set the equipped button to active
+            //There can only be one eqiupped character/board at one time.
             if (PlayerPrefs.GetInt("character" + i, 0) == 2)
             {
                 chBuyButton[i].SetActive(false);
@@ -171,6 +182,8 @@ public class ShopController : MonoBehaviour
             }
         }
 
+        //Default character's playerprefs will start as 0, we want it to be equipped when this is the case.
+        //This statement will only run once when the user first starts the game.
         if (PlayerPrefs.GetInt("character0") == 0)
         {
             PlayerPrefs.SetInt("character0", 2);
@@ -180,10 +193,14 @@ public class ShopController : MonoBehaviour
         }
     }
 
+    //The button feeds in an integer representing the board
+    //With the given number, perform the following logic
     public void EquipBoard(int j)
     {
+        //Go through each board in the array
         for (int i = 0; i < bdEquipButton.Length; i++)
         {
+            //If a different board is currently equipped, set its status to 1 "Bought"
             if (i != j && PlayerPrefs.GetInt("board" + i) == 2)
             {
                 PlayerPrefs.SetInt("board" + i, 1);
@@ -196,6 +213,7 @@ public class ShopController : MonoBehaviour
         }
     }
 
+    //Brings up the purchase panel
     public void BuyBoard(int k)
     {
         purchasePanelDark.SetActive(true);
@@ -207,10 +225,14 @@ public class ShopController : MonoBehaviour
         bdbool = true;
     }
 
+    //The button feeds in an integer representing the character
+    //With the given number, perform the following logic
     public void EquipCharacter(int j)
     {
+        //Go through each board in the array
         for (int i = 0; i < bdEquipButton.Length; i++)
         {
+            //If a different character is currently active, set its status to 1 "Bought"
             if (i != j && PlayerPrefs.GetInt("character" + i) == 2)
             {
                 PlayerPrefs.SetInt("character" + i, 1);
@@ -223,6 +245,9 @@ public class ShopController : MonoBehaviour
         }
     }
 
+    //Brings up the purchase panel
+    //Sets the current character number to 'k' to let the code know which character we're buying
+    //also sets chbool to true to denote that we're buying a character not a board.
     public void BuyCharacter(int k)
     {
         purchasePanelDark.SetActive(true);
@@ -235,10 +260,13 @@ public class ShopController : MonoBehaviour
         chbool = true;
     }
 
+    //Listener method
     public void Purchase()
     {
+        //If the user wants to buy a board
         if (bdbool)
         {
+            //Check if there is enough money
             if (PlayerPrefs.GetInt("money", 0) - bdprice[boardNumber] >= 0)
             {
                 bdbool = false;
@@ -252,6 +280,7 @@ public class ShopController : MonoBehaviour
                 NoMoneyDark.SetActive(true);
             }
         }
+        //If the user wants to buy a character
         if (chbool)
         {
             if (PlayerPrefs.GetInt("money", 0) - chprice[characterNumber] >= 0)
@@ -269,6 +298,8 @@ public class ShopController : MonoBehaviour
         }
     }
 
+    //Listener method: called when the user clicks "No" in the purchase panel
+    //Logic self explanatory
     public void DontPurchase()
     {
         if (bdbool)
@@ -284,6 +315,7 @@ public class ShopController : MonoBehaviour
         }
     }
 
+    //when user has no money :( *sob*
     public void NoMoneyOKButton()
     {
         if (bdbool)
@@ -305,6 +337,7 @@ public class ShopController : MonoBehaviour
         }
     }
 
+    //Barrell
     public void AdCharacterBuy(int k)
     {
         purchasePanelDark.SetActive(true);
@@ -316,11 +349,13 @@ public class ShopController : MonoBehaviour
         characterNumber = k;
     }
 
+    //Call Admob to show rewarded based video
     public void WatchAd()
     {
         Admob.Instance.ShowRewardBasedVideo("Shop");
     }
 
+    //Callback function - Once the Ad finishes this method will be called
     public void RewardAd()
     {
         PlayerPrefs.SetInt("adch" + characterNumber, (PlayerPrefs.GetInt("adch" + characterNumber, 0) + 1));
@@ -334,6 +369,7 @@ public class ShopController : MonoBehaviour
         }
     }
 
+    //The user doesn't want free Barrell. wtf
     public void NoWatchAd()
     {
         purchasePanelDark.SetActive(false);
