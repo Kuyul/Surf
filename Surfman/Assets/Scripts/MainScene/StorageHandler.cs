@@ -95,8 +95,8 @@ public class StorageHandler : MonoBehaviour {
 
     public void UploadProfilePic()
     {
-        Firebase.Storage.FirebaseStorage storage = Firebase.Storage.FirebaseStorage.DefaultInstance;
-        Firebase.Storage.StorageReference storage_ref = storage.GetReferenceFromUrl("gs://surfman-389c5.appspot.com");
+        FirebaseStorage storage = FirebaseStorage.DefaultInstance;
+        StorageReference storage_ref = GetStorageReference();
         var profilePicReference = storage_ref.Child("images/" + auth.CurrentUser.Email);
         Byte[] profile = FacebookManager.Instance.ProfileTexture.EncodeToPNG();
 
